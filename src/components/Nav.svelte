@@ -60,7 +60,7 @@
         <a
           rel="prefetch"
           class:active={segment === 'index'}
-          href="/"
+          href="."
           class="text-primary">
           <strong>
             Musikversicherung
@@ -85,22 +85,22 @@
             <a
               rel="prefetch"
               class:active={segment === 'faq'}
-              href="/faq"
+              href="faq"
               class="block mt-4 lg:inline-block lg:mt-0 text-primary
               hover:text-primary mr-4">
-              <strong>FAQ</strong>
+              FAQ
             </a>
             <a
               rel="prefetch"
               class:active={segment === 'kontakt'}
-              href="/kontakt"
+              href="kontakt"
               class="block mt-4 lg:inline-block lg:mt-0 text-primary
               hover:text-primary mr-4">
-              <strong>Kontakt</strong>
+              Kontakt
             </a>
           </div>
           <a
-            href="/anfrage"
+            href="anfrage"
             class="inline-block text-sm px-4 py-2 leading-none border rounded
             text-primary border-primary hover:border-transparent
             hover:text-light hover:bg-primary mt-4 lg:mt-0">
