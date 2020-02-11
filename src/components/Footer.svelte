@@ -29,20 +29,11 @@
   </div>
   <hr class="border border-primary mb-x1 md:mb-x0p5" />
   <nav class="mb-x1 md:mb-x0p5 text-x2">
-    {{}}
     <a href="/impressum">Impressum</a>
     &nbsp; · &nbsp;
     <a href="/datenschutz">Datenschutz</a>
     &nbsp; · &nbsp;
     <a href="/versicherungsbedingungen">Versicherungsbedingungen</a>
-    {{}}
   </nav>
   <hr class="border border-primary mb-x1 md:mb-x0p5" />
-
-  <!-- Include scripts defined in individual page frontmatter -->
-  <!-- {{- range .Params.js }} -->
-  <!--Concat path with filename given in md file-->
-  <!-- {{ $path := printf "js/%s.js" .}}
-	{{ $js := resources.Get $path | resources.Minify | resources.Fingerprint }}
-	<script src="{{ $js.Permalink }}"></script>	{{- end }} -->
 </footer>
