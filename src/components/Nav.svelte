@@ -79,11 +79,6 @@
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
           </svg>
         </button>
-        <!-- <input
-          type="checkbox"
-          class="burger-toggle flex items-center px-3 py-2 w-x1 h-x1 border
-          rounded text-primary border-primary lg:hidden" /> -->
-
         <div
           class="burger-menu-items w-full block lg:flex lg:items-center
           lg:w-auto {expanded === false ? 'hidden' : ''}">
