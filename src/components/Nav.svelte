@@ -1,5 +1,6 @@
 <script>
   export let segment;
+  let expanded = false;
 </script>
 
 <style>
@@ -30,7 +31,7 @@
     z-index: 999;
   }
 
-  .burger-toggle {
+  /* .burger-toggle {
     position: absolute;
     right: 0;
     background: none;
@@ -46,7 +47,7 @@
   .burger-svg {
     position: absolute;
     right: 0;
-  }
+  } */
 </style>
 
 <header class="fixed w-full z-10 top-0">
@@ -55,8 +56,8 @@
     class="flex items-center justify-between flex-wrap bg-light py-x0p5 px-x1p5">
     <div class="relative flex justify-between flex-wrap w-full">
       <div
-        class="grid md:flex justify-between flex-wrap w-full items-center
-        flex-shrink-0 text-white mr-6">
+        class="flex justify-between flex-wrap w-full items-center flex-shrink-0
+        text-white mr-6">
         <a
           rel="prefetch"
           class:active={segment === 'index'}
@@ -67,20 +68,25 @@
             <span class="opacity-50">.com</span>
           </strong>
         </a>
-        <svg
-          class="fill-primary w-x1 h-x1 lg:hidden burger-svg"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg">
-          <title>Menu</title>
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-        </svg>
-        <input
+        <button
+          on:click={expanded === false ? () => (expanded = true) : () => (expanded = false)}
+          aria-label="Menu">
+          <svg
+            class="fill-primary w-x1 h-x1 lg:hidden burger-svg"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+        <!-- <input
           type="checkbox"
           class="burger-toggle flex items-center px-3 py-2 w-x1 h-x1 border
-          rounded text-primary border-primary lg:hidden" />
+          rounded text-primary border-primary lg:hidden" /> -->
+
         <div
           class="burger-menu-items w-full block lg:flex lg:items-center
-          lg:w-auto hidden">
+          lg:w-auto {expanded === false ? 'hidden' : ''}">
           <div class="text-sm lg:flex-grow">
             <a
               rel="prefetch"
