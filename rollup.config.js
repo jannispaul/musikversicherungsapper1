@@ -10,6 +10,8 @@ import getPreprocessor from "svelte-preprocess";
 import postcss from "rollup-plugin-postcss";
 import PurgeSvelte from "purgecss-from-svelte";
 import path from "path";
+import image from "svelte-image";
+
 const mode = process.env.NODE_ENV;
 const dev = mode === "development";
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
@@ -47,13 +49,18 @@ const postcssPlugins = (purgecss = false) => {
   ].filter(Boolean);
 };
 
-const preprocess = getPreprocessor({
-  transformers: {
-    postcss: {
-      plugins: postcssPlugins() // Don't need purgecss because Svelte handle unused css for you.
+const preprocess = [
+  getPreprocessor({
+    transformers: {
+      postcss: {
+        plugins: postcssPlugins() // Don't need purgecss because Svelte handle unused css for you.
+      }
     }
-  }
-});
+  }),
+  image({
+    placeholder: "trace"
+  })
+];
 
 export default {
   client: {
@@ -68,7 +75,11 @@ export default {
         dev,
         hydratable: true,
         emitCss: true,
-        preprocess
+        preprocess: {
+          ...image({
+            placeholder: "trace"
+          })
+        }
       }),
       resolve({
         browser: true,

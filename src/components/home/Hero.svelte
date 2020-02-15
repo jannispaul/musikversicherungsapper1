@@ -1,3 +1,7 @@
+<script>
+  import Image from "svelte-image";
+</script>
+
 <section class="px-x1p5">
   <div class="text-secondary bg-secondary inline-block opacity-25 ">
     825 Bewertungen
@@ -61,3 +65,4 @@
   </div>
 
 </section>
+<Image src="images/test.jpg" />
