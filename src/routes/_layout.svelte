@@ -6,7 +6,12 @@
 </script>
 
 <style>
-
+  :global(body) {
+    background: theme("colors.primary");
+  }
+  :global(main:focus) {
+    outline: none;
+  }
 </style>
 
 <Nav {segment} />

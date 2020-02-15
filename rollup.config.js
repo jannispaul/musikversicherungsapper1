@@ -130,7 +130,11 @@ export default {
       svelte({
         generate: "ssr",
         dev,
-        preprocess
+        preprocess: {
+          ...image({
+            placeholder: "trace"
+          })
+        }
       }),
       resolve({
         dedupe

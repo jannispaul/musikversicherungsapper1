@@ -1,9 +1,11 @@
 <script>
   import Image from "svelte-image";
+  import StarRating from "../StarRating.svelte";
 </script>
 
 <section class="px-x1p5">
   <div class="text-secondary bg-secondary inline-block opacity-25 ">
+    <StarRating rating="5" />
     825 Bewertungen
   </div>
   <h1 class="text-primary text-x7 md:text-x5 leading-none mb-x0p5">
