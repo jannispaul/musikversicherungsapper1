@@ -1,22 +1,3 @@
-<script>
-  import Image from "svelte-image";
-  import StarRating from "../StarRating.svelte";
-</script>
-
-<section class="px-x1p5">
-  <div class="text-secondary bg-secondary inline-block opacity-25 ">
-    <StarRating rating="5" />
-    825 Bewertungen
-  </div>
-  <h1 class="text-primary text-x7 md:text-x5 leading-none mb-x0p5">
-    Versicherung für deine
-    <span class="text-secondary">Instrumente</span>
-    und
-    <span class="text-secondary">Equipment</span>
-  </h1>
-  <a href="/anfrage" class="text-secondary underline text-x2">Jetzt anfragen</a>
-
-</section>
 <section class="p-x1p5 mb-x2">
   <p class="mb-x1">Die perfekte Versicherung für den richtigen Zweck</p>
   <div class="flex">
@@ -67,4 +48,3 @@
   </div>
 
 </section>
-<Image src="images/test.jpg" />

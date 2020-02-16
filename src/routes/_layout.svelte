@@ -7,7 +7,7 @@
 
 <style>
   :global(body) {
-    background: theme("colors.primary");
+    background: #f8f4ff;
   }
   :global(main:focus) {
     outline: none;
