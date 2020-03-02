@@ -1,6 +1,9 @@
 module.exports = {
   theme: {
     extend: {
+      lineHeight: {
+        tighter: "1.1"
+      },
       colors: {
         light: "#F8F5FF",
         primary: "#6B46C1",
@@ -8,9 +11,17 @@ module.exports = {
         secondary: "#DB0086",
         "secondary-light": "#F7E9F9"
       },
+      fontFamily: {
+        sans: ["Space Grotesk", "Helvetica"],
+        body: ["Space Grotesk", "Helvetica"]
+      },
       fontSize: {
+        // x0p5: "calc(7.35px + (10.5 - 7.35) * ((100vw - 320px) / (2560 - 320)))",
+        x0p5: "1.5vw;",
         // x1: "calc(9.8px + (14 - 9.8) * ((100vw - 320px) / (2560 - 320)))",
         x1: "2vw;",
+        // x1p5: "calc(12.8px + (23.60 - 12.8) * ((100vw - 320px) / (2560 - 320)))",
+        x1p5: "3vw;",
         // x2: "calc(14.8px + (33.60 - 14.8) * ((100vw - 320px) / (2560 - 320)))",
         x2: "4vw;",
         // x3: "calc(17.8px + (56.88 - 17.8) * ((100vw - 320px) / (2560 - 320)))",

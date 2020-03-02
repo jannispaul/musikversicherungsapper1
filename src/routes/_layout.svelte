@@ -8,6 +8,8 @@
 <style>
   :global(body) {
     background: #f8f4ff;
+    position: relative;
+    hyphens: manual;
   }
   :global(main:focus) {
     outline: none;
@@ -16,7 +18,7 @@
 
 <Nav {segment} />
 
-<main class="my-x3" id="main" tabindex="-1">
+<main class="my-x3 relative z-0" id="main" tabindex="-1">
   <slot />
 </main>
 <Footer />

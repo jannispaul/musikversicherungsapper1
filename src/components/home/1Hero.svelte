@@ -16,47 +16,67 @@
   @media (min-width: 768px) {
     section {
       display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: repeat(4, 100px);
+      grid-template-columns: calc(100vw * 1.5 / 27) 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr calc(
+          100vw * 1.5 / 27
+        );
+      grid-template-rows: 5vw 5vw 20vw 3vw 5vw;
     }
-  }
-  .image {
-    grid-column: 7/13;
-    grid-row: 2;
-  }
-  .content {
-    grid-column: 1/7;
-    grid-row: 1/4;
+    .content {
+      grid-column: 2/8;
+      grid-row: 2/4;
+    }
+    .image {
+      grid-column: 9/14;
+      grid-row: 2/5;
+    }
+    .shape {
+      grid-column: 10/15;
+      grid-row: 1/6;
+      height: 100%;
+      width: 100%;
+    }
+    .cta {
+      /* grid-column: 1/7;
+      grid-row: 4/5; */
+    }
+    .reviews:hover p {
+      display: inline;
+    }
   }
 </style>
 
-<section class="px-x1p5 relative">
-  <div class="content z-20">
+<section class="px-x1p5 md:px-0 relative">
+  <div class="content z-20 md:flex md:flex-wrap ">
     <a
       href="#reviews"
-      class="inline text-secondary bg-secondary-light inline-block inline-flex
-      py-x0p5 px-x1 mt-x3">
+      class="reviews inline text-secondary bg-secondary-light inline-block
+      inline-flex py-x0p5 px-x1 mt-x3 md:mt-0 md:py-x0p25 md:px-x0p5 md:order-1
+      md:flex md:items-center">
       <StarRating rating="5" {style} class="mr-x1" />
-      <p>825 Bewertungen</p>
+      <p class="text-x1p5 md:text-x0p5 md:hidden ">825 Bewertungen</p>
     </a>
-    <h1 class="text-primary text-x7 md:text-x5 leading-none mt-x2 mb-x5 ">
-      Versicherung für deine
+    <h1
+      class="text-primary text-x7 md:text-x5 leading-none mt-x2 mb-x5 md:mb-x0p5
+      md:mt-x0p5 md:order-0">
+      Versicherung für Deine
       <span class="text-secondary">Instrumente</span>
       und
       <span class="text-secondary">Equipment</span>
     </h1>
+    <a
+      href="/anfrage"
+      class="cta text-secondary underline text-x2 bg-white absolute left-0 p-x1
+      z-20 bottom-0 shadow-2 md:relative md:text-secondary md:bg-secondary-light
+      md:inline-block md:inline-flex md:mt-0 md:py-x0p25 md:px-x0p5 md:text-x0p5
+      md:order-2 md:ml-x0p25 md:flex md:items-center">
+      Jetzt anfragen
+    </a>
   </div>
-  <div class="image">
+  <div class="image overflow-hidden">
     <Image src="images/test.jpg" class="z-10 " />
   </div>
   <div
-    class="bg-primary absolute w-6/12 h-64 right-0 bottom-0 mb-4 z-0 shape" />
-
-  <a
-    href="/anfrage"
-    class="text-secondary underline text-x2 bg-white absolute left-0 p-x1 z-20
-    bottom-0 shadow-2">
-    Jetzt anfragen
-  </a>
+    class="shape bg-primary absolute w-6/12 h-64 right-0 bottom-0 mb-4 z-0
+    md:relative md:mb-0" />
 
 </section>
