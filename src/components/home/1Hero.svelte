@@ -35,12 +35,17 @@
       height: 100%;
       width: 100%;
     }
-    .cta {
-      /* grid-column: 1/7;
-      grid-row: 4/5; */
+    .reviews p {
+      width: 0;
+      opacity: 0;
+      transition: all 500ms;
+      white-space: nowrap;
+      overflow: hidden;
     }
     .reviews:hover p {
-      display: inline;
+      opacity: 1;
+      width: 12.5vw;
+      transition: all 400ms;
     }
   }
 </style>
@@ -53,7 +58,9 @@
       inline-flex py-x0p5 px-x1 mt-x3 md:mt-0 md:py-x0p25 md:px-x0p5 md:order-1
       md:flex md:items-center">
       <StarRating rating="5" {style} class="mr-x1" />
-      <p class="text-x1p5 md:text-x0p5 md:hidden ">825 Bewertungen</p>
+      <p class="text-x1p5 md:text-x0p5 transition duration-500 ease-in-out ">
+        825 Bewertungen
+      </p>
     </a>
     <h1
       class="text-primary text-x7 md:text-x5 leading-none mt-x2 mb-x5 md:mb-x0p5
