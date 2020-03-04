@@ -4,7 +4,6 @@
     return this.fetch(`reviews.json`)
       .then(r => r.json())
       .then(reviews => {
-        // console.log(reviews);
         return { reviews };
       });
   }
@@ -15,6 +14,11 @@
   let averageRating =
     reviews.map(i => i.rating).reduce((a, b) => parseInt(a) + parseInt(b), 0) /
     reviews.length;
+
+  // This following part is not working store values are not being changed
+  import { reviewData } from "../../components/stores.js";
+  reviewData.count.set(reviews.length);
+  reviewData.average.set(reviews.length);
 </script>
 
 <h1>Reviews</h1>

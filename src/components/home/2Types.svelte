@@ -17,7 +17,8 @@
 </section>
 <section class="md:relative ">
   <div class=" p-x1p5 bg-secondary text-white md:mx-x1p5 md:relative md:z-10">
-    <h3 class="text-x6 md:text-x1p5 mb-x1 md:leading-tight md:mb-x0p5">
+    <h3
+      class="text-x6 md:text-x1p5 mb-x1 md:leading-tight md:mb-x0p5 font-medium">
       Instrumentenversicherung so, wie sie sein sollte
     </h3>
     <p class="text-x2 mb-x1 md:text-x1 md:mb-x0p5">

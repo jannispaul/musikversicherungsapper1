@@ -1,5 +1,6 @@
 <script>
   import Image from "svelte-image";
+  import { reviewData } from "../stores";
   import StarRating from "../StarRating.svelte";
 
   let style = {
@@ -59,12 +60,12 @@
       md:flex md:items-center">
       <StarRating rating="5" {style} class="mr-x1" />
       <p class="text-x1p5 md:text-x0p5 transition duration-500 ease-in-out ">
-        825 Bewertungen
+        {$reviewData.count} Bewertungen
       </p>
     </a>
     <h1
       class="text-primary text-x7 md:text-x5 leading-none mt-x2 mb-x5 md:mb-x0p5
-      md:mt-x0p5 md:order-0">
+      md:mt-x0p5 md:order-0 font-medium">
       Versicherung für Deine
       <span class="text-secondary">Instrumente</span>
       und

@@ -3,13 +3,13 @@ import path from "path";
 import yaml from "js-yaml";
 
 export function getReviews() {
-  // Find all yml files in reviews folder and store slugs
+  // Find all yml files in reviews folder and store slugs (remove file extension)
   const slugs = fs
     .readdirSync("reviews")
     .filter(file => path.extname(file) === ".yml")
     .map(file => file.slice(0, -4));
 
-  // Return slugs sorted newest to oldest according to date
+  // Return slugs
   return slugs.map(getReview);
 
   // Sort according to date
