@@ -9,27 +9,29 @@
 </script>
 
 <script>
-  import StarRating from "../../components/StarRating.svelte";
+  //   import Image from "svelte-image";
+  import StarRating from "../StarRating.svelte";
   export let reviews;
-  
   let averageRating =
     reviews.map(i => i.rating).reduce((a, b) => parseInt(a) + parseInt(b), 0) /
     reviews.length;
 
-  // This following part is not working store values are not being changed
-  // import { reviewData } from "../../components/stores.js";
-  // reviewData.count.set(reviews.length);
-  // reviewData.average.set(reviews.length);
+  let style = {
+    styleStarWidth: 20,
+    styleEmptyStarColor: "#000",
+    styleFullStarColor: "#DB0086"
+  };
 </script>
 
-<h1>Reviews</h1>
-{reviews.length} Berwertungen mit {averageRating} Sternen
-<div>
-  {#each reviews as review}
+<section class="p-x1p5 w-100">
+  <h2 class="text-secondary text-x5 md:text-x5">Alle zufrieden</h2>
+  {reviews.length} Bewertungen mit {averageRating} Sternen
+  {#each reviews.slice(0, 2) as review}
     <p>{review.name}</p>
     <StarRating rating={review.rating} />
 
     <p>{review.date}</p>
     <p>{review.review}</p>
   {/each}
-</div>
+
+</section>

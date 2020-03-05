@@ -1,11 +1,11 @@
 <script>
   import Image from "svelte-image";
-  import { reviewData } from "../stores";
+
   import StarRating from "../StarRating.svelte";
 
   let style = {
     styleStarWidth: 20,
-    styleEmptyStarColor: "white",
+    styleEmptyStarColor: "#000",
     styleFullStarColor: "#DB0086"
   };
 </script>
@@ -58,9 +58,9 @@
       class="reviews inline text-secondary bg-secondary-light inline-block
       inline-flex py-x0p5 px-x1 mt-x3 md:mt-0 md:py-x0p25 md:px-x0p5 md:order-1
       md:flex md:items-center">
-      <StarRating rating="5" {style} class="mr-x1" />
+      <StarRating rating="0" {style} class="mr-x1" />
       <p class="text-x1p5 md:text-x0p5 transition duration-500 ease-in-out ">
-        {$reviewData.count} Bewertungen
+        "0" Bewertungen
       </p>
     </a>
     <h1

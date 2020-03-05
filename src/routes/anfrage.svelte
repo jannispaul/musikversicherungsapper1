@@ -1,7 +1,13 @@
 <script>
   import { onMount } from "svelte";
+  // https://sapper.svelte.dev/docs/#Stores
+  // 	import { stores } from '@sapper/app';
+  // 	const { preloading, page, session } = stores();
 
   onMount(() => {
+    // Access sessionStorage like this?
+    // sessionStorage.setItem('myWork', 'Developer');
+
     // This script handles form pages called tabs, adding instruments to the list and saves the form's state to localstorage
 
     // Set variables
