@@ -1,16 +1,9 @@
-<script context="module">
-  export async function preload({ params, query }) {
-    return this.fetch(`reviews.json`)
-      .then(r => r.json())
-      .then(reviewData => {
-        return { reviewData };
-      });
-  }
-</script>
-
 <script>
+  // Use context to get reviewData from layout
+  import { getContext } from "svelte";
+  const reviewData = getContext("reviewData");
+
   import StarRating from "../../components/StarRating.svelte";
-  export let reviewData;
 </script>
 
 <h1>Reviews</h1>

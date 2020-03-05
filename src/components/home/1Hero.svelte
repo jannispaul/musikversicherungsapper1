@@ -1,6 +1,9 @@
 <script>
-  import Image from "svelte-image";
+  // Use context to get reviewData from layout
+  import { getContext } from "svelte";
+  const reviewData = getContext("reviewData");
 
+  import Image from "svelte-image";
   import StarRating from "../StarRating.svelte";
 
   let style = {
@@ -58,9 +61,9 @@
       class="reviews inline text-secondary bg-secondary-light inline-block
       inline-flex py-x0p5 px-x1 mt-x3 md:mt-0 md:py-x0p25 md:px-x0p5 md:order-1
       md:flex md:items-center">
-      <StarRating rating="0" {style} class="mr-x1" />
+      <StarRating rating={reviewData.averageRating} {style} />
       <p class="text-x1p5 md:text-x0p5 transition duration-500 ease-in-out ">
-        "0" Bewertungen
+        {reviewData.count} Bewertungen
       </p>
     </a>
     <h1
