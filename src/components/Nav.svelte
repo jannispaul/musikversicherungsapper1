@@ -30,27 +30,9 @@
     font-size: 1.2em;
     z-index: 999;
   }
-
-  /* .burger-toggle {
-    position: absolute;
-    right: 0;
-    background: none;
-    opacity: 0;
-    z-index: 10;
-  }
-  .burger-toggle:hover {
-    cursor: pointer;
-  }
-  .burger-toggle:checked ~ .burger-menu-items {
-    display: block;
-  }
-  .burger-svg {
-    position: absolute;
-    right: 0;
-  } */
 </style>
 
-<header class="fixed w-full z-10 top-0">
+<header class="fixed w-full z-10 top-0 ">
   <a href="#main" class="skip-to-main">Navigation überspringen</a>
   <nav
     class="flex items-center justify-between flex-wrap bg-light py-x0p5 px-x1p5">
@@ -62,7 +44,7 @@
           rel="prefetch"
           class:active={segment === 'index'}
           href="."
-          class="text-primary">
+          class="text-primary text-x1">
           <strong>
             Musikversicherung
             <span class="opacity-50">.com</span>
@@ -82,7 +64,7 @@
         <div
           class="burger-menu-items w-full block lg:flex lg:items-center
           lg:w-auto {expanded === false ? 'hidden' : ''}">
-          <div class="text-sm lg:flex-grow">
+          <div class="text-x0p5 lg:flex-grow">
             <a
               rel="prefetch"
               class:active={segment === 'faq'}
@@ -102,7 +84,7 @@
           </div>
           <a
             href="anfrage"
-            class="inline-block text-sm px-4 py-2 leading-none border rounded
+            class="inline-block text-x0p5 px-4 py-2 leading-none border-2
             text-primary border-primary hover:border-transparent
             hover:text-light hover:bg-primary mt-4 lg:mt-0">
             Jetzt anfragen

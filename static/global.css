@@ -1072,7 +1072,7 @@ video {
 }
 
 .bg-primary-light {
-  background-color: #F8F4FF;
+  background-color: #F8F5FF;
 }
 
 .bg-secondary {
@@ -1464,7 +1464,7 @@ video {
 }
 
 .hover\:bg-primary-light:hover {
-  background-color: #F8F4FF;
+  background-color: #F8F5FF;
 }
 
 .hover\:bg-secondary:hover {
@@ -1856,7 +1856,7 @@ video {
 }
 
 .focus\:bg-primary-light:focus {
-  background-color: #F8F4FF;
+  background-color: #F8F5FF;
 }
 
 .focus\:bg-secondary:focus {
@@ -2328,7 +2328,7 @@ video {
 }
 
 .border-primary-light {
-  border-color: #F8F4FF;
+  border-color: #F8F5FF;
 }
 
 .border-secondary {
@@ -2720,7 +2720,7 @@ video {
 }
 
 .hover\:border-primary-light:hover {
-  border-color: #F8F4FF;
+  border-color: #F8F5FF;
 }
 
 .hover\:border-secondary:hover {
@@ -3112,7 +3112,7 @@ video {
 }
 
 .focus\:border-primary-light:focus {
-  border-color: #F8F4FF;
+  border-color: #F8F5FF;
 }
 
 .focus\:border-secondary:focus {
@@ -10922,23 +10922,23 @@ video {
 }
 
 .placeholder-primary-light::-webkit-input-placeholder {
-  color: #F8F4FF;
+  color: #F8F5FF;
 }
 
 .placeholder-primary-light::-moz-placeholder {
-  color: #F8F4FF;
+  color: #F8F5FF;
 }
 
 .placeholder-primary-light:-ms-input-placeholder {
-  color: #F8F4FF;
+  color: #F8F5FF;
 }
 
 .placeholder-primary-light::-ms-input-placeholder {
-  color: #F8F4FF;
+  color: #F8F5FF;
 }
 
 .placeholder-primary-light::placeholder {
-  color: #F8F4FF;
+  color: #F8F5FF;
 }
 
 .placeholder-secondary::-webkit-input-placeholder {
@@ -12882,23 +12882,23 @@ video {
 }
 
 .focus\:placeholder-primary-light:focus::-webkit-input-placeholder {
-  color: #F8F4FF;
+  color: #F8F5FF;
 }
 
 .focus\:placeholder-primary-light:focus::-moz-placeholder {
-  color: #F8F4FF;
+  color: #F8F5FF;
 }
 
 .focus\:placeholder-primary-light:focus:-ms-input-placeholder {
-  color: #F8F4FF;
+  color: #F8F5FF;
 }
 
 .focus\:placeholder-primary-light:focus::-ms-input-placeholder {
-  color: #F8F4FF;
+  color: #F8F5FF;
 }
 
 .focus\:placeholder-primary-light:focus::placeholder {
-  color: #F8F4FF;
+  color: #F8F5FF;
 }
 
 .focus\:placeholder-secondary:focus::-webkit-input-placeholder {
@@ -13627,7 +13627,7 @@ video {
 }
 
 .text-primary-light {
-  color: #F8F4FF;
+  color: #F8F5FF;
 }
 
 .text-secondary {
@@ -14019,7 +14019,7 @@ video {
 }
 
 .hover\:text-primary-light:hover {
-  color: #F8F4FF;
+  color: #F8F5FF;
 }
 
 .hover\:text-secondary:hover {
@@ -14411,7 +14411,7 @@ video {
 }
 
 .focus\:text-primary-light:focus {
-  color: #F8F4FF;
+  color: #F8F5FF;
 }
 
 .focus\:text-secondary:focus {
@@ -19930,7 +19930,7 @@ video {
   }
 
   .sm\:bg-primary-light {
-    background-color: #F8F4FF;
+    background-color: #F8F5FF;
   }
 
   .sm\:bg-secondary {
@@ -20322,7 +20322,7 @@ video {
   }
 
   .sm\:hover\:bg-primary-light:hover {
-    background-color: #F8F4FF;
+    background-color: #F8F5FF;
   }
 
   .sm\:hover\:bg-secondary:hover {
@@ -20714,7 +20714,7 @@ video {
   }
 
   .sm\:focus\:bg-primary-light:focus {
-    background-color: #F8F4FF;
+    background-color: #F8F5FF;
   }
 
   .sm\:focus\:bg-secondary:focus {
@@ -21186,7 +21186,7 @@ video {
   }
 
   .sm\:border-primary-light {
-    border-color: #F8F4FF;
+    border-color: #F8F5FF;
   }
 
   .sm\:border-secondary {
@@ -21578,7 +21578,7 @@ video {
   }
 
   .sm\:hover\:border-primary-light:hover {
-    border-color: #F8F4FF;
+    border-color: #F8F5FF;
   }
 
   .sm\:hover\:border-secondary:hover {
@@ -21970,7 +21970,7 @@ video {
   }
 
   .sm\:focus\:border-primary-light:focus {
-    border-color: #F8F4FF;
+    border-color: #F8F5FF;
   }
 
   .sm\:focus\:border-secondary:focus {
@@ -29780,23 +29780,23 @@ video {
   }
 
   .sm\:placeholder-primary-light::-webkit-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .sm\:placeholder-primary-light::-moz-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .sm\:placeholder-primary-light:-ms-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .sm\:placeholder-primary-light::-ms-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .sm\:placeholder-primary-light::placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .sm\:placeholder-secondary::-webkit-input-placeholder {
@@ -31740,23 +31740,23 @@ video {
   }
 
   .sm\:focus\:placeholder-primary-light:focus::-webkit-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .sm\:focus\:placeholder-primary-light:focus::-moz-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .sm\:focus\:placeholder-primary-light:focus:-ms-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .sm\:focus\:placeholder-primary-light:focus::-ms-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .sm\:focus\:placeholder-primary-light:focus::placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .sm\:focus\:placeholder-secondary:focus::-webkit-input-placeholder {
@@ -32485,7 +32485,7 @@ video {
   }
 
   .sm\:text-primary-light {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .sm\:text-secondary {
@@ -32877,7 +32877,7 @@ video {
   }
 
   .sm\:hover\:text-primary-light:hover {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .sm\:hover\:text-secondary:hover {
@@ -33269,7 +33269,7 @@ video {
   }
 
   .sm\:focus\:text-primary-light:focus {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .sm\:focus\:text-secondary:focus {
@@ -38789,7 +38789,7 @@ video {
   }
 
   .md\:bg-primary-light {
-    background-color: #F8F4FF;
+    background-color: #F8F5FF;
   }
 
   .md\:bg-secondary {
@@ -39181,7 +39181,7 @@ video {
   }
 
   .md\:hover\:bg-primary-light:hover {
-    background-color: #F8F4FF;
+    background-color: #F8F5FF;
   }
 
   .md\:hover\:bg-secondary:hover {
@@ -39573,7 +39573,7 @@ video {
   }
 
   .md\:focus\:bg-primary-light:focus {
-    background-color: #F8F4FF;
+    background-color: #F8F5FF;
   }
 
   .md\:focus\:bg-secondary:focus {
@@ -40045,7 +40045,7 @@ video {
   }
 
   .md\:border-primary-light {
-    border-color: #F8F4FF;
+    border-color: #F8F5FF;
   }
 
   .md\:border-secondary {
@@ -40437,7 +40437,7 @@ video {
   }
 
   .md\:hover\:border-primary-light:hover {
-    border-color: #F8F4FF;
+    border-color: #F8F5FF;
   }
 
   .md\:hover\:border-secondary:hover {
@@ -40829,7 +40829,7 @@ video {
   }
 
   .md\:focus\:border-primary-light:focus {
-    border-color: #F8F4FF;
+    border-color: #F8F5FF;
   }
 
   .md\:focus\:border-secondary:focus {
@@ -48639,23 +48639,23 @@ video {
   }
 
   .md\:placeholder-primary-light::-webkit-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .md\:placeholder-primary-light::-moz-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .md\:placeholder-primary-light:-ms-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .md\:placeholder-primary-light::-ms-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .md\:placeholder-primary-light::placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .md\:placeholder-secondary::-webkit-input-placeholder {
@@ -50599,23 +50599,23 @@ video {
   }
 
   .md\:focus\:placeholder-primary-light:focus::-webkit-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .md\:focus\:placeholder-primary-light:focus::-moz-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .md\:focus\:placeholder-primary-light:focus:-ms-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .md\:focus\:placeholder-primary-light:focus::-ms-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .md\:focus\:placeholder-primary-light:focus::placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .md\:focus\:placeholder-secondary:focus::-webkit-input-placeholder {
@@ -51344,7 +51344,7 @@ video {
   }
 
   .md\:text-primary-light {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .md\:text-secondary {
@@ -51736,7 +51736,7 @@ video {
   }
 
   .md\:hover\:text-primary-light:hover {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .md\:hover\:text-secondary:hover {
@@ -52128,7 +52128,7 @@ video {
   }
 
   .md\:focus\:text-primary-light:focus {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .md\:focus\:text-secondary:focus {
@@ -57648,7 +57648,7 @@ video {
   }
 
   .lg\:bg-primary-light {
-    background-color: #F8F4FF;
+    background-color: #F8F5FF;
   }
 
   .lg\:bg-secondary {
@@ -58040,7 +58040,7 @@ video {
   }
 
   .lg\:hover\:bg-primary-light:hover {
-    background-color: #F8F4FF;
+    background-color: #F8F5FF;
   }
 
   .lg\:hover\:bg-secondary:hover {
@@ -58432,7 +58432,7 @@ video {
   }
 
   .lg\:focus\:bg-primary-light:focus {
-    background-color: #F8F4FF;
+    background-color: #F8F5FF;
   }
 
   .lg\:focus\:bg-secondary:focus {
@@ -58904,7 +58904,7 @@ video {
   }
 
   .lg\:border-primary-light {
-    border-color: #F8F4FF;
+    border-color: #F8F5FF;
   }
 
   .lg\:border-secondary {
@@ -59296,7 +59296,7 @@ video {
   }
 
   .lg\:hover\:border-primary-light:hover {
-    border-color: #F8F4FF;
+    border-color: #F8F5FF;
   }
 
   .lg\:hover\:border-secondary:hover {
@@ -59688,7 +59688,7 @@ video {
   }
 
   .lg\:focus\:border-primary-light:focus {
-    border-color: #F8F4FF;
+    border-color: #F8F5FF;
   }
 
   .lg\:focus\:border-secondary:focus {
@@ -67498,23 +67498,23 @@ video {
   }
 
   .lg\:placeholder-primary-light::-webkit-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .lg\:placeholder-primary-light::-moz-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .lg\:placeholder-primary-light:-ms-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .lg\:placeholder-primary-light::-ms-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .lg\:placeholder-primary-light::placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .lg\:placeholder-secondary::-webkit-input-placeholder {
@@ -69458,23 +69458,23 @@ video {
   }
 
   .lg\:focus\:placeholder-primary-light:focus::-webkit-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .lg\:focus\:placeholder-primary-light:focus::-moz-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .lg\:focus\:placeholder-primary-light:focus:-ms-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .lg\:focus\:placeholder-primary-light:focus::-ms-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .lg\:focus\:placeholder-primary-light:focus::placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .lg\:focus\:placeholder-secondary:focus::-webkit-input-placeholder {
@@ -70203,7 +70203,7 @@ video {
   }
 
   .lg\:text-primary-light {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .lg\:text-secondary {
@@ -70595,7 +70595,7 @@ video {
   }
 
   .lg\:hover\:text-primary-light:hover {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .lg\:hover\:text-secondary:hover {
@@ -70987,7 +70987,7 @@ video {
   }
 
   .lg\:focus\:text-primary-light:focus {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .lg\:focus\:text-secondary:focus {
@@ -76507,7 +76507,7 @@ video {
   }
 
   .xl\:bg-primary-light {
-    background-color: #F8F4FF;
+    background-color: #F8F5FF;
   }
 
   .xl\:bg-secondary {
@@ -76899,7 +76899,7 @@ video {
   }
 
   .xl\:hover\:bg-primary-light:hover {
-    background-color: #F8F4FF;
+    background-color: #F8F5FF;
   }
 
   .xl\:hover\:bg-secondary:hover {
@@ -77291,7 +77291,7 @@ video {
   }
 
   .xl\:focus\:bg-primary-light:focus {
-    background-color: #F8F4FF;
+    background-color: #F8F5FF;
   }
 
   .xl\:focus\:bg-secondary:focus {
@@ -77763,7 +77763,7 @@ video {
   }
 
   .xl\:border-primary-light {
-    border-color: #F8F4FF;
+    border-color: #F8F5FF;
   }
 
   .xl\:border-secondary {
@@ -78155,7 +78155,7 @@ video {
   }
 
   .xl\:hover\:border-primary-light:hover {
-    border-color: #F8F4FF;
+    border-color: #F8F5FF;
   }
 
   .xl\:hover\:border-secondary:hover {
@@ -78547,7 +78547,7 @@ video {
   }
 
   .xl\:focus\:border-primary-light:focus {
-    border-color: #F8F4FF;
+    border-color: #F8F5FF;
   }
 
   .xl\:focus\:border-secondary:focus {
@@ -86357,23 +86357,23 @@ video {
   }
 
   .xl\:placeholder-primary-light::-webkit-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .xl\:placeholder-primary-light::-moz-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .xl\:placeholder-primary-light:-ms-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .xl\:placeholder-primary-light::-ms-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .xl\:placeholder-primary-light::placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .xl\:placeholder-secondary::-webkit-input-placeholder {
@@ -88317,23 +88317,23 @@ video {
   }
 
   .xl\:focus\:placeholder-primary-light:focus::-webkit-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .xl\:focus\:placeholder-primary-light:focus::-moz-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .xl\:focus\:placeholder-primary-light:focus:-ms-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .xl\:focus\:placeholder-primary-light:focus::-ms-input-placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .xl\:focus\:placeholder-primary-light:focus::placeholder {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .xl\:focus\:placeholder-secondary:focus::-webkit-input-placeholder {
@@ -89062,7 +89062,7 @@ video {
   }
 
   .xl\:text-primary-light {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .xl\:text-secondary {
@@ -89454,7 +89454,7 @@ video {
   }
 
   .xl\:hover\:text-primary-light:hover {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .xl\:hover\:text-secondary:hover {
@@ -89846,7 +89846,7 @@ video {
   }
 
   .xl\:focus\:text-primary-light:focus {
-    color: #F8F4FF;
+    color: #F8F5FF;
   }
 
   .xl\:focus\:text-secondary:focus {

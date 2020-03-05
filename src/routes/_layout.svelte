@@ -22,7 +22,7 @@
 
 <style>
   :global(body) {
-    background: #f8f4ff;
+    background: #f8f5ff;
     position: relative;
     hyphens: manual;
   }
