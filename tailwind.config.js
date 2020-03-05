@@ -16,8 +16,8 @@ module.exports = {
         body: ["Space Grotesk", "Helvetica"]
       },
       fontSize: {
-        // x0p5: "calc(7.35px + (10.5 - 7.35) * ((100vw - 320px) / (2560 - 320)))",
-        x0p5: "1.5vw;",
+        x0p5: "min(max(14px, 1.5vw), 40px)",
+        // x0p5: "1.5vw;",
         // x1: "calc(9.8px + (14 - 9.8) * ((100vw - 320px) / (2560 - 320)))",
         x1: "2vw;",
         // x1p5: "calc(12.8px + (23.60 - 12.8) * ((100vw - 320px) / (2560 - 320)))",

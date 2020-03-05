@@ -44,17 +44,17 @@
           rel="prefetch"
           class:active={segment === 'index'}
           href="."
-          class="text-primary text-x1">
+          class="text-primary md:text-x1">
           <strong>
             Musikversicherung
-            <span class="opacity-50">.com</span>
+            <span class="opacity-50 -ml-1">.com</span>
           </strong>
         </a>
         <button
           on:click={expanded === false ? () => (expanded = true) : () => (expanded = false)}
           aria-label="Menu">
           <svg
-            class="fill-primary w-x1 h-x1 lg:hidden burger-svg"
+            class="fill-primary w-x1 h-x1 md:hidden burger-svg"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">
             <title>Menu</title>
@@ -62,31 +62,31 @@
           </svg>
         </button>
         <div
-          class="burger-menu-items w-full block lg:flex lg:items-center
-          lg:w-auto {expanded === false ? 'hidden' : ''}">
-          <div class="text-x0p5 lg:flex-grow">
+          class="burger-menu-items w-full block mb-x1p5 md:mb-0 md:flex
+          md:items-center md:w-auto {expanded === false ? 'hidden' : ''}">
+          <div class=" md:text-x0p5 md:flex-grow">
             <a
               rel="prefetch"
               class:active={segment === 'faq'}
               href="faq"
-              class="block mt-4 lg:inline-block lg:mt-0 text-primary
-              hover:text-primary mr-4">
+              class="block mt-4 md:inline-block md:mt-0 text-primary
+              hover:text-primary mr-x0p5">
               FAQ
             </a>
             <a
               rel="prefetch"
               class:active={segment === 'kontakt'}
               href="kontakt"
-              class="block mt-4 lg:inline-block lg:mt-0 text-primary
-              hover:text-primary mr-4">
+              class="block mt-4 md:inline-block md:mt-0 text-primary
+              hover:text-primary mr-x0p5">
               Kontakt
             </a>
           </div>
           <a
             href="anfrage"
-            class="inline-block text-x0p5 px-4 py-2 leading-none border-2
+            class="inline-block md:text-x0p5 px-4 py-2 leading-none border-2
             text-primary border-primary hover:border-transparent
-            hover:text-light hover:bg-primary mt-4 lg:mt-0">
+            hover:text-light hover:bg-primary mt-4 md:mt-0">
             Jetzt anfragen
           </a>
         </div>

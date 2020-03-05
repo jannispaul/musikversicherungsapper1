@@ -59,7 +59,7 @@
     <a
       href="#reviews"
       class="reviews inline text-secondary bg-secondary-light inline-block
-      inline-flex py-x0p5 px-x1 mt-x3 md:mt-0 md:py-x0p25 md:px-x0p5 md:order-1
+      inline-flex py-x0p5 px-x1 mt-x1 md:mt-0 md:py-x0p25 md:px-x0p5 md:order-1
       md:flex md:items-center">
       <StarRating rating={reviewData.averageRating} {style} />
       <p class="text-x1p5 md:text-x0p5 transition duration-500 ease-in-out ">
@@ -67,7 +67,7 @@
       </p>
     </a>
     <h1
-      class="text-primary text-x7 md:text-x5 leading-none mt-x2 mb-x5 md:mb-x0p5
+      class="text-primary text-x7 md:text-x5 leading-none mt-x2 mb-x3 md:mb-x0p5
       md:mt-x0p5 md:order-0 font-medium">
       Versicherung für Deine
       <span class="text-secondary">Instrumente</span>
