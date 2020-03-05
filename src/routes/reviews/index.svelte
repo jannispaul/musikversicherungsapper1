@@ -2,30 +2,21 @@
   export async function preload({ params, query }) {
     return this.fetch(`reviews.json`)
       .then(r => r.json())
-      .then(reviews => {
-        return { reviews };
+      .then(reviewData => {
+        return { reviewData };
       });
   }
 </script>
 
 <script>
   import StarRating from "../../components/StarRating.svelte";
-  export let reviews;
-  
-  let averageRating =
-    reviews.map(i => i.rating).reduce((a, b) => parseInt(a) + parseInt(b), 0) /
-    reviews.length;
-
-  // This following part is not working store values are not being changed
-  // import { reviewData } from "../../components/stores.js";
-  // reviewData.count.set(reviews.length);
-  // reviewData.average.set(reviews.length);
+  export let reviewData;
 </script>
 
 <h1>Reviews</h1>
-{reviews.length} Berwertungen mit {averageRating} Sternen
+{reviewData.count} Berwertungen mit {reviewData.averageRating} Sternen
 <div>
-  {#each reviews as review}
+  {#each reviewData.allReviews as review}
     <p>{review.name}</p>
     <StarRating rating={review.rating} />
 

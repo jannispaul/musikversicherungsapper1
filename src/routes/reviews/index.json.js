@@ -30,10 +30,20 @@ export async function get(req, res, next) {
       review: review.review
     }));
 
+    const reviewData = {
+      count: reviews.length,
+      averageRating:
+        reviews
+          .map(i => i.rating)
+          .reduce((a, b) => parseInt(a) + parseInt(b), 0) / reviews.length,
+      recentReviews: reviews.slice(0, 3),
+      allReviews: reviews
+    };
+
     // If reviews is NOT null set headers and stringify
     if (reviews !== null) {
       res.setHeader("Content-Type", "application/json");
-      res.end(JSON.stringify(reviews));
+      res.end(JSON.stringify(reviewData));
     } else {
       next();
     }
