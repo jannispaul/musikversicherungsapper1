@@ -1,4 +1,4 @@
-import { getFaqs } from "./_faqs.js";
+import { getFaq } from "./_faq.js";
 
 // Declare contents for later use
 let contents;
@@ -6,16 +6,13 @@ let contents;
 export async function get(req, res, next) {
   // If contents is undefined or in production
   if (!contents || process.env.NODE_ENV !== "production") {
-    // Call getFaqs and the results
-    const faqs = getFaqs().map(faq => ({
-      question: faq.question,
-      answer: faq.answer
-    }));
+    // Call getFaq and extract values from object into array
+    const faq = Object.values(getFaq());
 
-    // If faqs is NOT null set headers and stringify
-    if (faqs !== null) {
+    // If faq is NOT null set headers and stringify
+    if (faq !== null) {
       res.setHeader("Content-Type", "application/json");
-      res.end(JSON.stringify(faqs));
+      res.end(JSON.stringify(faq));
     } else {
       next();
     }

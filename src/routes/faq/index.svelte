@@ -1,30 +1,27 @@
 <script context="module">
-  import Faq from "../../components/Faq.svelte";
   export async function preload({ params, query }) {
-    return this.fetch(`faqs.json`)
+    return this.fetch(`faq.json`)
       .then(r => r.json())
-      .then(faqs => {
-        // console.log(faqs);
-        return { faqs };
+      .then(faq => {
+        return { faq };
       });
   }
 </script>
 
 <script>
-  export let faqs;
-  let averageRating =
-    faqs.map(i => i.rating).reduce((a, b) => parseInt(a) + parseInt(b), 0) /
-    faqs.length;
+  import FaqItem from "../../components/FaqItem.svelte";
+  export let faq;
 </script>
 
-<h1>faqs</h1>
-{faqs.length} Berwertungen mit {averageRating} Sternen
-<div>
-  {#each faqs as faq}
-    <p>{faq.name}</p>
-    <!-- <StarRating rating={faq.rating} /> -->
-
-    <p>{faq.date}</p>
-    <p>{faq.faq}</p>
-  {/each}
-</div>
+<section class="px-x1p5" itemscope itemtype="https://schema.org/FAQPage">
+  <h1 class="text-primary text-x6 leading-tight mb-x2 border-solid">
+    Häufig gestellte Fragen
+  </h1>
+  <div class="flex flex-wrap md:-mx-x1">
+    {#each faq as faq}
+      <FaqItem
+        question={faq.question}
+        answer={faq.answer.replace(/\n/g, '<br>')} />
+    {/each}
+  </div>
+</section>

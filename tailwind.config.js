@@ -72,6 +72,12 @@ module.exports = {
       },
       margin: {
         "-2": "-2px"
+      },
+      flex: {
+        half: "1 0 40%"
+      },
+      variants: {
+        margin: ["responsive", "odd"]
       }
     }
   },

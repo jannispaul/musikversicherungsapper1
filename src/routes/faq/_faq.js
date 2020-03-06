@@ -1,20 +1,10 @@
 import fs from "fs";
-import path from "path";
+// import path from "path";
 import yaml from "js-yaml";
 
-export function getFaqs() {
-  // Find all yml files in faq folder and store slugs
-  const slugs = fs
-    .readdirSync("faq")
-    .filter(file => path.extname(file) === ".yml")
-    .map(file => file.slice(0, -4));
-
-  return slugs.map(getFaq);
-}
-
-export function getFaq(slug) {
+export function getFaq() {
   // Set file by inserting slug and check if exists
-  const file = `faq/${slug}.yml`;
+  const file = `faq/faq.yml`;
   if (!fs.existsSync(file)) return null;
 
   // Read file
