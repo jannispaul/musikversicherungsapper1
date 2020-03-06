@@ -84,7 +84,7 @@
     </a>
   </div>
   <div class="image overflow-hidden">
-    <Image src="images/test.jpg" class="z-10 " />
+    <Image src="images/piano.jpg" class="z-10 " />
   </div>
   <div
     class="shape bg-primary absolute w-6/12 h-64 right-0 bottom-0 mb-4 z-0

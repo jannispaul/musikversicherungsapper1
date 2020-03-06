@@ -33,7 +33,7 @@
 
 <Nav {segment} />
 
-<main class="my-x3 relative z-0" id="main" tabindex="-1">
+<main class="mb-x3 mt-x1 relative z-0" id="main" tabindex="-1">
   <slot />
 </main>
 <Footer />

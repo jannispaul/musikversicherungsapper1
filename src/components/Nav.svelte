@@ -4,36 +4,32 @@
 </script>
 
 <style>
-  .skip-to-main {
-    left: -999px;
-    position: absolute;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    z-index: -999;
-  }
   .skip-to-main:focus,
   .skip-to-main:active {
     color: #fff;
     background-color: #000;
-    left: auto;
     top: auto;
-    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: max-content;
     height: auto;
     overflow: auto;
-    margin: 10px 35%;
-    padding: 5px;
-    border-radius: 15px;
+    margin-top: 10px;
+    padding: 5px 15px;
     border: 4px solid yellow;
     text-align: center;
-    font-size: 1.2em;
     z-index: 999;
   }
 </style>
 
-<header class="fixed w-full z-10 top-0 ">
-  <a href="#main" class="skip-to-main">Navigation überspringen</a>
+<header class="sticky w-full z-10 top-0 ">
+  <a
+    href="#main"
+    class="skip-to-main absolute overflow-hidden z-0 w-1 h-1 text-x2 md:text-x1">
+    Navigation überspringen
+  </a>
   <nav
     class="flex items-center justify-between flex-wrap bg-light py-x0p5 px-x1p5">
     <div class="relative flex justify-between flex-wrap w-full">
@@ -47,7 +43,7 @@
           class="text-primary md:text-x1">
           <strong>
             Musikversicherung
-            <span class="opacity-50 -ml-1">.com</span>
+            <span class="opacity-75 -ml-1">.com</span>
           </strong>
         </a>
         <button
