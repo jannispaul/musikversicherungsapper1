@@ -21,30 +21,30 @@
   @media (min-width: 768px) {
     section {
       display: grid;
-      grid-template-columns: calc(100vw * 1.5 / 27) 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr calc(
+      grid-template-columns: calc(100vw * 1.5 / 27) repeat(24, 1fr) calc(
           100vw * 1.5 / 27
         );
-      grid-template-rows: 6vw 6vw 6vw 6vw 6vw 6vw 6vw;
+      grid-template-rows: repeat(12, 3.5vw);
     }
     .content {
-      grid-column: 2/8;
+      grid-column: 2/14;
       grid-row: 2/7;
     }
     .image-piano {
-      grid-column: 9/14;
-      grid-row: 2/5;
+      grid-column: 16/23;
+      grid-row: 2/8;
     }
     .image-mixer {
-      grid-column: 10/13;
-      grid-row: 3/6;
+      grid-column: 17/26;
+      grid-row: 5/12;
     }
     .image-sax {
-      grid-column: 8/13;
-      grid-row: 4/7;
+      grid-column: 14/19;
+      grid-row: 6/10;
     }
     .shape {
-      grid-column: 10/15;
-      grid-row: 1/8;
+      grid-column: 20/27;
+      grid-row: 1/13;
       height: 100%;
       width: 100%;
     }
@@ -95,10 +95,10 @@
   <div class="z-20 overflow-hidden image-piano">
     <Image src="images/piano.jpg" />
   </div>
-  <div class="z-30 overflow-hidden image-mixer">
+  <div class="z-10 overflow-hidden image-mixer">
     <Image src="images/mixer.jpg" />
   </div>
-  <div class="z-10 overflow-hidden image-sax">
+  <div class="z-30 overflow-hidden image-sax">
     <Image src="images/sax.jpg" />
   </div>
 
