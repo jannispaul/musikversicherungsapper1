@@ -10,7 +10,6 @@
   class="text-x1p5 md:text-x0p5 md:flex-half md:px-x1">
   <div
     itemprop="name"
-    data-disclosure
     class="w-full bg-transparent text-primary border-solid border-0 border-b-2
     border-primary py-x0p5 md:py-x0p25 mb-x0p5 md:mb-x0p25">
     {question}
