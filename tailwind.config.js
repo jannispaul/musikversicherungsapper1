@@ -12,8 +12,8 @@ module.exports = {
         "secondary-light": "#F7E9F9"
       },
       fontFamily: {
-        sans: ["Space Grotesk", "Helvetica"],
-        body: ["Space Grotesk", "Helvetica"]
+        sans: ["Space Grotesk", "Helvetica Neue", "Helvetica"],
+        body: ["Space Grotesk", "Helvetica Neue", "Helvetica"]
       },
       fontSize: {
         x0p5: "min(max(14px, 1.5vw), 40px)",

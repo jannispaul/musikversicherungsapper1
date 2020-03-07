@@ -7,8 +7,8 @@
   import StarRating from "../StarRating.svelte";
 
   let style = {
-    styleStarWidth: 20,
-    styleEmptyStarColor: "#000",
+    styleStarWidth: 50,
+    styleEmptyStarColor: "#EE97CC",
     styleFullStarColor: "#DB0086"
   };
 </script>
@@ -72,7 +72,7 @@
       md:flex md:items-center">
       <StarRating rating={reviewData.averageRating} {style} />
       <p class="text-x1p5 md:text-x0p5 transition duration-500 ease-in-out ">
-        {reviewData.count} Bewertungen
+        &nbsp; {reviewData.count} Bewertungen
       </p>
     </a>
     <h1

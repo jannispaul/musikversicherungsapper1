@@ -17,7 +17,7 @@
   <h1 class="text-primary text-x6 leading-tight mb-x2 border-solid">
     Häufig gestellte Fragen
   </h1>
-  <div class="flex flex-wrap md:-mx-x1">
+  <div class="grid md:grid-cols-2 gap-x1">
     {#each faq as faq}
       <FaqItem
         question={faq.question}

@@ -4,7 +4,7 @@
   export let rating = 0;
   export let isIndicatorActive = false;
   export let style = {
-    styleStarWidth: 30,
+    styleStarWidth: 50,
     styleEmptyStarColor: "#737373",
     styleFullStarColor: "#ffd219"
   };
@@ -105,26 +105,24 @@
   .indicator {
     font-size: 2.5rem;
   }
-  .star-container:not(:last-child) {
-    margin-right: 5px;
-  }
 </style>
 
 <div class="star-container">
   <div class="star-rating">
     {#each stars as star}
       <svg
-        class="star-svg"
-        style="fill: url(#gradient{star.raw});height:{style.styleStarWidth};
-        width:{style.styleStarWidth}">
-        <polygon points={getStarPoints()} style="fill-rule:nonzero;" />
+        viewBox="0 0 50 50"
+        class="star-svg w-x1 md:w-x0p5"
+        style="fill: url(#gradient{star.raw});">
+        <polygon points={getStarPoints()} style="" />
         <defs>
           <linearGradient id="gradient{star.raw}">
             <stop
               id="stop1"
               offset={star.percent}
               stop-opacity="1"
-              stop-color={getFullFillColor(star)} />
+              stop-color={getFullFillColor(star)}
+              class="star-svg" />
             <stop
               id="stop2"
               offset={star.percent}
@@ -139,13 +137,14 @@
               id="stop4"
               offset="100%"
               stop-opacity="1"
-              :stop-color={style.styleEmptyStarColor} />
+              stop-color={style.styleEmptyStarColor} />
+
           </linearGradient>
         </defs>
       </svg>
     {/each}
     {#if isIndicatorActive}
-      <div class="indicator">{rating}</div>
+      <div class="indicator" itemprop="ratingValue">{rating}</div>
     {/if}
   </div>
 </div>

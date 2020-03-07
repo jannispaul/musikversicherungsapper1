@@ -7,7 +7,7 @@
   itemscope
   itemprop="mainEntity"
   itemtype="https://schema.org/Question"
-  class="text-x1p5 md:text-x0p5 md:flex-half md:px-x1">
+  class="text-x1p5 md:text-x0p5 ">
   <div
     itemprop="name"
     class="w-full bg-transparent text-primary border-solid border-0 border-b-2

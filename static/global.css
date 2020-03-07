@@ -418,7 +418,7 @@ ul {
  */
 
 html {
-  font-family: Space Grotesk, Helvetica; /* 1 */
+  font-family: Space Grotesk, Helvetica Neue, Helvetica; /* 1 */
   line-height: 1.5; /* 2 */
 }
 
@@ -3920,7 +3920,7 @@ video {
 }
 
 .font-sans {
-  font-family: Space Grotesk, Helvetica;
+  font-family: Space Grotesk, Helvetica Neue, Helvetica;
 }
 
 .font-serif {
@@ -3932,7 +3932,7 @@ video {
 }
 
 .font-body {
-  font-family: Space Grotesk, Helvetica;
+  font-family: Space Grotesk, Helvetica Neue, Helvetica;
 }
 
 .font-hairline {
@@ -22784,7 +22784,7 @@ video {
   }
 
   .sm\:font-sans {
-    font-family: Space Grotesk, Helvetica;
+    font-family: Space Grotesk, Helvetica Neue, Helvetica;
   }
 
   .sm\:font-serif {
@@ -22796,7 +22796,7 @@ video {
   }
 
   .sm\:font-body {
-    font-family: Space Grotesk, Helvetica;
+    font-family: Space Grotesk, Helvetica Neue, Helvetica;
   }
 
   .sm\:font-hairline {
@@ -41649,7 +41649,7 @@ video {
   }
 
   .md\:font-sans {
-    font-family: Space Grotesk, Helvetica;
+    font-family: Space Grotesk, Helvetica Neue, Helvetica;
   }
 
   .md\:font-serif {
@@ -41661,7 +41661,7 @@ video {
   }
 
   .md\:font-body {
-    font-family: Space Grotesk, Helvetica;
+    font-family: Space Grotesk, Helvetica Neue, Helvetica;
   }
 
   .md\:font-hairline {
@@ -60514,7 +60514,7 @@ video {
   }
 
   .lg\:font-sans {
-    font-family: Space Grotesk, Helvetica;
+    font-family: Space Grotesk, Helvetica Neue, Helvetica;
   }
 
   .lg\:font-serif {
@@ -60526,7 +60526,7 @@ video {
   }
 
   .lg\:font-body {
-    font-family: Space Grotesk, Helvetica;
+    font-family: Space Grotesk, Helvetica Neue, Helvetica;
   }
 
   .lg\:font-hairline {
@@ -79379,7 +79379,7 @@ video {
   }
 
   .xl\:font-sans {
-    font-family: Space Grotesk, Helvetica;
+    font-family: Space Grotesk, Helvetica Neue, Helvetica;
   }
 
   .xl\:font-serif {
@@ -79391,7 +79391,7 @@ video {
   }
 
   .xl\:font-body {
-    font-family: Space Grotesk, Helvetica;
+    font-family: Space Grotesk, Helvetica Neue, Helvetica;
   }
 
   .xl\:font-hairline {
