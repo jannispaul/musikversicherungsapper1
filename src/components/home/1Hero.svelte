@@ -42,6 +42,7 @@
       grid-column: 14/19;
       grid-row: 6/10;
     }
+
     .shape {
       grid-column: 20/27;
       grid-row: 1/13;
