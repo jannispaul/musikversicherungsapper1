@@ -32,10 +32,11 @@ export async function get(req, res, next) {
 
     const reviewData = {
       count: reviews.length,
-      averageRating:
+      averageRating: (
         reviews
           .map(i => i.rating)
-          .reduce((a, b) => parseInt(a) + parseInt(b), 0) / reviews.length,
+          .reduce((a, b) => parseInt(a) + parseInt(b), 0) / reviews.length
+      ).toFixed(2),
       recentReviews: reviews.slice(0, 3),
       allReviews: reviews
     };

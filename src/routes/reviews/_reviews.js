@@ -10,12 +10,12 @@ export function getReviews() {
     .map(file => file.slice(0, -4));
 
   // Return slugs
-  return slugs.map(getReview);
+  // return slugs.map(getReview);
 
   // Sort according to date
-  // return slugs.map(getReview).sort((a, b) => {
-  //   return a.date < b.date ? 1 : -1;
-  // });
+  return slugs.map(getReview).sort((a, b) => {
+    return a.date < b.date ? 1 : -1;
+  });
 }
 
 export function getReview(slug) {

@@ -14468,6 +14468,10 @@ video {
   font-size: 4rem;
 }
 
+.text-x0p25 {
+  font-size: min(max(12px, 1.3vw), 40px);
+}
+
 .text-x0p5 {
   font-size: min(max(14px, 1.5vw), 40px);
 }
@@ -33330,6 +33334,10 @@ video {
 
   .sm\:text-6xl {
     font-size: 4rem;
+  }
+
+  .sm\:text-x0p25 {
+    font-size: min(max(12px, 1.3vw), 40px);
   }
 
   .sm\:text-x0p5 {
@@ -52197,6 +52205,10 @@ video {
     font-size: 4rem;
   }
 
+  .md\:text-x0p25 {
+    font-size: min(max(12px, 1.3vw), 40px);
+  }
+
   .md\:text-x0p5 {
     font-size: min(max(14px, 1.5vw), 40px);
   }
@@ -71062,6 +71074,10 @@ video {
     font-size: 4rem;
   }
 
+  .lg\:text-x0p25 {
+    font-size: min(max(12px, 1.3vw), 40px);
+  }
+
   .lg\:text-x0p5 {
     font-size: min(max(14px, 1.5vw), 40px);
   }
@@ -89925,6 +89941,10 @@ video {
 
   .xl\:text-6xl {
     font-size: 4rem;
+  }
+
+  .xl\:text-x0p25 {
+    font-size: min(max(12px, 1.3vw), 40px);
   }
 
   .xl\:text-x0p5 {
