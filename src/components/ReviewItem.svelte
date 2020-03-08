@@ -30,6 +30,12 @@
         <p>{review.date}</p>
       </span>
     </div>
-    <p itemprop="reviewBody" class="">{review.review}</p>
+    <p
+      itemprop="reviewBody"
+      class=""
+      contenteditable="false"
+      bind:innerHTML={review.review}>
+      {review.review}
+    </p>
   </div>
 </div>
