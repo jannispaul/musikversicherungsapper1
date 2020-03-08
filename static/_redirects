@@ -1,0 +1,5 @@
+# Redirect domain aliases to primary domain
+# https://musikversicherung.com* https://musikversicherung.com/:splat 301!
+
+# Optional: Redirect default Netlify subdomain to primary domain
+#https://musikversicherung.netlify.com* https://musikversicherung.com/:splat 301!
