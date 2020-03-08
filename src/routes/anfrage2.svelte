@@ -1,34 +1,36 @@
 <script>
   import { onMount } from "svelte";
   var currentTab = 0;
-  let type;
+  let type = undefined;
 
   let nextTab = () => currentTab++;
   let prevTab = () => currentTab--;
 
-  function lsWritable(key, type) {
-    let initialValue = localStorage.getItem(key);
-    if (type == "numeric") {
-      initialValue = Number(initialValue);
-    }
-    const { subscribe, set } = writable(initialValue);
+  // function lsWritable(key, type) {
+  //   let initialValue = localStorage.getItem(key);
+  //   if (type == "numeric") {
+  //     initialValue = Number(initialValue);
+  //   }
+  //   const { subscribe, set } = writable(initialValue);
 
-    return {
-      subscribe,
-      set: value => {
-        localStorage.setItem(key, value);
-        return set(value);
-      }
-    };
+  //   return {
+  //     subscribe,
+  //     set: value => {
+  //       localStorage.setItem(key, value);
+  //       return set(value);
+  //     }
+  //   };
+  // }
+
+  function updateType(userChoice) {
+    type = userChoice;
+    console.log(type);
   }
-
   onMount(() => {
-    // Name cookie
-    var storageID = "form-auto-save";
     let instrumentCount = 1; // Instrument counter starts with 1 instrument
     let incrementInstrumentCount = () => instrumentCount++; // Increment instrument count
-    // Get existing data from localStorage
-    var saved = localStorage.getItem(storageID);
+    var storageID = "form-auto-save"; // Var for cookie name
+    var saved = localStorage.getItem(storageID); // Get existing data from localStorage
     saved = saved ? JSON.parse(saved) : {};
     // Save the insrumentCounter to it
     saved.instrumentCount = instrumentCount;
@@ -143,8 +145,7 @@
             class=""
             bind:group={type}
             value={'SINFONIMA'}
-            class:active={type === 'SINFONIMA'}
-            on:click={() => (type = 'SINFONIMA')} />
+            on:click={updateType('SINFONIMA')} />
           <label for="choice-sinfonima" data-sinfonima class="block p-10">
             Akustische Instrumente
           </label>
@@ -155,8 +156,8 @@
             name="type"
             id="choice-imsound"
             bind:group={type}
-            value={'IMSOUND'}
-            on:click={() => (type = 'IMSOUND')} />
+            value={'IAMSOUND'}
+            on:click={updateType('IAMSOUND')} />
           <label for="choice-imsound" data-imsound class="block p-10">
             Elektronische Instrumente & Equipment
           </label>

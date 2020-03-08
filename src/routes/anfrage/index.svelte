@@ -776,8 +776,8 @@
           class="button">
           Previous
         </button>
-        <button type="button" id="nextBtn" onclick="nextPrev(1)" class="button">
-          Next
+        <button type="button" id="nextBtn" onclick={nextPrev(1)} class="button">
+          Weiter
         </button>
       </div>
     </div>
