@@ -6,7 +6,7 @@
 <div
   itemscope
   itemtype="https://schema.org/Review"
-  class="text-x1p5 md:text-x0p5 md:flex-half">
+  class="text-x2 md:text-x0p5 md:flex-half">
   <div
     itemprop="itemReviewed"
     itemscope

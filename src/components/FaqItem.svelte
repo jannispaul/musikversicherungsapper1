@@ -7,7 +7,7 @@
   itemscope
   itemprop="mainEntity"
   itemtype="https://schema.org/Question"
-  class="text-x1p5 md:text-x0p5 ">
+  class="text-x2 md:text-x0p5 ">
   <div
     itemprop="name"
     class="w-full bg-transparent text-primary border-solid border-0 border-b-2
@@ -17,7 +17,7 @@
   <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
     <div
       itemprop="text"
-      class=" mb-x2 md:mb-x1"
+      class="mb-x1 md:mb-x1"
       contenteditable="false"
       bind:innerHTML={answer} />
   </div>

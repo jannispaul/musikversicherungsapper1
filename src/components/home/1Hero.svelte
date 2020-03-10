@@ -72,7 +72,7 @@
       inline-flex py-x0p5 px-x1 mt-x1 md:mt-0 md:py-x0p25 md:px-x0p5 md:order-1
       md:flex md:items-center">
       <StarRating rating={reviewData.averageRating} {style} />
-      <p class="text-x1p5 md:text-x0p5 transition duration-500 ease-in-out ">
+      <p class="text-x2 md:text-x0p5 transition duration-500 ease-in-out ">
         &nbsp; {reviewData.count} Bewertungen
       </p>
     </a>
@@ -96,10 +96,10 @@
   <div class="z-20 overflow-hidden image-piano">
     <Image src="images/piano.jpg" />
   </div>
-  <div class="z-10 overflow-hidden image-mixer">
+  <div class="z-10 overflow-hidden image-mixer hidden md:inline">
     <Image src="images/mixer.jpg" />
   </div>
-  <div class="z-30 overflow-hidden image-sax">
+  <div class="z-30 overflow-hidden image-sax hidden md:inline">
     <Image src="images/sax.jpg" />
   </div>
 
