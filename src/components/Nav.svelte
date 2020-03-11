@@ -31,7 +31,8 @@
     Navigation überspringen
   </a>
   <nav
-    class="flex items-center justify-between flex-wrap bg-light py-x0p5 px-x1p5">
+    class="flex items-center justify-between flex-wrap bg-light py-x1 md:py-x0p5
+    px-x1p5">
     <div class="relative flex justify-between flex-wrap w-full">
       <div
         class="flex justify-between flex-wrap w-full items-center flex-shrink-0

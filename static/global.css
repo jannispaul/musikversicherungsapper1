@@ -14505,7 +14505,7 @@ video {
 }
 
 .text-x7 {
-  font-size: min(max(50px, 10vw), 150px);
+  font-size: min(max(33px, 10vw), 150px);
 }
 
 .text-x8 {
@@ -33373,7 +33373,7 @@ video {
   }
 
   .sm\:text-x7 {
-    font-size: min(max(50px, 10vw), 150px);
+    font-size: min(max(33px, 10vw), 150px);
   }
 
   .sm\:text-x8 {
@@ -52242,7 +52242,7 @@ video {
   }
 
   .md\:text-x7 {
-    font-size: min(max(50px, 10vw), 150px);
+    font-size: min(max(33px, 10vw), 150px);
   }
 
   .md\:text-x8 {
@@ -71111,7 +71111,7 @@ video {
   }
 
   .lg\:text-x7 {
-    font-size: min(max(50px, 10vw), 150px);
+    font-size: min(max(33px, 10vw), 150px);
   }
 
   .lg\:text-x8 {
@@ -89980,7 +89980,7 @@ video {
   }
 
   .xl\:text-x7 {
-    font-size: min(max(50px, 10vw), 150px);
+    font-size: min(max(33px, 10vw), 150px);
   }
 
   .xl\:text-x8 {

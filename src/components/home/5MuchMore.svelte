@@ -1,6 +1,6 @@
 <section class="p-x1p5 md:flex">
   <h2
-    class="text-secondary font-medium text-x5 md:text-x2 flex-1 leading-tight
+    class="text-secondary font-medium text-x6 md:text-x2 flex-1 leading-tight
     md:mr-x0p5 mb-x1 ">
     Weit mehr als nur eine Hausratdeckung
   </h2>

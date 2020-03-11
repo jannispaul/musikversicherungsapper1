@@ -13,7 +13,7 @@
     itemtype="https://schema.org/Restaurant"
     class="w-full bg-transparent border-solid border-0 border-t-2 border-primary
     pt-x0p5 mb-x0p5 md:mb-x0p25">
-    <div class="flex items-center mb-x0p25 text-x1 md:text-x0p25">
+    <div class="flex items-center mb-x0p25 md:text-x0p25">
       <span
         itemprop="reviewRating"
         itemscope

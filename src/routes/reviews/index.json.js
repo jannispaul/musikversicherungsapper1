@@ -3,18 +3,18 @@ import { getReviews } from "./_reviews.js";
 // Declare contents for later use
 let contents;
 let months = [
-  "Januar",
-  "Februar",
+  "Jan",
+  "Feb",
   "März",
   "April",
   "Mai",
   "Juni",
   "Juli",
-  "August",
-  "September",
-  "Oktober",
-  "November",
-  "Dezember"
+  "Aug",
+  "Sept",
+  "Okt",
+  "Nov",
+  "Dez"
 ];
 
 export async function get(req, res, next) {
