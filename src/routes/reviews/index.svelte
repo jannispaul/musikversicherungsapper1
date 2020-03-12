@@ -10,14 +10,28 @@
   <h1 class="text-primary text-x6 leading-tight mb-x1 border-solid">
     Kundenmeinungen
   </h1>
-  <div class="text-x1p5 md:text-x0p5 mb-x1p5">
+  <div
+    class="text-x1p5 md:text-x0p5 mb-x1p5"
+    itemscope
+    itemtype="https://schema.org/AggregateRating">
+    <div
+      itemprop="itemReviewed"
+      itemscope
+      itemtype="https://schema.org/Service"
+      class="hidden">
+      <span itemprop="name">Belmot Oldtimerversicherung</span>
+    </div>
+    <div class="hidden">
+      <span itemprop="ratingValue">{reviewData.averageRating}</span>
+      <span itemprop="bestRating">5</span>
+    </div>
     <StarRating rating={reviewData.averageRating} />
     {reviewData.averageRating} Sterne von {reviewData.count} Berwertungen
-  </div>
-  <div class="grid md:grid-cols-2 col-gap-x1 row-gap-x0p5">
-    {#each reviewData.allReviews as review}
-      <ReviewItem {review} />
-    {/each}
+    <div class="grid md:grid-cols-2 col-gap-x1 row-gap-x0p5">
+      {#each reviewData.allReviews as review}
+        <ReviewItem {review} />
+      {/each}
+    </div>
   </div>
 </section>
 

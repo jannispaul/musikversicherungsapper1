@@ -24,6 +24,7 @@ export async function get(req, res, next) {
     const reviews = getReviews().map(review => ({
       name: review.name,
       rating: review.rating,
+      microDataDate: review.date.slice(0, 10),
       date: `${review.date.slice(8, 10)}. ${
         months[parseInt(review.date.slice(5, 7))]
       } ${review.date.slice(0, 4)}`,
