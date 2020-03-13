@@ -3,8 +3,8 @@
   var currentTab = 0;
   let type = undefined;
 
-  let nextTab = () => currentTab++;
-  let prevTab = () => currentTab--;
+  let nextTab = () => currentTab++ && console.log(currentTab);
+  let prevTab = () => currentTab-- && console.log(currentTab);
 
   // function lsWritable(key, type) {
   //   let initialValue = localStorage.getItem(key);
@@ -24,7 +24,6 @@
 
   function updateType(userChoice) {
     type = userChoice;
-    console.log(type);
   }
   onMount(() => {
     let instrumentCount = 1; // Instrument counter starts with 1 instrument
@@ -193,61 +192,76 @@
       </label>
     </div>
   {/if}
-  {#if currentTab == 3}
+  {#if currentTab == 2}
     <div class="tab">
       <p>Schritt 3 von 3</p>
-      <h2>Instrumente:</h2>
-      <div class="instrument-list">
-        <div class="single-instrument">
-          <label>
-            Instrument
-            <input oninput="this.className = ''" name="instrument" />
-          </label>
-          <fieldset class="switch">
-            <label for="Neuwert">
-              <input type="radio" name="valueType" value="Neuwert" />
-              Neuwert
+      {#if type == 'SINFONIMA'}
+        <h2>Instrumente:</h2>
+        <div class="instrument-list">
+          <div class="single-instrument">
+            <label>
+              Instrument
+              <input oninput="this.className = ''" name="instrument" />
             </label>
-            <label for="Zeitwert">
-              <input type="radio" name="valueType" value="Zeitwert" />
-              Zeitwert
+            <fieldset class="switch">
+              <label for="Neuwert">
+                <input type="radio" name="valueType" value="Neuwert" />
+                Neuwert
+              </label>
+              <label for="Zeitwert">
+                <input type="radio" name="valueType" value="Zeitwert" />
+                Zeitwert
+              </label>
+            </fieldset>
+            <label>
+              Wert
+              <input oninput="this.className = ''" name="value" />
             </label>
-          </fieldset>
-          <label>
-            Wert
-            <input oninput="this.className = ''" name="value" />
-          </label>
-        </div>
-        <div class="single-instrument">
-          <label>
-            Instrument
-            <input oninput="this.className = ''" name="instrument" autofocus />
-          </label>
-          <div class="switch">
-            <p class="">
-              <input
-                type="radio"
-                name="match"
-                id="match_1"
-                value="neuwert"
-                checked />
-              <label for="match_1">Neuwert</label>
-            </p>
-            <p class="">
-              <input type="radio" name="match" id="match_2" value="zeitwert" />
-              <label for="match_2">Zeitwert</label>
-            </p>
           </div>
-          <label>
-            Wert
-            <input oninput="this.className = ''" name="value" />
-          </label>
+          <div class="single-instrument">
+            <label>
+              Instrument
+              <input
+                oninput="this.className = ''"
+                name="instrument"
+                autofocus />
+            </label>
+            <div class="switch">
+              <p class="">
+                <input
+                  type="radio"
+                  name="match"
+                  id="match_1"
+                  value="neuwert"
+                  checked />
+                <label for="match_1">Neuwert</label>
+              </p>
+              <p class="">
+                <input
+                  type="radio"
+                  name="match"
+                  id="match_2"
+                  value="zeitwert" />
+                <label for="match_2">Zeitwert</label>
+              </p>
+            </div>
+            <label>
+              Wert
+              <input oninput="this.className = ''" name="value" />
+            </label>
+          </div>
         </div>
-      </div>
-      <button type="button" data-name="addInstrument">
-        Weiteres Instrument hinzufügen
-      </button>
+        <button type="button" data-name="addInstrument">
+          Weiteres Instrument hinzufügen
+        </button>
+      {/if}
     </div>
+    {#if type == 'IAMSOUND'}
+      <div>
+        <input type="radio" name="match" id="match_2" value="zeitwert" />
+        <label for="match_2">Proberaum ...</label>
+      </div>
+    {/if}
   {/if}
   <div style="overflow:auto;">
     <div style="float:right;">
