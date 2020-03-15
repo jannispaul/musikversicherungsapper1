@@ -61,53 +61,28 @@
     background-color: #ffdddd;
   }
 
+  .primary-button {
+    margin-top: 3vw;
+    border: 1px solid red;
+    height: 5vw;
+  }
   button:not(:disabled) {
     cursor: pointer;
   }
   button:disabled {
     cursor: not-allowed;
   }
-  button:hover {
+  /* button:hover {
     opacity: 0.8;
-  }
-
-  /* #prevBtn {
-    background-color: #bbbbbb;
-  } */
-
-  /* Make circles that indicate the steps of the form: */
-  /* .step {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbbbbb;
-    border: none;
-    border-radius: 50%;
-    display: inline-block;
-    opacity: 0.5;
-  } */
-
-  /* .step.active {
-    opacity: 1;
-  } */
-
-  /* Mark the steps that are finished and valid: */
-  /* .step.finish {
-    background-color: #4caf50;
-  } */
-
-  /* .single-instrument:first-of-type {
-    display: none;
   } */
 
   :disabled {
-    background: gray;
-    opacity: 0.8;
+    opacity: 0.5;
   }
 
-  .single-instrument {
+  /* .single-instrument {
     display: flex;
-  }
+  } */
 
   .switch {
     display: flex;
@@ -128,6 +103,10 @@
   input[type="radio"]:active ~ label {
     opacity: 1;
   }
+  input {
+    height: 5vw;
+    padding: 1.5vw;
+  }
 
   /* input[type="radio"]:checked ~ label {
     opacity: 1;
@@ -141,105 +120,107 @@
 </style>
 
 <form id="form" action="/" data-auto-save class=" text-x1 px-x1p5">
-  <h1>Anfrage:</h1>
-  <!-- One "tab" for each step in the form: -->
-  {#if currentTab == 0}
-    <div class="tab" for="sinfonima">
-      <p>Schritt 1 von 3</p>
-      <h2>Start:</h2>
-      <div class="switch flex items-stretch">
-        <p class=" flex-1 relative">
-          <input
-            type="radio"
-            name="type"
-            id="choice-sinfonima"
-            bind:group={type}
-            value="SINFONIMA" />
-          <label for="choice-sinfonima" data-sinfonima class="block p-10">
-            Akustische Instrumente
-          </label>
-        </p>
-        <p class=" flex-1 relative">
-          <input
-            type="radio"
-            name="type"
-            id="choice-imsound"
-            bind:group={type}
-            value="IAMSOUND" />
-          <label for="choice-imsound" data-imsound class="block p-10">
-            Elektronische Instrumente & Equipment
-          </label>
-        </p>
-      </div>
-      {#if type == 'IAMSOUND'}
-        <label id="totalValue">
-          Gesamtwert der Instrumente
-          <input name="totalValue" bind:value={totalValue} autofocus />
-        </label>
-      {/if}
-    </div>
-    <button
-      type="button"
-      id="nextBtn"
-      on:click={nextTab}
-      class="button"
-      disabled={type != 'SINFONIMA' && !totalValue}>
-      Weiter
-    </button>
-  {/if}
-  {#if currentTab == 1}
-    <div class="tab">
-      <p>Schritt 2 von 3</p>
-      <h2>Persönliche Informationen:</h2>
-      <label class="inline-flex flex-col">
-        Vorname
-        <input
-          oninput="this.className = ''"
-          name="vorname"
-          bind:value={vorname}
-          required
-          autofocus />
-      </label>
-      <label class="inline-flex flex-col">
-        Nachname
-        <input
-          oninput="this.className = ''"
-          name="nachname"
-          bind:value={nachname}
-          required />
-      </label>
-      <label class="inline-flex flex-col">
-        E-Mail
-        <input
-          oninput="this.className = ''"
-          name="email"
-          bind:value={email}
-          required />
-      </label>
-    </div>
-    <button type="button" id="prevBtn" on:click={prevTab} class="button">
-      Zurück
-    </button>
-    <button
-      type="button"
-      id="nextBtn"
-      on:click={nextTab}
-      class="button"
-      disabled={!vorname || !nachname || !email}>
-      Weiter
-    </button>
-  {/if}
-  {#if currentTab == 2}
-    <div class="tab">
-      <p>Schritt 3 von 3</p>
-      {#if type == 'SINFONIMA'}
-        <h2>Deine Instrumente:</h2>
-        <div class="instrument-list">
-          {#each instruments as instrument, index}
-            <SingleInstrument bind:instrument {index} />
-          {/each}
+  <div class="px-x5">
 
-          <!-- <div class="single-instrument">
+    <!-- One "tab" for each step in the form: -->
+    {#if currentTab == 0}
+      <div class="tab" for="sinfonima">
+        <p class="text-center">Schritt 1 von 3</p>
+        <h2>Start:</h2>
+        <div class="switch flex items-stretch">
+          <p class=" flex-1 relative">
+            <input
+              type="radio"
+              name="type"
+              id="choice-sinfonima"
+              bind:group={type}
+              value="SINFONIMA" />
+            <label
+              for="choice-sinfonima"
+              data-sinfonima
+              class="block p-10"
+              class:bg-primary={type === 'SINFONIMA'}>
+              Akustische Instrumente
+            </label>
+          </p>
+          <p class=" flex-1 relative">
+            <input
+              type="radio"
+              name="type"
+              id="choice-imsound"
+              bind:group={type}
+              value="IAMSOUND" />
+            <label
+              for="choice-imsound"
+              data-imsound
+              class="block p-10"
+              class:bg-primary={type === 'IAMSOUND'}>
+              Elektronische Instrumente & Equipment
+            </label>
+          </p>
+        </div>
+        {#if type == 'IAMSOUND'}
+          <label id="totalValue">
+            Gesamtwert der Instrumente
+            <input name="totalValue" bind:value={totalValue} autofocus />
+          </label>
+        {/if}
+      </div>
+      <button
+        type="button"
+        id="nextBtn"
+        on:click={nextTab}
+        class="primary-button w-1/2 float-right"
+        disabled={type != 'SINFONIMA' && !totalValue}>
+        Weiter
+      </button>
+    {/if}
+    {#if currentTab == 1}
+      <div class="tab flex flex-col">
+        <p class="text-center">Schritt 2 von 3</p>
+        <h2>Persönliche Informationen:</h2>
+        <label class="inline-flex flex-col ">
+          Vorname
+          <input name="vorname" bind:value={vorname} required autofocus />
+        </label>
+        <label class="inline-flex flex-col">
+          Nachname
+          <input name="nachname" bind:value={nachname} required />
+        </label>
+        <label class="inline-flex flex-col">
+          E-Mail
+          <input name="email" bind:value={email} required />
+        </label>
+      </div>
+      <div class="grid gap-x0p5 grid-cols-2">
+        <button
+          type="button"
+          id="prevBtn"
+          on:click={prevTab}
+          class="primary-button">
+          Zurück
+        </button>
+        <button
+          type="button"
+          id="nextBtn"
+          on:click={nextTab}
+          class="primary-button "
+          disabled={!vorname || !nachname || !email}>
+          Weiter
+        </button>
+      </div>
+    {/if}
+    {#if currentTab == 2}
+      <div class="tab">
+        <p class="text-center">Schritt 3 von 3</p>
+        {#if type == 'SINFONIMA'}
+          <h2>Deine Instrumente:</h2>
+          <div class="instrument-list">
+            {#each instruments as instrument, index}
+              <SingleInstrument bind:instrument {index} />
+            {/each}
+
+            <!-- <div class="single-instrument">
             <label>
               Instrument
               <input
@@ -273,7 +254,7 @@
                 bind:value={instruments[0].value} />
             </label>
           </div> -->
-          <!-- <div class="single-instrument">
+            <!-- <div class="single-instrument">
             <label>
               Instrument
               <input
@@ -305,25 +286,40 @@
               <input oninput="this.className = ''" name="value" />
             </label>
           </div> -->
-        </div>
-        <button type="button" on:click={addInstrument}>
-          Weiteres Instrument hinzufügen
-        </button>
-        <button type="button" id="prevBtn" on:click={prevTab} class="button">
-          Zurück
-        </button>
-        <button type="submit" class="button" disabled={false}>Absenden</button>
-      {/if}
-      {#if type == 'IAMSOUND'}
-        <div>
-          <input type="radio" name="match" id="match_2" value="zeitwert" />
-          <label for="match_2">Proberaum ...</label>
-        </div>
-        <button type="button" id="prevBtn" on:click={prevTab} class="button">
-          Zurück
-        </button>
-        <button type="submit" class="button" disabled={false}>Absenden</button>
-      {/if}
-    </div>
-  {/if}
+          </div>
+          <button type="button" on:click={addInstrument}>
+            Weiteres Instrument hinzufügen
+          </button>
+          <div class="grid gap-x0p5 grid-cols-2">
+            <button
+              type="primary-button"
+              id="prevBtn"
+              on:click={prevTab}
+              class="primary-button">
+              Zurück
+            </button>
+            <button type="submit" class="primary-button" disabled={false}>
+              Absenden
+            </button>
+          </div>
+        {/if}
+        {#if type == 'IAMSOUND'}
+          <div>
+            <input type="radio" name="match" id="match_2" value="zeitwert" />
+            <label for="match_2">Proberaum ...</label>
+          </div>
+          <button
+            type="button"
+            id="prevBtn"
+            on:click={prevTab}
+            class="primary-button">
+            Zurück
+          </button>
+          <button type="submit" class="primary-button" disabled={false}>
+            Absenden
+          </button>
+        {/if}
+      </div>
+    {/if}
+  </div>
 </form>
