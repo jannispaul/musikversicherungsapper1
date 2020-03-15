@@ -63,8 +63,12 @@
 
   .primary-button {
     margin-top: 3vw;
-    border: 1px solid red;
+    background: rgba(107, 70, 193, 0.15);
+    /* border-radius: 5px; */
     height: 5vw;
+  }
+  .primary-button:hover:not(:disabled) {
+    background: rgba(107, 70, 193, 0.3);
   }
   button:not(:disabled) {
     cursor: pointer;
@@ -219,75 +223,10 @@
             {#each instruments as instrument, index}
               <SingleInstrument bind:instrument {index} />
             {/each}
-
-            <!-- <div class="single-instrument">
-            <label>
-              Instrument
-              <input
-                name="instrument"
-                bind:value={instruments[0].name}
-                autofocus />
-            </label>
-            <fieldset class="switch">
-              <label for="Neuwert">
-                <input
-                  type="radio"
-                  name="valueType"
-                  bind:group={instruments[0].valueType}
-                  value="Neuwert" />
-                Neuwert
-              </label>
-              <label for="Zeitwert">
-                <input
-                  type="radio"
-                  name="valueType"
-                  bind:group={instruments[0].valueType}
-                  value="Zeitwert" />
-                Zeitwert
-              </label>
-            </fieldset>
-            <label>
-              Wert
-              <input
-                oninput="this.className = ''"
-                name="value"
-                bind:value={instruments[0].value} />
-            </label>
-          </div> -->
-            <!-- <div class="single-instrument">
-            <label>
-              Instrument
-              <input
-                oninput="this.className = ''"
-                name="instrument"
-                autofocus />
-            </label>
-            <div class="switch">
-              <p class="">
-                <input
-                  type="radio"
-                  name="match"
-                  id="match_1"
-                  value="neuwert"
-                  checked />
-                <label for="match_1">Neuwert</label>
-              </p>
-              <p class="">
-                <input
-                  type="radio"
-                  name="match"
-                  id="match_2"
-                  value="zeitwert" />
-                <label for="match_2">Zeitwert</label>
-              </p>
-            </div>
-            <label>
-              Wert
-              <input oninput="this.className = ''" name="value" />
-            </label>
-          </div> -->
           </div>
-          <button type="button" on:click={addInstrument}>
+          <button
+            type="button t-x1 p-x1 border-primary"
+            on:click={addInstrument}>
             Weiteres Instrument hinzufügen
           </button>
           <div class="grid gap-x0p5 grid-cols-2">

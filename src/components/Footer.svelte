@@ -32,12 +32,15 @@
     </p>
   </div>
   <hr class="border border-primary mb-x1 md:mb-x0p5" />
-  <nav class="mb-x1 md:mb-x0p5 text-x2 md:text-x1">
-    <a href="/impressum">Impressum</a>
-    &nbsp; · &nbsp;
-    <a href="/datenschutz">Datenschutz</a>
-    &nbsp; · &nbsp;
-    <a href="/versicherungsbedingungen">Versicherungsbedingungen</a>
-  </nav>
+  <div class="">
+    <nav class="mb-x1 md:mb-x0p5 text-x2 md:text-x1">
+      <a href="/impressum">Impressum</a>
+      &nbsp; · &nbsp;
+      <a href="/datenschutz">Datenschutz</a>
+    </nav>
+    <a href="/versicherungsbedingungen" class=" text-x2 md:text-x1">
+      Versicherungsbedingungen
+    </a>
+  </div>
   <hr class="border border-primary mb-x1 md:mb-x0p5" />
 </footer>
