@@ -36,10 +36,8 @@
       </p>
     </span>
   </div>
-  <p
-    itemprop="reviewBody"
-    class=""
-    contenteditable="false"
-    bind:innerHTML={review.review} />
+  <p itemprop="reviewBody" class="">
+    {@html review.review}
+  </p>
 
 </div>

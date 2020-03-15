@@ -129,10 +129,10 @@
     opacity: 1;
   }
 
-  input[type="radio"]:checked ~ label {
+  /* input[type="radio"]:checked ~ label {
     opacity: 1;
     border: 1px solid red;
-  }
+  } */
 
   /* .active {
     opacity: 1;
@@ -140,7 +140,7 @@
   } */
 </style>
 
-<form id="form" action="/" data-auto-save>
+<form id="form" action="/" data-auto-save class=" text-x1 px-x1p5">
   <h1>Anfrage:</h1>
   <!-- One "tab" for each step in the form: -->
   {#if currentTab == 0}
@@ -236,7 +236,7 @@
         <h2>Deine Instrumente:</h2>
         <div class="instrument-list">
           {#each instruments as instrument, index}
-            <SingleInstrument bind:instrument index={index} />
+            <SingleInstrument bind:instrument {index} />
           {/each}
 
           <!-- <div class="single-instrument">
