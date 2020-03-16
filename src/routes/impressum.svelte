@@ -29,29 +29,10 @@
   Fax: 05191 - 9739026
   <br />
   <br />
-  <div class="fusion-builder-row fusion-row ">
-    <div
-      class="fusion-layout-column fusion_builder_column
-      fusion_builder_column_1_1 fusion-builder-column-0 fusion-one-full
-      fusion-column-first fusion-column-last fusion-column-no-min-height 1_1"
-      style="margin-top:0px;margin-bottom:0px;">
-      <div
-        class="fusion-column-wrapper"
-        style="background-position: left top; background-repeat: no-repeat;
-        background-size: cover; height: auto;"
-        data-bg-url="">
-        <div class="fusion-sep-clear" />
-        <div
-          class="fusion-separator fusion-full-width-sep sep-shadow"
-          style="background:radial-gradient(ellipse at 50% -50% , #e0dede 0px,
-          rgba(255, 255, 255, 0) 80%) repeat scroll 0 0 rgba(0, 0, 0,
-          0);background:-webkit-radial-gradient(ellipse at 50% -50% , #e0dede
-          0px, rgba(255, 255, 255, 0) 80%) repeat scroll 0 0 rgba(0, 0, 0,
-          0);background:-moz-radial-gradient(ellipse at 50% -50% , #e0dede 0px,
-          rgba(255, 255, 255, 0) 80%) repeat scroll 0 0 rgba(0, 0, 0,
-          0);background:-o-radial-gradient(ellipse at 50% -50% , #e0dede 0px,
-          rgba(255, 255, 255, 0) 80%) repeat scroll 0 0 rgba(0, 0, 0,
-          0);margin-left: auto;margin-right: auto;margin-top:;" />
+  <div>
+    <div>
+      <div>
+
         <p>Verantwortlicher gem. § 5 Telemediengesetz (TMG), § 55 RStV:</p>
         <p>Heiner Blaskewitz, Generalagentur der Mannheimer Versicherungen,</p>
         <p>
@@ -304,7 +285,7 @@
           </a>
           eingesehen werden.
         </p>
-        <div class="fusion-clearfix" />
+
       </div>
     </div>
   </div>

@@ -55,9 +55,9 @@
 
 <style>
   /* Mark input boxes that gets an error on validation: */
-  input.invalid {
+  /* input.invalid {
     background-color: #ffdddd;
-  }
+  } */
 
   .primary-button {
     margin-top: 3vw;
