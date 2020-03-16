@@ -21,7 +21,7 @@
     };
     instruments = [...instruments, instrument];
   }
-  $: console.log(instruments);
+  // $: console.log(instruments);
   // let updateType = userChoice => (type = userChoice && console.log(type));
 
   // function lsWritable(key, type) {
@@ -41,8 +41,6 @@
   // }
 
   onMount(() => {
-    // let instrumentCount = 1; // Instrument counter starts with 1 instrument
-    // let incrementInstrumentCount = () => instrumentCount++; // Increment instrument count
     var storageID = "form-auto-save"; // Var for cookie name
     var saved = localStorage.getItem(storageID); // Get existing data from localStorage
     saved = saved ? JSON.parse(saved) : {};
@@ -132,7 +130,7 @@
         <p class="text-center">Schritt 1 von 3</p>
         <h2>Start:</h2>
         <div class="switch flex items-stretch">
-          <p class=" flex-1 relative">
+          <p class="flex-1 relative">
             <input
               type="radio"
               name="type"
@@ -147,7 +145,7 @@
               Akustische Instrumente
             </label>
           </p>
-          <p class=" flex-1 relative">
+          <p class="flex-1 relative">
             <input
               type="radio"
               name="type"

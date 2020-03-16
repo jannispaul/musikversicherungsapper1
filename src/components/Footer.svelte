@@ -1,29 +1,25 @@
-<footer class="text-primary p-x1p5 ">
+<footer class="text-primary p-x1p5 text-x2 md:text-x0p75">
+  <h3 class="text-x4 md:text-x2 mb-x0p25">Kontakt</h3>
   <hr class="border border-primary mb-x1 md:mb-x0p5" />
   <div
     class="flex flex-col md:flex-row justify-between md:items-center mb-x1
     md:mb-x0p5">
-    <h3 class="text-x4 md:text-x2">Kontakt</h3>
-    <a href="tel:+4951919313199" class="text-x2 md:text-x1">
-      Tel: 05191 931 31 99
-    </a>
-    <a href="mailto:info@musikversicherung.com" class="text-x2 md:text-x1">
+    <a href="tel:+4951919313199" class="flex-1">Tel: 05191 931 31 99</a>
+    <a href="mailto:info@musikversicherung.com" class="flex-1">
       info@musikversicherung.com
     </a>
   </div>
   <hr class="border border-primary mb-x1 md:mb-x0p5" />
-  <div
-    class="flex flex-col md:flex-row items-stretch mb-x1 md:mb-x0p5 text-x2
-    md:text-x1">
+  <div class="flex flex-col md:flex-row items-stretch mb-x1 md:mb-x0p5 ">
 
-    <p class="flex-1 md:flex-auto">
+    <p class="flex-1 wrap">
       Heiner Blaskewitz
       <br />
       Versicherungsfachmann (BWV)
       <br />
       Generalagentur der Mannheimer Versicherung AG
     </p>
-    <p class="flex-1 md:flex-auto">
+    <p class="flex-1 ">
       SINFONIMA® und IM SOUND® sind
       <br />
       eingetragene Marken der
@@ -32,15 +28,15 @@
     </p>
   </div>
   <hr class="border border-primary mb-x1 md:mb-x0p5" />
-  <div class="">
-    <nav class="mb-x1 md:mb-x0p5 text-x2 md:text-x1">
+  <div class="md:flex mb-x1 md:mb-x0p5">
+    <nav class="flex-1 ">
       <a href="/impressum">Impressum</a>
       &nbsp; · &nbsp;
       <a href="/datenschutz">Datenschutz</a>
     </nav>
-    <a href="/versicherungsbedingungen" class=" text-x2 md:text-x1">
+    <a href="/versicherungsbedingungen" class="flex-1 ">
       Versicherungsbedingungen
     </a>
   </div>
-  <hr class="border border-primary mb-x1 md:mb-x0p5" />
+  <hr class="border border-primary " />
 </footer>

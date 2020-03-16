@@ -18,6 +18,7 @@ module.exports = {
       fontSize: {
         x0p25: "min(max(12px, 1.3vw), 40px)",
         x0p5: "min(max(14px, 1.5vw), 40px)",
+        x0p75: "min(max(16px, 1.75vw), 60px)",
         // x0p5: "1.5vw;",
         // x1: "calc(9.8px + (14 - 9.8) * ((100vw - 320px) / (2560 - 320)))",
         x1: "2vw;",
