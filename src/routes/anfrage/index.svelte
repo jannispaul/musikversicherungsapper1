@@ -8,6 +8,8 @@
   let vorname = undefined;
   let nachname = undefined;
   let email = undefined;
+  let status = undefined;
+  let wohnsitz = undefined;
   let validated = false;
   let nextTab = () => currentTab++;
   let prevTab = () => currentTab--;
@@ -54,15 +56,12 @@
 </script>
 
 <style>
-  /* Mark input boxes that gets an error on validation: */
-  /* input.invalid {
-    background-color: #ffdddd;
+  /* label:focus {
+    border: 3px solid red;
   } */
-
-  .primary-button {
+  :global(.primary-button) {
     margin-top: 3vw;
     background: rgba(107, 70, 193, 0.15);
-    /* border-radius: 5px; */
     height: 5vw;
   }
   .primary-button:hover:not(:disabled) {
@@ -74,20 +73,9 @@
   button:disabled {
     cursor: not-allowed;
   }
-  /* button:hover {
-    opacity: 0.8;
-  } */
 
   :disabled {
     opacity: 0.5;
-  }
-
-  /* .single-instrument {
-    display: flex;
-  } */
-
-  .switch {
-    display: flex;
   }
 
   /* Input style */
@@ -101,65 +89,86 @@
     height: 25px;
     width: 25px;
   }
+  /* input[type="radio"]:active ~ label { */
 
-  input[type="radio"]:active ~ label {
-    opacity: 1;
-  }
-  input {
-    height: 5vw;
+  /* .indicator .radio {
+    border-radius: 100%;
+    background: white;
+    height: 3vw;
+    width: 3vw;
+    border: 2px solid #6b46c1;
+  } */
+  /* .indicator .active .radio {
+    background: #6b46c1;
+  } */
+  :global(input) {
+    min-height: 5vw;
     padding: 1.5vw;
   }
-
-  /* input[type="radio"]:checked ~ label {
+  .toggle > label {
+    border: 0.5vw solid #6b46c1;
+    opacity: 0.5;
+  }
+  label.active {
     opacity: 1;
-    border: 1px solid red;
-  } */
-
-  /* .active {
-    opacity: 1;
-    border: 1px solid red;
-  } */
+  }
+  /* Create a custom radio button */
+  .indicator {
+    position: relative;
+    height: 3vw;
+    width: 3vw;
+    border-radius: 100%;
+    border: 0.2vw solid #6b46c1;
+    border-radius: 100%;
+    background: white;
+  }
+  label.active .indicator {
+    /* background: #6b46c1; */
+    border: 1.2vw solid #6b46c1;
+  }
 </style>
 
-<form id="form" action="/" data-auto-save class=" text-x1 px-x1p5">
-  <div class="px-x5">
+<form id="form" action="/" data-auto-save class=" text-x0p75 px-x1p5">
+  <div class=" ">
 
     <!-- One "tab" for each step in the form: -->
     {#if currentTab == 0}
       <div class="tab" for="sinfonima">
-        <p class="text-center">Schritt 1 von 3</p>
-        <h2>Start:</h2>
-        <div class="switch flex items-stretch">
-          <p class="flex-1 relative">
+        <p class="text-center text-x0p5">Schritt 1 von 3</p>
+        <h2>Was möchtest Du versichern?:</h2>
+        <div class=" inline md:flex md:items-stretch toggle">
+
+          <label
+            for="choice-sinfonima"
+            data-sinfonima
+            class="block p-x1 flex-1 flex md:mr-x1 mb-x1 items-center"
+            class:active={type === 'SINFONIMA'}>
             <input
               type="radio"
               name="type"
               id="choice-sinfonima"
               bind:group={type}
               value="SINFONIMA" />
-            <label
-              for="choice-sinfonima"
-              data-sinfonima
-              class="block p-10"
-              class:bg-primary={type === 'SINFONIMA'}>
-              Akustische Instrumente
-            </label>
-          </p>
-          <p class="flex-1 relative">
+            <span class="indicator relative inline mr-x0p5" />
+            Akustische Instrumente
+          </label>
+
+          <label
+            for="choice-imsound"
+            data-imsound
+            class="block p-x1 flex-1 flex md:mr-x1 mb-x1 items-center"
+            class:active={type === 'IAMSOUND'}>
+
             <input
               type="radio"
               name="type"
               id="choice-imsound"
               bind:group={type}
               value="IAMSOUND" />
-            <label
-              for="choice-imsound"
-              data-imsound
-              class="block p-10"
-              class:bg-primary={type === 'IAMSOUND'}>
-              Elektronische Instrumente & Equipment
-            </label>
-          </p>
+            <span class="indicator relative inline mr-x0p5" />
+            Elektronische Instrumente & Equipment
+          </label>
+
         </div>
         {#if type == 'IAMSOUND'}
           <label id="totalValue">
@@ -192,6 +201,18 @@
         <label class="inline-flex flex-col">
           E-Mail
           <input name="email" bind:value={email} required />
+        </label>
+        <label class="inline-flex flex-col">
+          Stauts
+          <input name="email" bind:value={status} required />
+        </label>
+        <label class="inline-flex flex-col">
+          Wohnsitz in
+          <input
+            name="email"
+            bind:value={wohnsitz}
+            placeholdeer="Deutschland"
+            required />
         </label>
       </div>
       <div class="grid gap-x0p5 grid-cols-2">
@@ -227,6 +248,7 @@
             on:click={addInstrument}>
             Weiteres Instrument hinzufügen
           </button>
+
           <div class="grid gap-x0p5 grid-cols-2">
             <button
               type="primary-button"
@@ -245,16 +267,19 @@
             <input type="radio" name="match" id="match_2" value="zeitwert" />
             <label for="match_2">Proberaum ...</label>
           </div>
-          <button
-            type="button"
-            id="prevBtn"
-            on:click={prevTab}
-            class="primary-button">
-            Zurück
-          </button>
-          <button type="submit" class="primary-button" disabled={false}>
-            Absenden
-          </button>
+
+          <div class="grid gap-x0p5 grid-cols-2">
+            <button
+              type="button"
+              id="prevBtn"
+              on:click={prevTab}
+              class="primary-button">
+              Zurück
+            </button>
+            <button type="submit" class="primary-button" disabled={false}>
+              Absenden
+            </button>
+          </div>
         {/if}
       </div>
     {/if}
