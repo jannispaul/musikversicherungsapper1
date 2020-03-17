@@ -9,7 +9,7 @@
   let nachname = undefined;
   let email = undefined;
   let status = undefined;
-  let wohnsitz = undefined;
+  let wohnsitz = "Deutschland";
   let validated = false;
   let nextTab = () => currentTab++;
   let prevTab = () => currentTab--;
@@ -62,7 +62,7 @@
   :global(.primary-button) {
     margin-top: 3vw;
     background: rgba(107, 70, 193, 0.15);
-    height: 5vw;
+    padding: 1.5vw;
   }
   .primary-button:hover:not(:disabled) {
     background: rgba(107, 70, 193, 0.3);
@@ -102,9 +102,28 @@
     background: #6b46c1;
   } */
   :global(input) {
-    min-height: 5vw;
+    height: 5vw;
+    min-height: fit-content;
     padding: 1.5vw;
+    margin-bottom: 2vw;
+    background: white;
+    border: 0.2vw solid #6b46c1;
   }
+  :global(select) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-position: right 50%;
+    background-repeat: no-repeat;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDZFNDEwNjlGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDZFNDEwNkFGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0NkU0MTA2N0Y3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0NkU0MTA2OEY3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuGsgwQAAAA5SURBVHjaYvz//z8DOYCJgUxAf42MQIzTk0D/M+KzkRGPoQSdykiKJrBGpOhgJFYTWNEIiEeAAAMAzNENEOH+do8AAAAASUVORK5CYII=);
+    height: 5vw;
+    min-height: fit-content;
+    padding: 1vw 1.5vw;
+    margin-bottom: 2vw;
+    background: white;
+    border: 0.2vw solid #6b46c1;
+    border-radius: 0;
+  }
+
   .toggle > label {
     border: 0.5vw solid #6b46c1;
     opacity: 0.5;
@@ -203,16 +222,27 @@
           <input name="email" bind:value={email} required />
         </label>
         <label class="inline-flex flex-col">
-          Stauts
-          <input name="email" bind:value={status} required />
+          Status
+          <select bind:value={status} on:change={() => (answer = '')}>
+            <option value="Hobbymusiker">Hobbymusiker</option>
+            <option value="Berufsmusiker (selbstständig)">
+              Berufsmusiker (selbstständig)
+            </option>
+            <option value="Berufsmusiker (angestellt)">
+              Berufsmusiker (angestellt)
+            </option>
+            <option value="DJ">DJ</option>
+            <option value="Homestudio">Homestudio</option>
+            <option value="Produzent">Produzent</option>
+            <option value="Sammler von Vintageinstrumenten">
+              Sammler von Vintageinstrumenten
+            </option>
+            <option value="Musikstudent">Musikstudent</option>
+          </select>
         </label>
         <label class="inline-flex flex-col">
           Wohnsitz in
-          <input
-            name="email"
-            bind:value={wohnsitz}
-            placeholdeer="Deutschland"
-            required />
+          <input name="email" bind:value={wohnsitz} required />
         </label>
       </div>
       <div class="grid gap-x0p5 grid-cols-2">
