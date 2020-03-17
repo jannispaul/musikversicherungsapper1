@@ -79,7 +79,7 @@
   }
 
   /* Input style */
-  input[type="radio"] {
+  :global(input[type="radio"]) {
     opacity: 0;
     width: 0;
     height: 0;
@@ -112,23 +112,25 @@
   :global(select) {
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-position: right 50%;
+    background-position: right 1vw top 50%;
     background-repeat: no-repeat;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDZFNDEwNjlGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDZFNDEwNkFGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0NkU0MTA2N0Y3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0NkU0MTA2OEY3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuGsgwQAAAA5SURBVHjaYvz//z8DOYCJgUxAf42MQIzTk0D/M+KzkRGPoQSdykiKJrBGpOhgJFYTWNEIiEeAAAMAzNENEOH+do8AAAAASUVORK5CYII=);
+    background-size: 2vw;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wIDZMNS42NTcuMzQzIDExLjMxNCA2SDB6bTAgMmw1LjY1NyA1LjY1N0wxMS4zMTQgOEgweiIgZmlsbD0iIzMzMyIvPjwvc3ZnPg==);
+    background-color: white;
     height: 5vw;
     min-height: fit-content;
     padding: 1vw 1.5vw;
     margin-bottom: 2vw;
-    background: white;
+    /* background: white; */
     border: 0.2vw solid #6b46c1;
     border-radius: 0;
   }
 
-  .toggle > label {
+  :global(.toggle > label) {
     border: 0.5vw solid #6b46c1;
     opacity: 0.5;
   }
-  label.active {
+  :global(label.active) {
     opacity: 1;
   }
   /* Create a custom radio button */
@@ -153,8 +155,8 @@
     <!-- One "tab" for each step in the form: -->
     {#if currentTab == 0}
       <div class="tab" for="sinfonima">
-        <p class="text-center text-x0p5">Schritt 1 von 3</p>
-        <h2>Was möchtest Du versichern?:</h2>
+        <p class="text-x0p5">Schritt 1 von 3</p>
+        <h2 class="text-x3 text-primary mb-x1">Was möchtest Du versichern?</h2>
         <div class=" inline md:flex md:items-stretch toggle">
 
           <label
@@ -168,8 +170,10 @@
               id="choice-sinfonima"
               bind:group={type}
               value="SINFONIMA" />
-            <span class="indicator relative inline mr-x0p5" />
-            Akustische Instrumente
+            <div class="flex items-center">
+              <div class="indicator relative inline mr-x0p5" />
+            </div>
+            <span>Akustische Instrumente</span>
           </label>
 
           <label
@@ -190,8 +194,8 @@
 
         </div>
         {#if type == 'IAMSOUND'}
-          <label id="totalValue">
-            Gesamtwert der Instrumente
+          <label class="flex flex-col">
+            Gesamtwert der Instrumente in €
             <input name="totalValue" bind:value={totalValue} autofocus />
           </label>
         {/if}
@@ -207,8 +211,8 @@
     {/if}
     {#if currentTab == 1}
       <div class="tab flex flex-col">
-        <p class="text-center">Schritt 2 von 3</p>
-        <h2>Persönliche Informationen:</h2>
+        <p class="">Schritt 2 von 3</p>
+        <h2 class="text-x3 text-primary mb-x1">Persönliche Informationen</h2>
         <label class="inline-flex flex-col ">
           Vorname
           <input name="vorname" bind:value={vorname} required autofocus />
@@ -265,16 +269,17 @@
     {/if}
     {#if currentTab == 2}
       <div class="tab">
-        <p class="text-center">Schritt 3 von 3</p>
+        <p class="">Schritt 3 von 3</p>
         {#if type == 'SINFONIMA'}
-          <h2>Deine Instrumente:</h2>
+          <h2 class="text-x3 text-primary mb-x1">Deine Instrumente</h2>
           <div class="instrument-list">
             {#each instruments as instrument, index}
               <SingleInstrument bind:instrument {index} />
             {/each}
           </div>
           <button
-            type="button t-x1 p-x1 border-primary"
+            type="button"
+            class="t-x1 p-x1 primary-button w-full"
             on:click={addInstrument}>
             Weiteres Instrument hinzufügen
           </button>
