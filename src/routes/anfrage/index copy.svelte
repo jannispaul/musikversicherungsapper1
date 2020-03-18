@@ -1,31 +1,22 @@
 <script>
   import { onMount } from "svelte";
   import SingleInstrument from "../../components/SingleInstrument.svelte";
-  import { writable } from "svelte/store";
-
-  let formData = writable({});
-  formData.set(
-    JSON.parse(
-      localStorage.getItem("formData") || {
-        versicherungsTyp: undefined,
-        gesamtWert: undefined,
-        vorname: undefined,
-        nachname: undefined,
-        email: undefined,
-        status: undefined,
-        wohnsitz: "Deutschland",
-        nachricht: undefined,
-        proberaum: undefined,
-        anhanger: undefined,
-        musikerhaftpflicht: undefined,
-        verdientGeld: undefined
-      }
-    )
-  );
-  formData.subscribe(formData =>
-    localStorage.setItem("formData", JSON.stringify(formData))
-  );
-
+  import { formData } from "../../components/store.js";
+  // let formData = {
+  //   versicherungsTyp: undefined,
+  //   gesamtWert: undefined,
+  //   vorname: undefined,
+  //   nachname: undefined,
+  //   email: undefined,
+  //   status: undefined,
+  //   wohnsitz: "Deutschland",
+  //   nachricht: undefined,
+  //   proberaum: undefined,
+  //   anhanger: undefined,
+  //   musikerhaftpflicht: undefined,
+  //   verdientGeld: undefined
+  //   // instruments: [{ name: "", valueType: "Neuwert", value: "" }]
+  // };
   var currentTab = 0;
   var termsAccepted = false;
 
@@ -41,6 +32,18 @@
     };
     instruments = [...instruments, instrument];
   }
+
+  onMount(() => {
+    $formData.useLocalStorage;
+    // var storageID = "form-auto-save"; // Var for cookie name
+    // const json = localStorage.getItem(storageID); // Get existing data from localStorage
+    // formData = saved ? JSON.parse(json) : formData;
+    // // Save the insrumentCounter to it
+    // // saved.instrumentCount = instrumentCount;
+    // // Save the object back to localStorage
+    // //End of onMount
+    // localStorage.setItem(storageID, JSON.stringify(formData));
+  });
 </script>
 
 <style>

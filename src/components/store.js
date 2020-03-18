@@ -20,4 +20,18 @@ const createWritableStore = (key, startValue) => {
   };
 };
 
-export const count = createWritableStore("count", 0);
+export const formData = createWritableStore("formData", {
+  versicherungsTyp: undefined,
+  gesamtWert: undefined,
+  vorname: undefined,
+  nachname: undefined,
+  email: undefined,
+  status: undefined,
+  wohnsitz: "Deutschland",
+  nachricht: undefined,
+  proberaum: undefined,
+  anhanger: undefined,
+  musikerhaftpflicht: undefined,
+  verdientGeld: undefined
+  // instruments: [{ name: "", valueType: "Neuwert", value: "" }]
+});
