@@ -2,19 +2,36 @@
   import { onMount } from "svelte";
   import SingleInstrument from "../../components/SingleInstrument.svelte";
 
+  // $: type = undefined;
+  let formData = {
+    insuranceType: undefined,
+    totalValue: undefined,
+    vorname: undefined,
+    nachname: undefined,
+    email: undefined,
+    status: undefined,
+    wohnsitz: "Deutschland",
+    nachricht: undefined,
+    proberaum: undefined,
+    anhanger: undefined,
+    musikerhaftpflicht: undefined,
+    verdientGeld: undefined
+    // instruments: [{ name: "", valueType: "Neuwert", value: "" }]
+  };
   var currentTab = 0;
-  $: type = undefined;
-  let totalValue = undefined;
-  let vorname = undefined;
-  let nachname = undefined;
-  let email = undefined;
-  let status = undefined;
-  let wohnsitz = "Deutschland";
-  let validated = false;
+  var termsAccepted = false;
+  // let totalValue = undefined;
+  // let vorname = undefined;
+  // let nachname = undefined;
+  // let email = undefined;
+  // let status = undefined;
+  // let wohnsitz = "Deutschland";
+  // let nachricht = undefined;
+  // let validated = false;
   let nextTab = () => currentTab++;
   let prevTab = () => currentTab--;
-  let instruments = [{ name: "", valueType: "Neuwert", value: "" }];
 
+  let instruments = [{ name: "", valueType: "Neuwert", value: "" }];
   function addInstrument() {
     const instrument = {
       name: "",
@@ -23,8 +40,6 @@
     };
     instruments = [...instruments, instrument];
   }
-  // $: console.log(instruments);
-  // let updateType = userChoice => (type = userChoice && console.log(type));
 
   // function lsWritable(key, type) {
   //   let initialValue = localStorage.getItem(key);
@@ -144,14 +159,17 @@
     background: white;
   }
   label.active .indicator {
-    /* background: #6b46c1; */
-    border: 1.2vw solid #6b46c1;
+    border: 1vw solid #6b46c1;
   }
 </style>
 
-<form id="form" action="/" data-auto-save class=" text-x0p75 px-x1p5">
+<form
+  id="form"
+  action="https://hook.integromat.com/rv3r5iqg3ivce8h16ld3b3v5h3vs9121"
+  method="post"
+  class="text-x2 px-x1p5">
   <div class=" ">
-
+    <input type="hidden" id="redirect_" name="redirect" value="/success" />
     <!-- One "tab" for each step in the form: -->
     {#if currentTab == 0}
       <div class="tab" for="sinfonima">
@@ -160,43 +178,43 @@
         <div class=" inline md:flex md:items-stretch toggle">
 
           <label
-            for="choice-sinfonima"
-            data-sinfonima
             class="block p-x1 flex-1 flex md:mr-x1 mb-x1 items-center"
-            class:active={type === 'SINFONIMA'}>
+            class:active={formData.insuranceType === 'SINFONIMA'}>
             <input
               type="radio"
-              name="type"
-              id="choice-sinfonima"
-              bind:group={type}
+              bind:group={formData.insuranceType}
               value="SINFONIMA" />
             <div class="flex items-center">
-              <div class="indicator relative inline mr-x0p5" />
+              <div class="indicator relative inline mr-x1" />
             </div>
             <span>Akustische Instrumente</span>
           </label>
 
           <label
-            for="choice-imsound"
-            data-imsound
             class="block p-x1 flex-1 flex md:mr-x1 mb-x1 items-center"
-            class:active={type === 'IAMSOUND'}>
+            class:active={formData.insuranceType === 'IAMSOUND'}>
 
             <input
               type="radio"
               name="type"
               id="choice-imsound"
-              bind:group={type}
+              bind:group={formData.insuranceType}
               value="IAMSOUND" />
-            <span class="indicator relative inline mr-x0p5" />
-            Elektronische Instrumente & Equipment
+            <div class="flex">
+              <div class="indicator relative inline mr-x1" />
+            </div>
+            <span>Elektronische Instrumente & Equipment</span>
+
           </label>
 
         </div>
-        {#if type == 'IAMSOUND'}
+        {#if formData.insuranceType == 'IAMSOUND'}
           <label class="flex flex-col">
             Gesamtwert der Instrumente in €
-            <input name="totalValue" bind:value={totalValue} autofocus />
+            <input
+              name="totalValue"
+              bind:value={formData.totalValue}
+              autofocus />
           </label>
         {/if}
       </div>
@@ -205,7 +223,7 @@
         id="nextBtn"
         on:click={nextTab}
         class="primary-button w-1/2 float-right"
-        disabled={type != 'SINFONIMA' && !totalValue}>
+        disabled={formData.insuranceType != 'SINFONIMA' && !formData.totalValue}>
         Weiter
       </button>
     {/if}
@@ -215,19 +233,23 @@
         <h2 class="text-x3 text-primary mb-x1">Persönliche Informationen</h2>
         <label class="inline-flex flex-col ">
           Vorname
-          <input name="vorname" bind:value={vorname} required autofocus />
+          <input
+            name="vorname"
+            bind:value={formData.vorname}
+            required
+            autofocus />
         </label>
         <label class="inline-flex flex-col">
           Nachname
-          <input name="nachname" bind:value={nachname} required />
+          <input name="nachname" bind:value={formData.nachname} required />
         </label>
         <label class="inline-flex flex-col">
           E-Mail
-          <input name="email" bind:value={email} required />
+          <input name="email" bind:value={formData.email} required />
         </label>
         <label class="inline-flex flex-col">
           Status
-          <select bind:value={status} on:change={() => (answer = '')}>
+          <select bind:value={formData.status}>
             <option value="Hobbymusiker">Hobbymusiker</option>
             <option value="Berufsmusiker (selbstständig)">
               Berufsmusiker (selbstständig)
@@ -246,7 +268,7 @@
         </label>
         <label class="inline-flex flex-col">
           Wohnsitz in
-          <input name="email" bind:value={wohnsitz} required />
+          <input name="email" bind:value={formData.wohnsitz} required />
         </label>
       </div>
       <div class="grid gap-x0p5 grid-cols-2">
@@ -262,7 +284,7 @@
           id="nextBtn"
           on:click={nextTab}
           class="primary-button "
-          disabled={!vorname || !nachname || !email}>
+          disabled={!formData.vorname || !formData.nachname || !formData.email}>
           Weiter
         </button>
       </div>
@@ -270,7 +292,7 @@
     {#if currentTab == 2}
       <div class="tab">
         <p class="">Schritt 3 von 3</p>
-        {#if type == 'SINFONIMA'}
+        {#if formData.insuranceType == 'SINFONIMA'}
           <h2 class="text-x3 text-primary mb-x1">Deine Instrumente</h2>
           <div class="instrument-list">
             {#each instruments as instrument, index}
@@ -279,10 +301,29 @@
           </div>
           <button
             type="button"
-            class="t-x1 p-x1 primary-button w-full"
+            class="t-x1 p-x1 primary-button w-full -mt-x2"
             on:click={addInstrument}>
             Weiteres Instrument hinzufügen
           </button>
+          <label for="" class="mt-x2 block">
+            Anmerkungen & Fragen
+            <textarea
+              bind:value={formData.nachricht}
+              rows="4"
+              class="w-full border-primary" />
+          </label>
+          <label class="flex items-center mt-x1">
+            <input
+              type="checkbox"
+              name="terms"
+              bind:checked={termsAccepted}
+              class="mr-x1" />
+            <span>
+              Ich akzeptiere die Übertragung und Speicherung meiner Daten zum
+              Zwecke des angebotenen Services.
+              <a href="/datenschutz" class="underline">Mehr erfahren</a>
+            </span>
+          </label>
 
           <div class="grid gap-x0p5 grid-cols-2">
             <button
@@ -292,17 +333,146 @@
               class="primary-button">
               Zurück
             </button>
-            <button type="submit" class="primary-button" disabled={false}>
+            <button
+              type="submit"
+              class="primary-button"
+              disabled={!termsAccepted}>
               Absenden
             </button>
           </div>
         {/if}
-        {#if type == 'IAMSOUND'}
+        {#if formData.insuranceType == 'IAMSOUND'}
           <div>
-            <input type="radio" name="match" id="match_2" value="zeitwert" />
-            <label for="match_2">Proberaum ...</label>
+            <h2 class="text-x3 text-primary mb-x1">Weitere Details</h2>
+            <div class="inline flex flex-wrap md:items-stretch toggle ">
+              <span class="w-full flex-0">Ist ein Proberaum vorhanden? *</span>
+              <label
+                class="block p-x1 flex-1 flex mr-x0p5 mb-x1 items-center"
+                class:active={formData.proberaum === 'ja'}>
+                <input
+                  type="radio"
+                  bind:group={formData.proberaum}
+                  value="ja" />
+                <div class="flex items-center">
+                  <div class="indicator relative inline mr-x1" />
+                </div>
+                <span>Ja</span>
+              </label>
+              <label
+                class="block p-x1 flex-1 flex md:mr-x1 mb-x1 items-center"
+                class:active={formData.proberaum === 'nein'}>
+                <input
+                  type="radio"
+                  bind:group={formData.proberaum}
+                  value="nein" />
+                <div class="flex">
+                  <div class="indicator relative inline mr-x1" />
+                </div>
+                <span>Nein</span>
+              </label>
+            </div>
+            <div class="inline flex flex-wrap md:items-stretch toggle">
+              <span class="w-full flex-0">
+                Wird das Equipment in einem Anhänger transportiert / gelagert? *
+              </span>
+              <label
+                class="block p-x1 flex-1 flex mr-x0p5 mb-x1 items-center"
+                class:active={formData.anhaenger === 'ja'}>
+                <input
+                  type="radio"
+                  bind:group={formData.anhaenger}
+                  value="ja" />
+                <div class="flex items-center">
+                  <div class="indicator relative inline mr-x1" />
+                </div>
+                <span>Ja</span>
+              </label>
+              <label
+                class="block p-x1 flex-1 flex md:mr-x1 mb-x1 items-center"
+                class:active={formData.anhaenger === 'nein'}>
+                <input
+                  type="radio"
+                  bind:group={formData.anhaenger}
+                  value="nein" />
+                <div class="flex">
+                  <div class="indicator relative inline mr-x1" />
+                </div>
+                <span>Nein</span>
+              </label>
+            </div>
+            <div class="inline flex flex-wrap md:items-stretch toggle">
+              <span class="w-full flex-0">
+                Machst Du Deine Musik haupt- oder nebenberuflich, das heißt,
+                verdienst Du Geld damit? *
+              </span>
+              <label
+                class="block p-x1 flex-1 flex mr-x0p5 mb-x1 items-center"
+                class:active={formData.verdientGeld === 'ja'}>
+                <input
+                  type="radio"
+                  bind:group={formData.verdientGeld}
+                  value="ja" />
+                <div class="flex items-center">
+                  <div class="indicator relative inline mr-x1" />
+                </div>
+                <span>Ja</span>
+              </label>
+              <label
+                class="block p-x1 flex-1 flex md:mr-x1 mb-x1 items-center"
+                class:active={formData.verdientGeld === 'nein'}>
+                <input
+                  type="radio"
+                  bind:group={formData.verdientGeld}
+                  value="nein" />
+                <div class="flex">
+                  <div class="indicator relative inline mr-x1" />
+                </div>
+                <span>Nein</span>
+              </label>
+            </div>
+            <div class="inline flex flex-wrap md:items-stretch toggle">
+              <span class="w-full flex-0">
+                Möchtest Du zusätzlich ein individuelles Angebot für eine
+                Musikerhaftpflichtversicherung? *
+              </span>
+              <label
+                class="block p-x1 flex-1 flex mr-x0p5 mb-x1 items-center"
+                class:active={formData.musikerhaftpflicht === 'ja'}>
+                <input
+                  type="radio"
+                  bind:group={formData.musikerhaftpflicht}
+                  value="ja" />
+                <div class="flex items-center">
+                  <div class="indicator relative inline mr-x1" />
+                </div>
+                <span>Ja</span>
+              </label>
+              <label
+                class="block p-x1 flex-1 flex md:mr-x1 mb-x1 items-center"
+                class:active={formData.musikerhaftpflicht === 'nein'}>
+                <input
+                  type="radio"
+                  bind:group={formData.musikerhaftpflicht}
+                  value="nein" />
+                <div class="flex">
+                  <div class="indicator relative inline mr-x1" />
+                </div>
+                <span>Nein</span>
+              </label>
+            </div>
           </div>
-
+          <label class="flex items-center mt-x1">
+            <input
+              type="checkbox"
+              name="terms"
+              bind:checked={termsAccepted}
+              class="mr-x1" />
+            <span>
+              Ich akzeptiere die Übertragung und Speicherung meiner Daten zum
+              Zwecke des angebotenen Services.
+              <a href="/datenschutz" class="underline">Mehr erfahren</a>
+            </span>
+          </label>
           <div class="grid gap-x0p5 grid-cols-2">
             <button
               type="button"
@@ -311,7 +481,10 @@
               class="primary-button">
               Zurück
             </button>
-            <button type="submit" class="primary-button" disabled={false}>
+            <button
+              type="submit"
+              class="primary-button"
+              disabled={!termsAccepted}>
               Absenden
             </button>
           </div>
