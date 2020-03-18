@@ -1,45 +1,49 @@
 <script>
-  import { onMount } from "svelte";
   import SingleInstrument from "../../components/SingleInstrument.svelte";
   import { writable } from "svelte/store";
 
+  // Create store
   let formData = writable({});
+
+  // Set store to saved formData from localStorage or to defined object
   formData.set(
-    JSON.parse(
-      localStorage.getItem("formData") || {
-        versicherungsTyp: undefined,
-        gesamtWert: undefined,
-        vorname: undefined,
-        nachname: undefined,
-        email: undefined,
-        status: undefined,
-        wohnsitz: "Deutschland",
-        nachricht: undefined,
-        proberaum: undefined,
-        anhanger: undefined,
-        musikerhaftpflicht: undefined,
-        verdientGeld: undefined
-      }
-    )
+    JSON.parse(localStorage.getItem("formData")) || {
+      versicherungsTyp: undefined,
+      gesamtWert: undefined,
+      vorname: undefined,
+      nachname: undefined,
+      email: undefined,
+      status: undefined,
+      wohnsitz: "Deutschland",
+      nachricht: undefined,
+      proberaum: undefined,
+      anhanger: undefined,
+      musikerhaftpflicht: undefined,
+      verdientGeld: undefined,
+      instruments: [{ name: "", valueType: "Neuwert", value: "" }]
+    }
   );
+  // Subscribe to store to update object saved in localStorage
   formData.subscribe(formData =>
     localStorage.setItem("formData", JSON.stringify(formData))
   );
 
-  var currentTab = 0;
-  var termsAccepted = false;
+  // Setup variables for multi step form
+  let currentTab = 0;
+  let termsAccepted = false;
 
+  // Setup functions to navigate between tabs
   let nextTab = () => currentTab++;
   let prevTab = () => currentTab--;
 
-  let instruments = [{ name: "", valueType: "Neuwert", value: "" }];
+  // Setup function to add an Instrument
   function addInstrument() {
     const instrument = {
       name: "",
       valueType: "Neuwert",
       value: ""
     };
-    instruments = [...instruments, instrument];
+    $formData.instruments = [...$formData.instruments, instrument];
   }
 </script>
 
@@ -265,7 +269,7 @@
         {#if $formData.versicherungsTyp == 'SINFONIMA'}
           <h2 class="text-x3 text-primary mb-x1">Deine Instrumente</h2>
           <div class="instrument-list">
-            {#each instruments as instrument, index}
+            {#each $formData.instruments as instrument, index}
               <SingleInstrument bind:instrument {index} />
             {/each}
           </div>
