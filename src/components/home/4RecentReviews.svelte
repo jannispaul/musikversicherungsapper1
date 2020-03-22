@@ -1,7 +1,8 @@
 <script>
-  // Import context for reviewData
-  import { getContext } from "svelte";
-  const reviewData = getContext("reviewData");
+  // Import reviewData store
+  // import { reviewData } from "../reviewData.js";
+  export let reviewData;
+  // import { reviewData } from "../../routes/reviews/index.svelte";
 
   import StarRating from "../StarRating.svelte";
   import ReviewItem from "../ReviewItem.svelte";

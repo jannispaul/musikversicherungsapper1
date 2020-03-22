@@ -1,56 +1,53 @@
-<script>
-  // Use context to get reviewData from layout
-  import { getContext } from "svelte";
-  const reviewData = getContext("reviewData");
-  import ReviewItem from "../../components/ReviewItem.svelte";
-  import StarRating from "../../components/StarRating.svelte";
+<script context="module">
+  export async function preload({ params, query }) {
+    return this.fetch(`reviews.json`)
+      .then(r => r.json())
+      .then(reviewData => {
+        return { reviewData };
+      });
+  }
+  // import { writable } from "svelte/store";
+  // export const reviewData = writable(data);
 </script>
 
-<section class="px-x1p5 -mb-x3 md:-mb-x2">
-  <h1 class="text-primary text-x6 leading-tight mb-x1 border-solid">
-    Kundenmeinungen
-  </h1>
-  <div
-    class="text-x1p5 md:text-x0p5 mb-x1p5"
-    itemscope
-    itemtype="https://schema.org/AggregateRating">
-    <div
-      itemprop="itemReviewed"
-      itemscope
-      itemtype="https://schema.org/Service"
-      class="hidden">
-      <span itemprop="name">Belmot Oldtimerversicherung</span>
-    </div>
-    <div class="hidden">
-      <span itemprop="ratingValue">{reviewData.averageRating}</span>
-      <span itemprop="bestRating">5</span>
-    </div>
-    <StarRating rating={reviewData.averageRating} />
-    {reviewData.averageRating} Sterne von {reviewData.count} Berwertungen
-    <div class="grid md:grid-cols-2 col-gap-x1 row-gap-x0p5">
-      {#each reviewData.allReviews as review}
-        <ReviewItem {review} />
-      {/each}
-    </div>
-  </div>
-</section>
+<script>
+  // Import reviewData store
+  // import { reviewData } from "../../components/reviewData.js";
+  export let reviewData;
 
-<!-- 
-  itemscope
-  itemprop="mainEntity"
-  itemtype="https://schema.org/Question"
-  class="text-x1p5 md:text-x0p5 md:flex-half md:px-x1">
-  <div
-    itemprop="name"
-    class="w-full bg-transparent text-primary border-solid border-0 border-b-2
-    border-primary py-x0p5 md:py-x0p25 mb-x0p5 md:mb-x0p25">
-    {question}
-  </div>
-  <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+  import ReviewItem from "../../components/ReviewItem.svelte";
+  import StarRating from "../../components/StarRating.svelte";
+  import Layout from "../_layouts/_layout.svelte";
+</script>
+
+<Layout>
+
+  <section class="px-x1p5 -mb-x3 md:-mb-x2">
+    <h1 class="text-primary text-x6 leading-tight mb-x1 border-solid">
+      Kundenmeinungen
+    </h1>
     <div
-      itemprop="text"
-      class=" mb-x2 md:mb-x1"
-      contenteditable="false"
-      bind:innerHTML={answer} />
-  </div>
-</div> -->
+      class="text-x1p5 md:text-x0p5 mb-x1p5"
+      itemscope
+      itemtype="https://schema.org/AggregateRating">
+      <div
+        itemprop="itemReviewed"
+        itemscope
+        itemtype="https://schema.org/Service"
+        class="hidden">
+        <span itemprop="name">Belmot Oldtimerversicherung</span>
+      </div>
+      <div class="hidden">
+        <span itemprop="ratingValue">{reviewData.averageRating}</span>
+        <span itemprop="bestRating">5</span>
+      </div>
+      <StarRating rating={reviewData.averageRating} />
+      {reviewData.averageRating} Sterne von {reviewData.count} Berwertungen
+      <div class="grid md:grid-cols-2 col-gap-x1 row-gap-x0p5">
+        {#each reviewData.allReviews as review}
+          <ReviewItem {review} />
+        {/each}
+      </div>
+    </div>
+  </section>
+</Layout>

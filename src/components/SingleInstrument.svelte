@@ -21,10 +21,23 @@
     /* border: 0.2vw solid red; */
     @apply border-primary;
   }
+  @media (min-width: 768px) {
+    .toggle > label {
+      padding: 0 1vw;
+      height: 4.1vw;
+      display: flex;
+      align-items: center;
+      margin-right: -0.2vw;
+    }
+  }
 </style>
 
-<div class="single-instrument flex flex-wrap items-end mb-x1p5">
-  <label class="flex flex-col items-start flex-none w-full">
+<div
+  class="single-instrument flex flex-wrap md:flex-no-wrap items-end mb-x1p5
+  md:mb-x0p5">
+  <label
+    class="flex md:flex-grow flex-col items-start flex-none md:flex-auto w-full
+    md:w-1/2 md:mr-x0p5">
     Instrument {index + 1}
     <input
       name="instrument"
@@ -33,7 +46,7 @@
       class="w-full "
       autofocus />
   </label>
-  <div class="toggle flex order-2 ">
+  <div class="toggle flex order-2 md:order-2">
     <label class:active={instrument.valueType === 'Neuwert'} class="flex-1">
       <input
         type="radio"
@@ -53,7 +66,9 @@
     </label>
   </div>
 
-  <label class="flex flex-col flex-1 order-1 mr-x0p5 w-2/6">
+  <label
+    class="flex flex-col flex-grow-0 flex-1 order-1 mr-x0p5 w-2/6 md:w-auto
+    md:w-1/6">
     Wert
     <input name="value" bind:value={instrument.value} />
   </label>

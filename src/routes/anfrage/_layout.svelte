@@ -1,11 +1,11 @@
 <script context="module">
-  export async function preload({ params, query }) {
-    return this.fetch(`reviews.json`)
-      .then(r => r.json())
-      .then(reviewData => {
-        return { reviewData };
-      });
-  }
+  // export async function preload({ params, query }) {
+  //   return this.fetch(`reviews.json`)
+  //     .then(r => r.json())
+  //     .then(reviewData => {
+  //       return { reviewData };
+  //     });
+  // }
 </script>
 
 <script>
