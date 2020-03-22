@@ -1,28 +1,34 @@
 <script>
   import SingleInstrument from "../../components/SingleInstrument.svelte";
   import { writable } from "svelte/store";
+  import { onMount } from "svelte";
 
   // Create store
   let formData = writable({});
 
   // Set store to saved formData from localStorage or to defined object
-  formData.set(
-    JSON.parse(localStorage.getItem("formData")) || {
-      versicherungsTyp: undefined,
-      gesamtWert: undefined,
-      vorname: undefined,
-      nachname: undefined,
-      email: undefined,
-      status: undefined,
-      wohnsitz: "Deutschland",
-      nachricht: undefined,
-      proberaum: undefined,
-      anhanger: undefined,
-      musikerhaftpflicht: undefined,
-      verdientGeld: undefined,
-      instruments: [{ name: "", valueType: "Neuwert", value: "" }]
-    }
-  );
+  function initiateFormData() {
+    formData.set(
+      JSON.parse(localStorage.getItem("formData")) || {
+        redirect: "/success",
+        versicherungsTyp: undefined,
+        gesamtWert: undefined,
+        vorname: undefined,
+        nachname: undefined,
+        email: undefined,
+        status: undefined,
+        wohnsitz: "Deutschland",
+        nachricht: undefined,
+        proberaum: undefined,
+        anhanger: undefined,
+        musikerhaftpflicht: undefined,
+        verdientGeld: undefined,
+        instruments: [{ name: "", valueType: "Neuwert", value: "" }]
+      }
+    );
+  }
+  initiateFormData();
+
   // Subscribe to store to update object saved in localStorage
   formData.subscribe(formData =>
     localStorage.setItem("formData", JSON.stringify(formData))
@@ -45,6 +51,26 @@
     };
     $formData.instruments = [...$formData.instruments, instrument];
   }
+  function handleSubmit() {}
+  // https://hook.integromat.com/rv3r5iqg3ivce8h16ld3b3v5h3vs9121
+  onMount(function handleSubmit() {
+    var requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify($formData),
+      redirect: "follow"
+    };
+
+    fetch(
+      "https://hook.integromat.com/rv3r5iqg3ivce8h16ld3b3v5h3vs9121",
+      requestOptions
+    )
+      .then(response => response.text())
+      // .then(result => console.log(result))
+      // .then(localStorage.removeItem("formData"))
+      // .then(initiateFormData())
+      .catch(error => console.log("error", error));
+  });
 </script>
 
 <style>
@@ -137,13 +163,9 @@
   }
 </style>
 
-<form
-  id="form"
-  action="https://hook.integromat.com/rv3r5iqg3ivce8h16ld3b3v5h3vs9121"
-  method="post"
-  class="text-x2 px-x1p5">
+<form id="form" method="post" class="text-x2 px-x1p5">
   <div class=" ">
-    <input type="hidden" id="redirect_" name="redirect" value="/success" />
+    <!-- <input type="hidden" id="redirect_" name="redirect" value="/success" /> -->
     <!-- One "tab" for each step in the form: -->
     {#if currentTab == 0}
       <div class="tab" for="sinfonima">
@@ -310,7 +332,8 @@
             <button
               type="submit"
               class="primary-button"
-              disabled={!termsAccepted}>
+              disabled={!termsAccepted}
+              on:submit|preventDefault={handleSubmit}>
               Absenden
             </button>
           </div>
@@ -458,7 +481,8 @@
             <button
               type="submit"
               class="primary-button"
-              disabled={!termsAccepted}>
+              disabled={!termsAccepted}
+              on:submit|preventDefault={handleSubmit}>
               Absenden
             </button>
           </div>
