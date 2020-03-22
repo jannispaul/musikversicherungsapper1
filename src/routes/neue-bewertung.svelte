@@ -1,6 +1,6 @@
 <script>
   let rating = 5;
-  import Layout from "./_layouts/_layout.svelte";
+  import Layout from "./_layouts/layout.svelte";
 </script>
 
 <Layout>

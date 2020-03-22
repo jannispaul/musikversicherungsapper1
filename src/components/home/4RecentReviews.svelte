@@ -1,8 +1,5 @@
 <script>
-  // Import reviewData store
-  // import { reviewData } from "../reviewData.js";
   export let reviewData;
-  // import { reviewData } from "../../routes/reviews/index.svelte";
 
   import StarRating from "../StarRating.svelte";
   import ReviewItem from "../ReviewItem.svelte";

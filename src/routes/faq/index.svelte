@@ -9,7 +9,7 @@
 </script>
 
 <script>
-  import Layout from "../_layouts/_layout.svelte";
+  import Layout from "../_layouts/layout.svelte";
   import FaqItem from "../../components/FaqItem.svelte";
   export let faq;
 </script>

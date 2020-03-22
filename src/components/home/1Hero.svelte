@@ -1,21 +1,9 @@
 <script>
   export let reviewData;
-  // Import reviewData store
-  // import reviewData from "../reviewData.js";
-  // import { reviewData } from "../../routes/reviews/index.svelte";
+
   import Image from "svelte-image";
   import StarRating from "../StarRating.svelte";
-  // import reviewData from "../reviewData.js";
 
-  // let reviewData;
-  // export async function preload(page, session) {
-  //   const r = await this.fetch("reviews.json");
-  //   return {
-  //     reviewData: await r.json()
-  //   };
-  // }
-
-  // console.log(reviewData);
   let style = {
     styleStarWidth: 50,
     styleEmptyStarColor: "#EE97CC",
@@ -74,15 +62,6 @@
   }
 </style>
 
-<!-- <script context="module">
-  export async function preload({ params, query }) {
-    return this.fetch(`reviews.json`)
-      .then(r => r.json())
-      .then(reviewData => {
-        return { reviewData };
-      });
-  }
-</script> -->
 <section class="px-x1p5 md:px-0 relative">
   <div class="content z-20 md:flex md:flex-wrap md:items-start">
     <a

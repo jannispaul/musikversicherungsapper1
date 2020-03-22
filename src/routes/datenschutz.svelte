@@ -1,5 +1,5 @@
 <script>
-  import Layout from "./_layouts/_layout.svelte";
+  import Layout from "./_layouts/layout.svelte";
 </script>
 
 <svelte:head>
@@ -442,7 +442,7 @@
         Zusätzlich oder als Alternative zum Browser-Add-On können Sie das
         Tracking durch Google Analytics auf unseren Seiten unterbinden, indem
         Sie diesen Link anklicken:&nbsp;
-        <a href="#" data-ua="UA-99324592-3" class="gaoptout">
+        <a href="/" data-ua="UA-99324592-X" class="gaoptout">
           Google Analytics deaktivieren
         </a>
         . Dabei wird ein Opt-Out-Cookie auf Ihrem Gerät installiert. Damit wird

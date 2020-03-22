@@ -15,7 +15,7 @@
   import AsItShouldBe from "../components/home/3AsItShouldBe.svelte";
   import RecentReviews from "../components/home/4RecentReviews.svelte";
   import MuchMore from "../components/home/5MuchMore.svelte";
-  import Layout from "../routes/_layouts/_layout.svelte";
+  import Layout from "../routes/_layouts/layout.svelte";
 </script>
 
 <svelte:head>

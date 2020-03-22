@@ -17,7 +17,7 @@
 
   import ReviewItem from "../../components/ReviewItem.svelte";
   import StarRating from "../../components/StarRating.svelte";
-  import Layout from "../_layouts/_layout.svelte";
+  import Layout from "../_layouts/layout.svelte";
 </script>
 
 <Layout>
