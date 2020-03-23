@@ -51,8 +51,9 @@
     };
     $formData.instruments = [...$formData.instruments, instrument];
   }
-  function handleSubmit() {}
-  onMount(function handleSubmit() {
+  // function handleSubmit() {};
+  // onMount(
+  function handleSubmit() {
     var requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -66,10 +67,11 @@
     )
       .then(response => response.text())
       // .then(result => console.log(result))
-      // .then(localStorage.removeItem("formData")) // Remove formData from localstorage so form is empty
+      .then(localStorage.removeItem("formData")) // Remove formData from localstorage so form is empty
       .then(initiateFormData())
       .catch(error => console.log("error", error));
-  });
+  }
+  // );
 </script>
 
 <style>
@@ -142,6 +144,14 @@
   :global(.toggle > label) {
     border: 0.5vw solid #6b46c1;
     opacity: 0.5;
+    cursor: pointer;
+    position: relative;
+  }
+  .toggle > input:focus ~ label {
+    outline: -webkit-focus-ring-color auto 5px;
+    outline-color: -webkit-focus-ring-color;
+    outline-style: auto;
+    outline-width: 5px;
   }
   :global(label.active) {
     opacity: 1;
@@ -210,43 +220,47 @@
   }
 </style>
 
+<svelte:head>
+  <title>Anfrage</title>
+</svelte:head>
 <Layout>
   <form id="form" method="post" class="text-x2 md:text-x1 lg:text-x0p5 px-x1p5">
     <div class=" ">
       <!-- One "tab" for each step in the form: -->
       {#if currentTab == 0}
-        <div class="tab lg:w-4/6 lg:mx-auto" for="sinfonima">
+        <div class="tab lg:w-4/6 lg:mx-auto">
           <p class="text-x0p5 md:text-x0p25">Schritt 1 von 3</p>
           <h2 class="text-x3 md:text-x2 text-primary mb-x1 leading-tighter">
             Was möchtest Du versichern?
           </h2>
           <div class="toggle inline md:flex md:items-stretch overflow-hidden">
-
+            <input
+              type="radio"
+              bind:group={$formData.versicherungsTyp}
+              value="SINFONIMA"
+              id="SINFONIMA" />
             <label
+              for="SINFONIMA"
               class="block p-x1 md:py-x0p25 md:px-x0p5 flex-1 flex md:mr-x1
               mb-x1 items-center"
               class:active={$formData.versicherungsTyp === 'SINFONIMA'}>
-              <input
-                type="radio"
-                bind:group={$formData.versicherungsTyp}
-                value="SINFONIMA" />
               <div class="flex items-center">
                 <div class="indicator relative inline mr-x1 md:mr-x0p5" />
               </div>
               <span>Akustische Instrumente</span>
             </label>
 
+            <input
+              type="radio"
+              bind:group={$formData.versicherungsTyp}
+              value="IAMSOUND"
+              id="IAMSOUND" />
             <label
               class="block p-x1 md:py-x0p25 md:px-x0p5 flex-1 flex mb-x1
               items-center"
-              class:active={$formData.versicherungsTyp === 'IAMSOUND'}>
+              class:active={$formData.versicherungsTyp === 'IAMSOUND'}
+              for="IAMSOUND">
 
-              <input
-                type="radio"
-                name="type"
-                id="choice-imsound"
-                bind:group={$formData.versicherungsTyp}
-                value="IAMSOUND" />
               <div class="flex">
                 <div class="indicator relative inline mr-x1 md:mr-x0p5" />
               </div>
@@ -278,8 +292,8 @@
         </div>
       {/if}
       {#if currentTab == 1}
-        <div class="tab flex flex-col md:w-4/6 m-auto">
-          <p class="">Schritt 2 von 3</p>
+        <div class="tab flex flex-col lg:w-4/6 m-auto">
+          <p class="text-x0p5 md:text-x0p25">Schritt 2 von 3</p>
           <h2 class="text-x3 md:text-x2 text-primary mb-x1">
             Persönliche Informationen
           </h2>
@@ -328,24 +342,24 @@
         <div class="grid gap-x0p5 grid-cols-2 md:flex md:justify-center">
           <button
             type="button"
-            id="prevBtn"
-            on:click={prevTab}
-            class="primary-button">
-            Zurück
+            id="nextBtn"
+            on:click={nextTab}
+            class="primary-button order-2"
+            disabled={!$formData.vorname || !$formData.nachname || !$formData.email}>
+            Weiter
           </button>
           <button
             type="button"
-            id="nextBtn"
-            on:click={nextTab}
-            class="primary-button "
-            disabled={!$formData.vorname || !$formData.nachname || !$formData.email}>
-            Weiter
+            id="prevBtn"
+            on:click={prevTab}
+            class="primary-button order-1">
+            Zurück
           </button>
         </div>
       {/if}
       {#if currentTab == 2}
         <div class="tab lg:w-4/6 lg:mx-auto">
-          <p class="">Schritt 3 von 3</p>
+          <p class="text-x0p5 md:text-x0p25">Schritt 3 von 3</p>
           {#if $formData.versicherungsTyp == 'SINFONIMA'}
             <h2 class="text-x3 md:text-x2 text-primary mb-x1">
               Deine Instrumente
@@ -383,18 +397,18 @@
 
             <div class="grid gap-x0p5 grid-cols-2 md:flex md:justify-center">
               <button
-                type="primary-button"
-                id="prevBtn"
-                on:click={prevTab}
-                class="primary-button">
-                Zurück
-              </button>
-              <button
                 type="submit"
-                class="primary-button"
+                class="primary-button order-2"
                 disabled={!termsAccepted}
                 on:submit|preventDefault={handleSubmit}>
                 Absenden
+              </button>
+              <button
+                type="primary-button"
+                id="prevBtn"
+                on:click={prevTab}
+                class="primary-button order-1">
+                Zurück
               </button>
             </div>
           {/if}
@@ -408,7 +422,8 @@
                   Ist ein Proberaum vorhanden? *
                 </span>
                 <label
-                  class="block p-x1 flex-1 flex mr-x0p5 mb-x1 items-center"
+                  class="block p-x1 md:p-x0p5 flex-1 flex mr-x0p5 mb-x1
+                  items-center"
                   class:active={$formData.proberaum === 'ja'}>
                   <input
                     type="radio"
@@ -420,7 +435,8 @@
                   <span>Ja</span>
                 </label>
                 <label
-                  class="block p-x1 flex-1 flex md:mr-x1 mb-x1 items-center"
+                  class="block p-x1 md:p-x0p5 flex-1 flex md:mr-x1 mb-x1
+                  items-center"
                   class:active={$formData.proberaum === 'nein'}>
                   <input
                     type="radio"
@@ -438,7 +454,8 @@
                   *
                 </span>
                 <label
-                  class="block p-x1 flex-1 flex mr-x0p5 mb-x1 items-center"
+                  class="block p-x1 md:p-x0p5 flex-1 flex mr-x0p5 mb-x1
+                  items-center"
                   class:active={$formData.anhaenger === 'ja'}>
                   <input
                     type="radio"
@@ -450,7 +467,8 @@
                   <span>Ja</span>
                 </label>
                 <label
-                  class="block p-x1 flex-1 flex md:mr-x1 mb-x1 items-center"
+                  class="block p-x1 md:p-x0p5 flex-1 flex md:mr-x1 mb-x1
+                  items-center"
                   class:active={$formData.anhaenger === 'nein'}>
                   <input
                     type="radio"
@@ -468,7 +486,8 @@
                   verdienst Du Geld damit? *
                 </span>
                 <label
-                  class="block p-x1 flex-1 flex mr-x0p5 mb-x1 items-center"
+                  class="block p-x1 md:p-x0p5 flex-1 flex mr-x0p5 mb-x1
+                  items-center"
                   class:active={$formData.verdientGeld === 'ja'}>
                   <input
                     type="radio"
@@ -480,7 +499,8 @@
                   <span>Ja</span>
                 </label>
                 <label
-                  class="block p-x1 flex-1 flex md:mr-x1 mb-x1 items-center"
+                  class="block p-x1 md:p-x0p5 flex-1 flex md:mr-x1 mb-x1
+                  items-center"
                   class:active={$formData.verdientGeld === 'nein'}>
                   <input
                     type="radio"
@@ -498,7 +518,8 @@
                   Musikerhaftpflichtversicherung? *
                 </span>
                 <label
-                  class="block p-x1 flex-1 flex mr-x0p5 mb-x1 items-center"
+                  class="block p-x1 md:p-x0p5 flex-1 flex mr-x0p5 mb-x1
+                  items-center"
                   class:active={$formData.musikerhaftpflicht === 'ja'}>
                   <input
                     type="radio"
@@ -510,7 +531,8 @@
                   <span>Ja</span>
                 </label>
                 <label
-                  class="block p-x1 flex-1 flex md:mr-x1 mb-x1 items-center"
+                  class="block p-x1 md:p-x0p5 flex-1 flex md:mr-x1 mb-x1
+                  items-center"
                   class:active={$formData.musikerhaftpflicht === 'nein'}>
                   <input
                     type="radio"
@@ -528,7 +550,7 @@
                 type="checkbox"
                 name="terms"
                 bind:checked={termsAccepted}
-                class="mr-x1" />
+                class="mr-x1 md:mr-x0p5" />
               <span>
                 Ich akzeptiere die Übertragung und Speicherung meiner Daten zum
                 Zwecke des angebotenen Services.
@@ -537,18 +559,18 @@
             </label>
             <div class="grid gap-x0p5 grid-cols-2 md:flex md:justify-center">
               <button
-                type="button"
-                id="prevBtn"
-                on:click={prevTab}
-                class="primary-button">
-                Zurück
-              </button>
-              <button
                 type="submit"
-                class="primary-button"
+                class="primary-button order-2"
                 disabled={!termsAccepted}
                 on:submit|preventDefault={handleSubmit}>
                 Absenden
+              </button>
+              <button
+                type="button"
+                id="prevBtn"
+                on:click={prevTab}
+                class="primary-button order-1">
+                Zurück
               </button>
             </div>
           {/if}

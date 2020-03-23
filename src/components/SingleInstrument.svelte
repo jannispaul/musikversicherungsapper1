@@ -38,6 +38,12 @@
       class="w-full "
       autofocus />
   </label>
+  <label
+    class="flex flex-col flex-grow-0 flex-1 order-1 mr-x0p5 w-2/6 md:w-auto
+    md:w-1/6">
+    Wert
+    <input name="value" bind:value={instrument.value} />
+  </label>
   <div class="toggle flex order-2 md:order-2">
     <label class:active={instrument.valueType === 'Neuwert'} class="flex-1">
       <input
@@ -58,10 +64,4 @@
     </label>
   </div>
 
-  <label
-    class="flex flex-col flex-grow-0 flex-1 order-1 mr-x0p5 w-2/6 md:w-auto
-    md:w-1/6">
-    Wert
-    <input name="value" bind:value={instrument.value} />
-  </label>
 </div>
