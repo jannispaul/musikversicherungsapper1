@@ -9,7 +9,8 @@ module.exports = {
         primary: "#6B46C1",
         "primary-light": "#EEE7FF",
         secondary: "#DB0086",
-        "secondary-light": "#F7E9F9"
+        "secondary-light": "#F7E9F9",
+        "secondary-light-hover": "#f5e3f7"
       },
       fontFamily: {
         sans: ["Space Grotesk", "Helvetica Neue", "Helvetica"],

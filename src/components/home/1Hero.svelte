@@ -13,7 +13,7 @@
 
 <style>
   .shape {
-    height: 200px;
+    height: 60vw;
     background: linear-gradient(248.64deg, #412b75 4.06%, #6b46c1 94.06%);
   }
   @media (min-width: 768px) {
@@ -76,7 +76,8 @@
     <a
       href="#reviews"
       class="w-auto inline-flex text-secondary bg-secondary-light py-x0p5 px-x1
-      mt-x1 md:mt-0 md:py-x0p25 md:px-x0p5 md:order-1 md:items-center">
+      mt-x1 md:mt-0 md:py-x0p25 md:px-x0p5 md:order-1 md:items-center
+      md:hover:bg-secondary-light-hover">
       <StarRating rating={reviewData.averageRating} {style} />
       <!-- <p class="text-x2 md:text-x0p5 transition duration-500 ease-in-out "> -->
       <p class="text-x2 md:text-x0p5">
@@ -99,7 +100,7 @@
       class=" text-white underline text-x2 bg-secondary absolute left-0 p-x1
       z-30 bottom-0 md:relative md:text-secondary md:bg-secondary-light
       md:inline-flex md:mt-0 md:py-x0p25 md:px-x0p5 md:text-x0p5 md:order-2
-      md:items-center ">
+      md:items-center md:hover:bg-secondary-light-hover ">
       Jetzt anfragen
     </a>
   </div>
@@ -115,7 +116,7 @@
   </div>
 
   <div
-    class="shape bg-primary absolute w-6/12 h-64 right-0 bottom-0 mb-4 z-0
+    class="shape bg-primary absolute w-8/12 right-0 bottom-0 mb-x2 z-0
     md:relative md:mb-0" />
 
 </section>
