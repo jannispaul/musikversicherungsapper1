@@ -15,10 +15,12 @@
   <h2
     class="text-secondary text-x6 md:text-x6 mb-x1 md:leading-tight md:mb-x0p5
     font-medium">
-    Alle zufrieden
+    Alle zufrieden!
   </h2>
-  <div class="text-x2 md:text-x0p5">
-    {reviewData.count} Bewertungen mit {reviewData.averageRating} Sternen
+  <div class="text-x2 md:text-x0p5 grid gap-x1">
+    <div>
+      {reviewData.count} Bewertungen mit {reviewData.averageRating} Sternen
+    </div>
     {#each reviewData.recentReviews as review}
       <ReviewItem {review} />
     {/each}

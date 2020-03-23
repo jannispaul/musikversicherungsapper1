@@ -26,7 +26,16 @@
     }
     .content {
       grid-column: 2/14;
-      grid-row: 2/7;
+      grid-row: 3/7;
+    }
+    .reviews {
+      grid-column: 2/12;
+      grid-row: 2/3;
+      overflow: visible;
+    }
+    .cta {
+      grid-column: 2/8;
+      grid-row: 9/9;
     }
     .image-piano {
       grid-column: 16/23;
@@ -47,51 +56,55 @@
       height: 100%;
       width: 100%;
     }
-    .reviews p {
+    /* .reviews p {
       width: 0;
       opacity: 0;
       transition: all 500ms;
       white-space: nowrap;
       overflow: hidden;
-    }
-    .reviews:hover p {
+    } */
+    /* .reviews:hover p {
       opacity: 1;
       width: 12.5vw;
       transition: all 400ms;
-    }
+    } */
   }
 </style>
 
 <section class="px-x1p5 md:px-0 relative">
-  <div class="content z-20 md:flex md:flex-wrap md:items-start">
+  <div class="reviews">
     <a
       href="#reviews"
-      class="reviews inline text-secondary bg-secondary-light inline-block
-      inline-flex py-x0p5 px-x1 mt-x1 md:mt-0 md:py-x0p25 md:px-x0p5 md:order-1
-      md:flex md:items-center">
+      class="w-auto inline-flex text-secondary bg-secondary-light py-x0p5 px-x1
+      mt-x1 md:mt-0 md:py-x0p25 md:px-x0p5 md:order-1 md:items-center">
       <StarRating rating={reviewData.averageRating} {style} />
-      <p class="text-x2 md:text-x0p5 transition duration-500 ease-in-out ">
-        &nbsp; {reviewData.count} Bewertungen
+      <!-- <p class="text-x2 md:text-x0p5 transition duration-500 ease-in-out "> -->
+      <p class="text-x2 md:text-x0p5">
+        &nbsp; von {reviewData.count} Bewertungen
       </p>
     </a>
-    <h1
-      class="text-primary text-x7 md:text-x5 leading-none mt-x2 mb-x3 md:mb-x0p5
-      md:mt-x0p5 md:order-0 font-medium">
-      Versicherung für Deine
-      <span class="text-secondary">Instrumente</span>
-      und
-      <span class="text-secondary">Equipment</span>
-    </h1>
+  </div>
+  <!-- <div class="content z-20 md:flex md:flex-wrap md:items-start "> -->
+  <h1
+    class="content text-primary text-x7 md:text-x5 leading-none mt-x2 mb-x3
+    md:mb-x0p5 md:mt-x0p5 md:order-0 font-medium">
+    Versicherung für Deine
+    <span class="text-secondary">Instrumente</span>
+    und
+    <span class="text-secondary">Equipment</span>
+  </h1>
+  <div class="cta">
     <a
       href="/anfrage"
-      class="cta text-secondary underline text-x2 bg-white absolute left-0 p-x1
-      z-20 bottom-0 shadow-2 md:relative md:text-secondary md:bg-secondary-light
-      md:inline-block md:inline-flex md:mt-0 md:py-x0p25 md:px-x0p5 md:text-x0p5
-      md:order-2 md:ml-x0p25 md:flex md:items-center ">
+      class=" text-white underline text-x2 bg-secondary absolute left-0 p-x1
+      z-30 bottom-0 md:relative md:text-secondary md:bg-secondary-light
+      md:inline-flex md:mt-0 md:py-x0p25 md:px-x0p5 md:text-x0p5 md:order-2
+      md:items-center ">
       Jetzt anfragen
     </a>
   </div>
-  <div class="z-20 overflow-hidden image-piano">
+  <!-- </div> -->
+  <div class="z-20 overflow-hidden image-piano relative">
     <Image src="images/piano.jpg" />
   </div>
   <div class="z-10 overflow-hidden image-mixer hidden md:inline">

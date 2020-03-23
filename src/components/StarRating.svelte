@@ -112,7 +112,7 @@
     {#each stars as star}
       <svg
         viewBox="0 0 50 50"
-        class="star-svg w-x1 md:w-x0p5"
+        class="star-svg w-x1 md:w-x0p5 lg:w-x0p75"
         style="fill: url(#gradient{star.raw});">
         <polygon points={getStarPoints()} style="" />
         <defs>
