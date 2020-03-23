@@ -10,7 +10,7 @@
   function initiateFormData() {
     formData.set(
       JSON.parse(localStorage.getItem("formData")) || {
-        redirect: "/success",
+        redirect: "/vielen-danke",
         versicherungsTyp: undefined,
         gesamtWert: undefined,
         vorname: undefined,
@@ -52,7 +52,6 @@
     $formData.instruments = [...$formData.instruments, instrument];
   }
   function handleSubmit() {}
-  // https://hook.integromat.com/rv3r5iqg3ivce8h16ld3b3v5h3vs9121
   onMount(function handleSubmit() {
     var requestOptions = {
       method: "POST",
@@ -67,8 +66,8 @@
     )
       .then(response => response.text())
       // .then(result => console.log(result))
-      // .then(localStorage.removeItem("formData"))
-      // .then(initiateFormData())
+      .then(localStorage.removeItem("formData")) // Remove formData from localstorage so form is empty
+      .then(initiateFormData())
       .catch(error => console.log("error", error));
   });
 </script>
@@ -81,14 +80,14 @@
     padding: 1.5vw;
   }
 
-  .primary-button:hover:not(:disabled),
-  .add-instrument:hover:not(:disabled) {
+  :global(.primary-button:hover:not(:disabled)),
+  :global(.add-instrument:hover:not(:disabled)) {
     background: rgba(107, 70, 193, 0.3);
   }
-  button:not(:disabled) {
+  :global(button:not(:disabled)) {
     cursor: pointer;
   }
-  button:disabled {
+  :global(button:disabled) {
     cursor: not-allowed;
   }
 
@@ -118,6 +117,7 @@
   }
   :global(textarea) {
     padding: 1.5vw;
+    border: 0.2vw solid #6b46c1;
   }
   :global(select) {
     -webkit-appearance: none;
@@ -169,6 +169,7 @@
 
     :global(textarea) {
       padding: 0.75vw;
+      border: 0.2vw solid #6b46c1;
     }
     /* TOggle indicator styles  */
     .indicator {
@@ -198,7 +199,6 @@
 <Layout>
   <form id="form" method="post" class="text-x2 md:text-x1 lg:text-x0p5 px-x1p5">
     <div class=" ">
-      <!-- <input type="hidden" id="redirect_" name="redirect" value="/success" /> -->
       <!-- One "tab" for each step in the form: -->
       {#if currentTab == 0}
         <div class="tab lg:w-4/6 lg:mx-auto" for="sinfonima">
