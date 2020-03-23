@@ -8,6 +8,7 @@
   import Nav from "../../components/Nav.svelte";
   import Footer from "../../components/Footer.svelte";
   export let segment;
+  export let headline;
 </script>
 
 <style>
@@ -36,7 +37,7 @@
 
 <Nav {segment} />
 
-<main class="mb-x3 md:mb-x1 mt-x1 relative z-0" id="main" >
+<main class="mb-x3 md:mb-x1 mt-x1 relative z-0" id="main">
   <slot />
 </main>
-<Footer />
+<Footer {headline} />

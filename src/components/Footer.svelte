@@ -1,5 +1,11 @@
+<script>
+  export let headline = true;
+</script>
+
 <footer class="text-primary p-x1p5 text-x2 md:text-x0p75">
-  <h3 class="text-x4 md:text-x2 mb-x0p25">Kontakt</h3>
+  {#if headline}
+    <h3 class="text-x4 md:text-x2 mb-x0p25">Kontakt</h3>
+  {/if}
   <hr class="border border-primary mb-x1 md:mb-x0p5" />
   <div
     class="flex flex-col md:flex-row justify-between md:items-center mb-x1
