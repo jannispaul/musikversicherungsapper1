@@ -41,7 +41,7 @@
           rel="prefetch"
           class:active={segment === 'index'}
           href="."
-          class="text-primary md:text-x1">
+          class="text-primary md:text-x0p5">
           <strong>
             Musikversicherung
             <span class="opacity-75 -ml-1">.com</span>
