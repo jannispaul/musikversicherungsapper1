@@ -1,24 +1,16 @@
 <script>
   import Toggle from "./Toggle.svelte";
-  //   export let name = "";
-  //   export let valueType = "";
-  //   export let value = "";
+
   export let instrument;
   export let index;
-  //   export let index;
 </script>
 
 <style>
-  /* input[type="radio"] {
-    opacity: 0;
-  } */
   .toggle > label {
-    /* height: 5vw; */
     min-height: fit-content;
     padding: 1vw 1.5vw;
     margin-bottom: 2vw;
     margin-right: -0.4vw;
-    /* border: 0.2vw solid red; */
     @apply border-primary;
   }
   @media (min-width: 768px) {

@@ -66,13 +66,16 @@
     )
       .then(response => response.text())
       // .then(result => console.log(result))
-      .then(localStorage.removeItem("formData")) // Remove formData from localstorage so form is empty
+      // .then(localStorage.removeItem("formData")) // Remove formData from localstorage so form is empty
       .then(initiateFormData())
       .catch(error => console.log("error", error));
   });
 </script>
 
 <style>
+  #form:focus {
+    outline: 0;
+  }
   :global(.primary-button),
   .add-instrument {
     margin-top: 3vw;
@@ -167,6 +170,14 @@
       border: 0.2vw solid #6b46c1;
     }
 
+    :global(select) {
+      height: 2vw;
+      min-height: fit-content;
+      padding: 0.75vw;
+      margin-bottom: 2vw;
+      border: 0.2vw solid #6b46c1;
+    }
+
     :global(textarea) {
       padding: 0.75vw;
       border: 0.2vw solid #6b46c1;
@@ -192,6 +203,9 @@
     .primary-button:hover:not(:disabled) {
       /* background: rgba(107, 70, 193, 0.3); */
       background: none;
+    }
+    :global(select) {
+      background-size: 1vw;
     }
   }
 </style>
