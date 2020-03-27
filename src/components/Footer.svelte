@@ -6,7 +6,7 @@
   {#if headline}
     <h3 class="text-x4 md:text-x2 mb-x0p25">Kontakt</h3>
   {/if}
-  <hr class="border border-primary mb-x1 md:mb-x0p5" />
+  <hr class="border md:border-x0p1 border-primary mb-x1 md:mb-x0p5" />
   <div
     class="flex flex-col md:flex-row justify-between md:items-center mb-x1
     md:mb-x0p5">
@@ -15,7 +15,7 @@
       info@musikversicherung.com
     </a>
   </div>
-  <hr class="border border-primary mb-x1 md:mb-x0p5" />
+  <hr class="border md:border-x0p1 border-primary mb-x1 md:mb-x0p5" />
   <div class="flex flex-col md:flex-row items-stretch mb-x1 md:mb-x0p5 ">
 
     <p class="flex-1 wrap">
@@ -33,7 +33,7 @@
       Mannheimer Versicherung AG
     </p>
   </div>
-  <hr class="border border-primary mb-x1 md:mb-x0p5" />
+  <hr class="border md:border-x0p1 border-primary mb-x1 md:mb-x0p5" />
   <div class="md:flex mb-x1 md:mb-x0p5">
     <nav class="flex-1 ">
       <a href="/impressum">Impressum</a>
@@ -44,5 +44,5 @@
       Versicherungsbedingungen
     </a>
   </div>
-  <hr class="border border-primary " />
+  <hr class="border md:border-x0p1 border-primary " />
 </footer>

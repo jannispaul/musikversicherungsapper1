@@ -67,11 +67,11 @@
   </div>
   <div class="shape hidden md:block" />
   <div class="z-20 overflow-hidden image-drums relative hidden md:inline-block">
-    <Image src="images/drums.jpg" />
+    <Image src="images/drums.jpg" alt="" />
   </div>
   <div
     class="z-30 overflow-hidden image-guitar relative hidden md:inline-block">
-    <Image src="images/guitar.jpg" />
+    <Image src="images/guitar.jpg" alt="" />
   </div>
 
 </section>

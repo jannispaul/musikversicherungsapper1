@@ -82,6 +82,13 @@ module.exports = {
       },
       variants: {
         margin: ["responsive", "odd"]
+      },
+      borderWidth: {
+        default: "0.3vw",
+        x0p1: "0.18vw",
+        x0p2: "1vw",
+        x0p3: "1vw",
+        x0p4: "1vw"
       }
     }
   },

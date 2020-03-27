@@ -81,9 +81,10 @@
           </div>
           <a
             href="anfrage"
-            class="inline-block md:text-x0p5 px-4 py-2 leading-none border-2
-            text-primary border-primary hover:border-transparent
-            hover:text-light hover:bg-primary mt-4 md:mt-0">
+            class="inline-block md:text-x0p5 px-x0p5 py-x0p25 leading-none
+            border md:border-x0p1 text-primary border-primary
+            hover:border-transparent hover:text-light hover:bg-primary mt-4
+            md:mt-0">
             Jetzt anfragen
           </a>
         </div>
