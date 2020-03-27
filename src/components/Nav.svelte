@@ -24,7 +24,7 @@
   }
 </style>
 
-<header class="sticky w-full z-10 top-0 ">
+<header class="w-full z-10 top-0 sticky">
   <a
     href="#main"
     class="skip-to-main absolute overflow-hidden z-0 w-1 h-1 text-x2 md:text-x1">

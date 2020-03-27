@@ -7,7 +7,7 @@
   }
 </style>
 
-<header class="sticky w-full z-10 top-0 py-x1 md:py-x0p5 px-x1p5">
+<header class="w-full z-10 top-0 py-x1 md:py-x0p5 px-x1p5">
   <a rel="prefetch" href="/" class="text-primary md:text-x0p5">
     <strong>
       Musikversicherung

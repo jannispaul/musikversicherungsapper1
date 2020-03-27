@@ -136,7 +136,6 @@
     min-height: fit-content;
     padding: 1vw 1.5vw;
     margin-bottom: 2vw;
-    /* background: white; */
     border: 0.2vw solid #6b46c1;
     border-radius: 0;
   }
@@ -297,7 +296,7 @@
         <h2 class="text-x3 md:text-x2 text-primary mb-x1">
           Persönliche Informationen
         </h2>
-        <div class="grid grid-cols-2 gap-x0p5">
+        <div class="grid md:grid-cols-2 gap-x0p5">
           <label class="inline-flex flex-col ">
             Vorname
             <input
