@@ -1,12 +1,11 @@
 <script>
-  export let reviewData;
-
+  export let reviewData; // Data passed from index.svelte
   import Image from "svelte-image";
   import StarRating from "../StarRating.svelte";
 
   let style = {
-    styleStarWidth: 50,
-    styleEmptyStarColor: "#EE97CC",
+    styleStarWidth: 20,
+    // styleEmptyStarColor: "#EE97CC"
     styleFullStarColor: "#DB0086"
   };
 </script>
@@ -56,18 +55,6 @@
       height: 100%;
       width: 100%;
     }
-    /* .reviews p {
-      width: 0;
-      opacity: 0;
-      transition: all 500ms;
-      white-space: nowrap;
-      overflow: hidden;
-    } */
-    /* .reviews:hover p {
-      opacity: 1;
-      width: 12.5vw;
-      transition: all 400ms;
-    } */
   }
 </style>
 
@@ -78,7 +65,10 @@
       class="w-auto inline-flex text-secondary bg-secondary-light py-x0p5 px-x1
       mt-x1 md:mt-0 md:py-x0p25 md:px-x0p5 md:order-1 md:items-center
       md:hover:bg-secondary-light-hover">
-      <StarRating rating={reviewData.averageRating} {style} />
+      <StarRating
+        rating={reviewData.averageRating}
+        styleStarWidth="50"
+        {style} />
       <!-- <p class="text-x2 md:text-x0p5 transition duration-500 ease-in-out "> -->
       <p class="text-x2 md:text-x0p5">
         &nbsp; von {reviewData.count} Bewertungen

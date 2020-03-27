@@ -4,7 +4,7 @@
   export let rating = 0;
   export let isIndicatorActive = false;
   export let style = {
-    styleStarWidth: 50,
+    styleStarWidth: 10,
     styleEmptyStarColor: "#737373",
     styleFullStarColor: "#ffd219"
   };
@@ -12,6 +12,9 @@
   let emptyStar = 0;
   let fullStar = 5;
   let totalStars = 5;
+  // let styleFullStarColor = "#ffd219";
+  // let styleStarWidth = 50;
+
   let stars = [];
 
   function getStarPoints() {
@@ -111,8 +114,9 @@
   <div class="star-rating">
     {#each stars as star}
       <svg
-        viewBox="0 0 50 50"
-        class="star-svg w-x1 md:w-x0p5 lg:w-x0p75"
+        viewBox="0 0 {style.styleStarWidth}
+        {style.styleStarWidth}"
+        class="star-svg w-x1 md:w-stars-md lg:w-x0p75"
         style="fill: url(#gradient{star.raw});">
         <polygon points={getStarPoints()} style="" />
         <defs>

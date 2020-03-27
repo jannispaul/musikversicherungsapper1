@@ -71,7 +71,8 @@ module.exports = {
         x24: "calc(100vw * 24 / 27)",
         x25: "calc(100vw * 25 / 27)",
         x26: "calc(100vw * 26 / 27)",
-        x27: "calc(100vw * 27 / 27)"
+        x27: "calc(100vw * 27 / 27)",
+        "stars-md": "calc(100vw * 0.4/ 27)"
       },
       margin: {
         "-2": "-2px"
