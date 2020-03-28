@@ -11,8 +11,13 @@
 </script>
 
 <style>
+  section {
+    background: linear-gradient(248.64deg, #412b75 4.06%, #6b46c1 94.06%);
+  }
+
   @media (min-width: 768px) {
     section {
+      background: none;
       display: grid;
       grid-template-columns: calc(100vw * 1.5 / 27) repeat(24, 1fr) calc(
           100vw * 1.5 / 27
@@ -40,7 +45,7 @@
 </style>
 
 <section
-  class="p-x1p5 py-x3 md:p-0 w-100 bg-primary md:bg-light md:grid text-light"
+  class="p-x1p5 py-x3 md:p-0 w-100 bg-gradient md:bg-light md:grid text-light"
   id="reviews">
   <div class="content relative">
     <h2

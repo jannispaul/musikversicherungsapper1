@@ -17,6 +17,7 @@
   import RecentReviews from "../components/home/4RecentReviews.svelte";
   import MuchMore from "../components/home/5MuchMore.svelte";
   import NoDeductible from "../components/home/6NoDeductible.svelte";
+  import InstrumentsAndMore from "../components/home/8InstrumentsAndMore.svelte";
 
   // let headline = "Weit mehr als nur eine Hausratdeckung";
   // let paragraph1 =
@@ -50,4 +51,5 @@
   <MuchMore {...content1} headlineColor="text-secondary" />
   <NoDeductible />
   <MuchMore {...content2} />
+  <InstrumentsAndMore />
 </Layout>

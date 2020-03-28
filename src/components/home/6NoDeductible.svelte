@@ -46,12 +46,12 @@
     <Image src="images/drums.jpg" alt="" />
   </div>
 
-  <div class="content p-x1 text-light md:relative md:z-10 md:flex flex-col">
+  <div class="content md:p-x1 text-light md:relative md:z-10 md:flex flex-col">
     <h3
       class="text-x6 md:text-x1 mb-x1 leading-tight md:mb-x0p5 font-medium
       whitespace-no-wrap">
       Keine
-      <wbr />
+      <br class="md:hidden" />
       Selbstbeteiligung
     </h3>
     <p class="text-x2 mb-x1 md:text-x0p5 md:mb-0">
