@@ -122,23 +122,22 @@
         <defs>
           <linearGradient id="gradient{star.raw}">
             <stop
-              id="stop1"
               offset={star.percent}
               stop-opacity="1"
               stop-color={getFullFillColor(star)}
-              class="star-svg" />
+              class="star-svg stop1" />
             <stop
-              id="stop2"
+              class="stop2"
               offset={star.percent}
               stop-opacity="0"
               stop-color={getFullFillColor(star)} />
             <stop
-              id="stop3"
+              class="stop3"
               offset={star.percent}
               stop-opacity="1"
               stop-color={style.styleEmptyStarColor} />
             <stop
-              id="stop4"
+              class="stop4"
               offset="100%"
               stop-opacity="1"
               stop-color={style.styleEmptyStarColor} />
