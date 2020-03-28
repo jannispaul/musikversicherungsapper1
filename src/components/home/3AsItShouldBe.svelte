@@ -3,7 +3,9 @@
 </script>
 
 <section class="md:relative ">
-  <div class=" p-x1p5 bg-secondary text-white md:mx-x1p5 md:relative md:z-10">
+  <div
+    class=" px-x1p5 py-x3 md:p-x1p5 bg-secondary text-white md:mx-x1p5
+    md:relative md:z-10">
     <h3
       class="text-x5 md:text-x1p5 mb-x1 leading-tight md:mb-x0p5 font-medium
       whitespace-no-wrap">

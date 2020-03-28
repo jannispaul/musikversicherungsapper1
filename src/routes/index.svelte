@@ -31,7 +31,7 @@
       "Das kann zum Beispiel ein Sturz, Umfallen, ein Transportschaden – oder ein Verlust durch Diebstahl sein. In der Equipmentversicherung sind darüber hinaus auch Risiken gedeckt, die bei elektronischen Instrumenten und Geräten von Bedeutung sind – zum Beispiel Überspannungsschäden."
   };
   let content2 = {
-    headline: "Für Hobby- und Berufsmusiker",
+    headline: "Für Hobby- & Berufsmusiker",
     paragraph1:
       "Es macht keinen Unterschied, ob Du Hobby- oder Berufsmusiker bist oder deine Kinder die Instrumente nutzen. SINFONIMA und I’M SOUND schützen unabhängig davon immer gleich gut.",
     paragraph2:

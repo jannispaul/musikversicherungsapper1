@@ -48,9 +48,11 @@
 
   <div class="content p-x1 text-light md:relative md:z-10 md:flex flex-col">
     <h3
-      class="text-x5 md:text-x1 mb-x1 leading-tight md:mb-x0p5 font-medium
+      class="text-x6 md:text-x1 mb-x1 leading-tight md:mb-x0p5 font-medium
       whitespace-no-wrap">
-      Keine Selbstbeteiligung
+      Keine
+      <wbr />
+      Selbstbeteiligung
     </h3>
     <p class="text-x2 mb-x1 md:text-x0p5 md:mb-0">
       Mit einer Instrumentenversicherung müssen Sie sich nach einer Beschädigung
