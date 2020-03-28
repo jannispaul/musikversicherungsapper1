@@ -10,10 +10,17 @@
   //   paragraph2: ""
   // };
   export let headline;
-  export let paragraph1;
-  export let paragraph2;
+  export let paragraph;
   export let headlineColor = "text-primary";
 </script>
+
+<style>
+  @media (min-width: 768px) {
+    .col-2 {
+      column-count: 2;
+    }
+  }
+</style>
 
 <section class="px-x1p5 py-x3 md:flex">
   <h2
@@ -22,8 +29,7 @@
     {headline}
   </h2>
   <div class="flex-2 col-2 text-x2 md:flex md:text-x0p5 break-normal">
-    <p class="flex-1 md:mr-x0p5" {headlineColor}>{paragraph1}</p>
-    <p class="flex-1">{paragraph2}</p>
+    <p class="col-2">{paragraph}</p>
   </div>
 
 </section>
