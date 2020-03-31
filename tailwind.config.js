@@ -17,9 +17,9 @@ module.exports = {
         body: ["Space Grotesk", "Helvetica Neue", "Helvetica"]
       },
       fontSize: {
-        x0p25: "min(max(12px, 1.3vw), 40px)",
-        x0p5: "min(max(14px, 1.5vw), 40px)",
-        x0p75: "min(max(16px, 1.75vw), 60px)",
+        x0p25: "1.3vw",
+        x0p5: "1.5vw",
+        x0p75: "1.75vw",
         // x0p5: "1.5vw;",
         // x1: "calc(9.8px + (14 - 9.8) * ((100vw - 320px) / (2560 - 320)))",
         x1: "2vw;",
@@ -31,10 +31,10 @@ module.exports = {
         x3: "6vw",
         // x4: "calc(18.8px + (85.32 - 18.8) * ((100vw - 320px) / (2560 - 320)))",
         x4: "8vw",
-        x5: "calc(16px + (128 - 16) * ((100vw - 320px) / (2560 - 320)))",
+        x5: "5vw",
         x6:
           "calc(24.32px + (194.56 - 24.32) * ((100vw - 320px) / (2560 - 320)))",
-        x7: "min(max(33px, 10vw), 150px)",
+        x7: "10vw",
         // "calc(36.48px + (291.84 - 36.48) * ((100vw - 320px) / (2560 - 320)))",
         x8:
           "calc(54.72px + (437.76 - 54.72) * ((100vw - 320px) / (2560 - 320)))",
