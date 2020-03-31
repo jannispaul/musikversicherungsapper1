@@ -1,7 +1,7 @@
 <script>
   export let reviewData; // Data passed from index.svelte
   import ReviewItemReduced from "../ReviewItemReduced.svelte";
-  import Image from "svelte-image";
+  import Image from "../Image.svelte";
 
   let style = {
     styleStarWidth: 20,

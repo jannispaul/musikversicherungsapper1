@@ -10,7 +10,6 @@ import getPreprocessor from "svelte-preprocess";
 import postcss from "rollup-plugin-postcss";
 import PurgeSvelte from "purgecss-from-svelte";
 import path from "path";
-import image from "svelte-image";
 
 const mode = process.env.NODE_ENV;
 const dev = mode === "development";
@@ -56,9 +55,6 @@ const preprocess = [
         plugins: postcssPlugins() // Don't need purgecss because Svelte handle unused css for you.
       }
     }
-  }),
-  image({
-    placeholder: "trace"
   })
 ];
 
@@ -75,11 +71,7 @@ export default {
         dev,
         hydratable: true,
         emitCss: true,
-        preprocess: {
-          ...image({
-            placeholder: "trace"
-          })
-        }
+        preprocess: {}
       }),
       resolve({
         browser: true,
@@ -130,11 +122,7 @@ export default {
       svelte({
         generate: "ssr",
         dev,
-        preprocess: {
-          ...image({
-            placeholder: "trace"
-          })
-        }
+        preprocess: {}
       }),
       resolve({
         dedupe

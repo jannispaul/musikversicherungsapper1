@@ -1,5 +1,5 @@
 <script>
-  import Image from "svelte-image";
+  // import Image from "../Image.svelte";
 </script>
 
 <section class="p-x1p5 mb-x2">

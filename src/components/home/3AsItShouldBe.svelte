@@ -1,5 +1,5 @@
 <script>
-  import Image from "svelte-image";
+  import Image from "../Image.svelte";
 </script>
 
 <section class="md:relative ">
@@ -21,6 +21,6 @@
     </p>
   </div>
   <div class="flex image overflow-hidden md:-mt-x6 md:relative md:z-0">
-    <Image src="images/sax.jpg" class="z-10 " />
+    <Image src="images/sax.jpg" alt="" class="z-10 " />
   </div>
 </section>
