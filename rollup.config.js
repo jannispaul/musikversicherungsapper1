@@ -10,6 +10,7 @@ import getPreprocessor from "svelte-preprocess";
 import postcss from "rollup-plugin-postcss";
 import PurgeSvelte from "purgecss-from-svelte";
 import path from "path";
+import polyfill from "rollup-plugin-polyfill";
 
 const mode = process.env.NODE_ENV;
 const dev = mode === "development";
@@ -78,8 +79,6 @@ export default {
         dedupe
       }),
       commonjs(),
-      // Added for backwards compatibility
-      polyfill(["@webcomponents/webcomponentsjs"]),
       legacy &&
         babel({
           extensions: [".js", ".mjs", ".html", ".svelte"],
@@ -105,6 +104,8 @@ export default {
             ]
           ]
         }),
+      // Added for backwards compatibility
+      polyfill(["@webcomponents/webcomponentsjs"]),
 
       !dev &&
         terser({
@@ -131,13 +132,12 @@ export default {
         dedupe
       }),
       commonjs(),
-      // Added for backwards compatibility
-      polyfill(["@webcomponents/webcomponentsjs"]),
       postcss({
         plugins: postcssPlugins(!dev),
         extract: path.resolve(__dirname, "./static/global.css")
       })
     ],
+
     external: Object.keys(pkg.dependencies).concat(
       require("module").builtinModules ||
         Object.keys(process.binding("natives"))
