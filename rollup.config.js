@@ -78,7 +78,8 @@ export default {
         dedupe
       }),
       commonjs(),
-
+      // Added for backwards compatibility
+      polyfill(["@webcomponents/webcomponentsjs"]),
       legacy &&
         babel({
           extensions: [".js", ".mjs", ".html", ".svelte"],
@@ -130,6 +131,8 @@ export default {
         dedupe
       }),
       commonjs(),
+      // Added for backwards compatibility
+      polyfill(["@webcomponents/webcomponentsjs"]),
       postcss({
         plugins: postcssPlugins(!dev),
         extract: path.resolve(__dirname, "./static/global.css")
