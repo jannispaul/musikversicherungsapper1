@@ -25,28 +25,13 @@
 	     because `app/client.js` references it -->
     <div id="sapper">%sapper.html%</div>
 
-    <!-- Sapper creates a <script> tag containing `app/client.js`
-	     and anything else it needs to hydrate the app and
-		 initialise the router -->
-    <!-- Sapper creates a <script> tag containing `app/client.js`
-  	     and anything else it needs to hydrate the app and
-  			 initialise the router -->
-    <!-- <script crossorigin="anonymous" src="https://unpkg.com/blob-polyfill@4.0.20190430/Blob.js"></script>
-  			 <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.js?features=Object.keys,Array.prototype.keys,Array.from,String.prototype.startsWith,Map,URL,Promise"></script>
-  			 <script crossorigin="anonymous" src="https://unpkg.com/whatwg-fetch@3.0.0"></script> -->
-    <script>
-      if (
-        !window.Promise ||
-        ![].includes ||
-        !Object.assign ||
-        !window.Map ||
-        !window.fetch
-      ) {
-        document["wr" + "ite"](
-          '<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch,Array.prototype.find,Object.values"><\/script>'
-        );
-      }
-    </script>
+    <!-- generated via npm run build && npx create-polyfill-service-url analyse --file public/bundle.js -->
+
+    <script
+      crossorigin="anonymous"
+      src="https://cdn.polyfill.io/v3/polyfill.min.js?features=Array.from,Array.isArray,Array.prototype.entries,Array.prototype.fill,Array.prototype.filter,Array.prototype.forEach,Array.prototype.indexOf,Array.prototype.keys,Array.prototype.map,ArrayBuffer,console,DataView,Date.prototype.toISOString,document,fetch,Function.prototype.bind,globalThis,Map,Object.create,Object.defineProperties,Object.defineProperty,Object.entries,Object.getOwnPropertyDescriptor,Object.getOwnPropertyDescriptors,Object.getOwnPropertySymbols,Object.getPrototypeOf,Object.keys,Object.setPrototypeOf,Promise,Reflect,Reflect.construct,Set,Symbol,Symbol.iterator,WeakMap,WeakSet"
+    ></script>
+
     %sapper.scripts%
   </body>
 </html>
