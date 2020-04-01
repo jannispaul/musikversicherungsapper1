@@ -78,10 +78,10 @@ export default {
         dedupe
       }),
       commonjs(),
-      legacy &&
+      !legacy &&
         babel({
           extensions: [".js", ".mjs", ".html", ".svelte"],
-          runtimeHelpers: true,
+          // runtimeHelpers: true,
           exclude: ["node_modules/@babel/**", "node_modules/core-js/**"],
           presets: [
             [
@@ -95,11 +95,12 @@ export default {
           ],
           plugins: [
             "@babel/plugin-syntax-dynamic-import",
+            "@babel/plugin-proposal-object-rest-spread",
             [
-              "@babel/plugin-transform-runtime",
+              ("@babel/plugin-transform-runtime",
               {
                 useESModules: true
-              }
+              })
             ]
           ]
         }),
