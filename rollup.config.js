@@ -10,7 +10,6 @@ import getPreprocessor from "svelte-preprocess";
 import postcss from "rollup-plugin-postcss";
 import PurgeSvelte from "purgecss-from-svelte";
 import path from "path";
-import polyfill from "rollup-plugin-polyfill";
 
 const mode = process.env.NODE_ENV;
 const dev = mode === "development";
@@ -104,8 +103,6 @@ export default {
             ]
           ]
         }),
-      // Added for backwards compatibility
-      polyfill(["@webcomponents/webcomponentsjs"]),
 
       !dev &&
         terser({
