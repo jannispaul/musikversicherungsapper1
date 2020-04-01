@@ -2,37 +2,6 @@
   import SingleInstrument from "../../components/SingleInstrument.svelte";
   import { writable } from "svelte/store";
   import { onMount } from "svelte";
-  // import Layout from "./_layout.svelte";
-  // Create store
-  let formData = writable({});
-
-  // Set store to saved formData from localStorage or to defined object
-  function initiateFormData() {
-    formData.set(
-      JSON.parse(localStorage.getItem("formData")) || {
-        redirect: "/vielen-danke",
-        versicherungsTyp: undefined,
-        gesamtWert: undefined,
-        vorname: undefined,
-        nachname: undefined,
-        email: undefined,
-        status: undefined,
-        wohnsitz: "Deutschland",
-        nachricht: undefined,
-        proberaum: undefined,
-        anhanger: undefined,
-        musikerhaftpflicht: undefined,
-        verdientGeld: undefined,
-        instruments: [{ name: "", valueType: "Neuwert", value: "" }]
-      }
-    );
-  }
-  initiateFormData();
-
-  // Subscribe to store to update object saved in localStorage
-  formData.subscribe(formData =>
-    localStorage.setItem("formData", JSON.stringify(formData))
-  );
 
   // Setup variables for multi step form
   let currentTab = 0;
@@ -42,38 +11,76 @@
   let nextTab = () => currentTab++;
   let prevTab = () => currentTab--;
 
-  // Setup function to add an Instrument
-  function addInstrument() {
-    const instrument = {
-      name: "",
-      valueType: "Neuwert",
-      value: ""
-    };
-    $formData.instruments = [...$formData.instruments, instrument];
-  }
-  // function handleSubmit() {};
-  // onMount(
-  function handleSubmit() {
-    var requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify($formData),
-      redirect: "follow"
-    };
+  // Create store
+  let formData = writable({});
 
-    fetch(
-      "https://hook.integromat.com/rv3r5iqg3ivce8h16ld3b3v5h3vs9121",
-      requestOptions
-    )
-      .then(response => response.text())
-      // .then(result => console.log(result))
-      .then(localStorage.removeItem("formData")) // Remove formData from localstorage so form is empty
-      .then(initiateFormData())
-      .catch(error => console.log("error", error));
-  }
-  // );
-
+  // Set focus on Sinfonima when tabbing through the page
   const onFocus = () => ($formData.versicherungsTyp = "SINFONIMA");
+
+  // Initialize functions for onMount
+  function handleSubmit() {}
+  function addInstrument() {}
+
+  // Is wrapped in onMount to execute on client side not during SSR
+  onMount(() => {
+    // Set store to saved formData in localStorage or else to defined object
+    function initiateFormData() {
+      formData.set(
+        JSON.parse(localStorage.getItem("formData")) || {
+          redirect: "/vielen-danke",
+          versicherungsTyp: undefined,
+          gesamtWert: undefined,
+          vorname: undefined,
+          nachname: undefined,
+          email: undefined,
+          status: undefined,
+          wohnsitz: "Deutschland",
+          nachricht: undefined,
+          proberaum: undefined,
+          anhanger: undefined,
+          musikerhaftpflicht: undefined,
+          verdientGeld: undefined,
+          instruments: [{ name: "", valueType: "Neuwert", value: "" }]
+        }
+      );
+    }
+
+    initiateFormData();
+
+    // Subscribe to store to update object saved in localStorage
+    formData.subscribe(formData =>
+      localStorage.setItem("formData", JSON.stringify(formData))
+    );
+
+    // Setup function to add an Instrument
+    function addInstrument() {
+      const instrument = {
+        name: "",
+        valueType: "Neuwert",
+        value: ""
+      };
+      $formData.instruments = [...$formData.instruments, instrument];
+    }
+
+    function handleSubmit() {
+      var requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify($formData),
+        redirect: "follow"
+      };
+
+      fetch(
+        "https://hook.integromat.com/rv3r5iqg3ivce8h16ld3b3v5h3vs9121",
+        requestOptions
+      )
+        .then(response => response.text())
+        // .then(result => console.log(result))
+        .then(localStorage.removeItem("formData")) // Remove formData from localstorage so form is empty
+        .then(initiateFormData())
+        .catch(error => console.log("error", error));
+    }
+  });
 </script>
 
 <style>
@@ -148,12 +155,12 @@
     cursor: pointer;
     position: relative;
   }
-  .toggle > input:focus ~ label {
-    /* outline: -webkit-focus-ring-color auto 5px;
+  /* .toggle > input:focus ~ label { */
+  /* outline: -webkit-focus-ring-color auto 5px;
     outline-color: -webkit-focus-ring-color;
     outline-style: auto;
     outline-width: 5px; */
-  }
+  /* } */
   :global(label.active) {
     opacity: 1;
   }
