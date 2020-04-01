@@ -72,6 +72,8 @@
       .catch(error => console.log("error", error));
   }
   // );
+
+  const onFocus = () => ($formData.versicherungsTyp = "SINFONIMA");
 </script>
 
 <style>
@@ -147,10 +149,10 @@
     position: relative;
   }
   .toggle > input:focus ~ label {
-    outline: -webkit-focus-ring-color auto 5px;
+    /* outline: -webkit-focus-ring-color auto 5px;
     outline-color: -webkit-focus-ring-color;
     outline-style: auto;
-    outline-width: 5px;
+    outline-width: 5px; */
   }
   :global(label.active) {
     opacity: 1;
@@ -232,12 +234,15 @@
           <h2 class="text-x3 md:text-x2 text-primary mb-x1 leading-tighter">
             Was möchtest Du versichern?
           </h2>
-          <div class="toggle inline md:flex md:items-stretch overflow-hidden">
+          <div
+            class="relative toggle inline md:flex md:items-stretch
+            overflow-hidden">
             <input
               type="radio"
               bind:group={$formData.versicherungsTyp}
               value="SINFONIMA"
-              id="SINFONIMA" />
+              id="SINFONIMA"
+              on:focus={onFocus} />
             <label
               for="SINFONIMA"
               class="block p-x1 md:py-x0p25 md:px-x0p5 flex-1 flex md:mr-x1
