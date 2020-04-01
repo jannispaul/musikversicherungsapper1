@@ -82,7 +82,7 @@ export default {
         babel({
           extensions: [".js", ".mjs", ".html", ".svelte"],
           // runtimeHelpers: true,
-          exclude: ["node_modules/@babel/**", "node_modules/core-js/**"],
+          exclude: ["node_modules/@babel/**"],
           presets: [
             [
               "@babel/preset-env",
@@ -95,8 +95,12 @@ export default {
           ],
           plugins: [
             "@babel/plugin-syntax-dynamic-import",
-            "@babel/plugin-proposal-object-rest-spread",
             [
+              "@babel/plugin-proposal-object-rest-spread",
+              {
+                useESModules: true
+              }
+            ][
               ("@babel/plugin-transform-runtime",
               {
                 useESModules: true
