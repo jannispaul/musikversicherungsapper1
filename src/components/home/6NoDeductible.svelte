@@ -55,7 +55,7 @@
       Selbstbeteiligung
     </h3>
     <p class="text-x2 mb-x1 md:text-x0p5 md:mb-0">
-      Mit einer Instrumentenversicherung müssen Sie sich nach einer Beschädigung
+      Mit einer Instrumentenversicherung musst Du Dir nach einer Beschädigung
       keine Sorgen um die Reparaturkosten machen. Auch die Kosten für ein
       Leihinstrument während der Reparatur übernimmt die
       Instrumentenversicherung. Nach einem Verlust, zum Beispiel durch

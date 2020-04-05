@@ -26,7 +26,11 @@
       Generalagentur der Mannheimer Versicherung AG
     </p>
     <p class="flex-1 ">
-      SINFONIMA® und IM SOUND® sind
+      SINFONIMA
+      <sup>®</sup>
+      und IM SOUND
+      <sup>®</sup>
+      sind
       <br />
       eingetragene Marken der
       <br />

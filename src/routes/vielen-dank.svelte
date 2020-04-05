@@ -30,7 +30,7 @@
         </h2>
         In Kürze sende ich Dir ein individuelles Angebot per E-Mail zu. Nehme es
         per E-Mail an und genieße sofort den SINFONIMA® Allgefahrenschutz für
-        deine Instrumente.
+        Deine Instrumente.
       </div>
     </div>
   </section>

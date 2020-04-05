@@ -1,14 +1,4 @@
 <script>
-  // let headline = "Weit mehr als nur eine Hausratdeckung";
-  // let paragraph1 =
-  //   "Das kann zum Beispiel ein Sturz, Umfallen, ein Transportschaden – oder ein Verlust durch Diebstahl sein. In der Equipmentversicherung sind darüber hinaus auch Risiken gedeckt, die bei elektronischen Instrumenten und Geräten von Bedeutung sind – zum Beispiel Überspannungsschäden.";
-  // let paragraph2 =
-  //   "Das kann zum Beispiel ein Sturz, Umfallen, ein Transportschaden – oder ein Verlust durch Diebstahl sein. In der Equipmentversicherung sind darüber hinaus auch Risiken gedeckt, die bei elektronischen Instrumenten und Geräten von Bedeutung sind – zum Beispiel Überspannungsschäden.";
-  // export let content = {
-  //   headline: "",
-  //   paragraph1: "",
-  //   paragraph2: ""
-  // };
   export let headline;
   export let paragraph;
   export let headlineColor = "text-primary";
