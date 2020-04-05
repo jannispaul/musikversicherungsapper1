@@ -17,10 +17,6 @@
   // Set focus on Sinfonima when tabbing through the page
   const onFocus = () => ($formData.versicherungsTyp = "SINFONIMA");
 
-  // Initialize functions for onMount
-  function handleSubmit() {}
-  function addInstrument() {}
-
   // Is wrapped in onMount to execute on client side not during SSR
   onMount(() => {
     // Set store to saved formData in localStorage or else to defined object
@@ -51,36 +47,37 @@
     formData.subscribe(formData =>
       localStorage.setItem("formData", JSON.stringify(formData))
     );
-
-    // Setup function to add an Instrument
-    function addInstrument() {
-      const instrument = {
-        name: "",
-        valueType: "Neuwert",
-        value: ""
-      };
-      $formData.instruments = [...$formData.instruments, instrument];
-    }
-
-    function handleSubmit() {
-      var requestOptions = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify($formData),
-        redirect: "follow"
-      };
-
-      fetch(
-        "https://hook.integromat.com/rv3r5iqg3ivce8h16ld3b3v5h3vs9121",
-        requestOptions
-      )
-        .then(response => response.text())
-        // .then(result => console.log(result))
-        .then(localStorage.removeItem("formData")) // Remove formData from localstorage so form is empty
-        .then(initiateFormData())
-        .catch(error => console.log("error", error));
-    }
   });
+
+  // Setup function to add an Instrument
+  function addInstrument() {
+    const instrument = {
+      name: "",
+      valueType: "Neuwert",
+      value: ""
+    };
+    $formData.instruments = [...$formData.instruments, instrument];
+  }
+
+  // Send data to integromat webhook on submit
+  async function handleSubmit() {
+    var requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify($formData),
+      redirect: "follow"
+    };
+
+    const response = await fetch(
+      "https://hook.integromat.com/rv3r5iqg3ivce8h16ld3b3v5h3vs9121",
+      requestOptions
+    )
+      .then(response => response.text())
+      // .then(result => console.log(result))
+      .then(localStorage.removeItem("formData")) // Remove formData from localstorage so form is empty
+      .then(initiateFormData())
+      .catch(error => console.log("error", error));
+  }
 </script>
 
 <style>
@@ -408,10 +405,9 @@
 
             <div class="grid gap-x0p5 grid-cols-2 md:flex md:justify-center">
               <button
-                type="submit"
                 class="primary-button order-2"
                 disabled={!termsAccepted}
-                on:submit|preventDefault={handleSubmit}>
+                on:click={handleSubmit}>
                 Absenden
               </button>
               <button
@@ -570,10 +566,9 @@
             </label>
             <div class="grid gap-x0p5 grid-cols-2 md:flex md:justify-center">
               <button
-                type="submit"
                 class="primary-button order-2"
                 disabled={!termsAccepted}
-                on:submit|preventDefault={handleSubmit}>
+                on:click={handleSubmit}>
                 Absenden
               </button>
               <button
