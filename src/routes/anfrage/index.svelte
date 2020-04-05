@@ -31,6 +31,7 @@
           email: undefined,
           status: undefined,
           wohnsitz: "Deutschland",
+          andererwohnsitz: undefined,
           nachricht: undefined,
           proberaum: undefined,
           anhanger: undefined,
@@ -234,7 +235,7 @@
       <!-- One "tab" for each step in the form: -->
       {#if currentTab == 0}
         <div class="tab lg:w-4/6 lg:mx-auto">
-          <p class="text-x0p5 md:text-x0p25">Schritt 1 von 3</p>
+          <p class="text-x1p5 md:text-x0p25">Schritt 1 von 3</p>
           <h2 class="text-x3 md:text-x2 text-primary mb-x1 leading-tighter">
             Was möchtest Du versichern?
           </h2>
@@ -301,11 +302,18 @@
       {/if}
       {#if currentTab == 1}
         <div class="tab flex flex-col lg:w-4/6 m-auto">
-          <p class="text-x0p5 md:text-x0p25">Schritt 2 von 3</p>
+          <p class="text-x1p5 md:text-x0p25">Schritt 2 von 3</p>
           <h2 class="text-x3 md:text-x2 text-primary mb-x1">
             Persönliche Informationen
           </h2>
           <div class="grid md:grid-cols-2 gap-x0p5">
+            <label class="inline-flex flex-col ">
+              Anrede
+              <select bind:value={$formData.anrede}>
+                <option value="Frau">Frau</option>
+                <option value="Herr">Herr</option>
+              </select>
+            </label>
             <label class="inline-flex flex-col ">
               Vorname
               <input
@@ -314,18 +322,24 @@
                 required
                 autofocus />
             </label>
-            <label class="inline-flex flex-col">
+            <label class="inline-flex flex-col ">
               Nachname
               <input name="nachname" bind:value={$formData.nachname} required />
             </label>
-            <label class="inline-flex flex-col">
+            <label class="inline-flex flex-col ">
               E-Mail
               <input name="email" bind:value={$formData.email} required />
             </label>
-            <label class="inline-flex flex-col">
+            <label class="inline-flex flex-col ">
               Status
               <select bind:value={$formData.status}>
                 <option value="Hobbymusiker">Hobbymusiker</option>
+                <option value="Eltern von Musikschüler/in">
+                  Eltern von Musikschüler/in
+                </option>
+                <option value="Musiklehrer">Musiklehrer</option>
+                <option value="Musikschüler/in">Musikschüler/in</option>
+                <option value="Musikstudent">Musikstudent</option>
                 <option value="Berufsmusiker (selbstständig)">
                   Berufsmusiker (selbstständig)
                 </option>
@@ -341,10 +355,81 @@
                 <option value="Musikstudent">Musikstudent</option>
               </select>
             </label>
-            <label class="inline-flex flex-col">
+            <label class="inline-flex flex-col ">
               Wohnsitz in
-              <input name="email" bind:value={$formData.wohnsitz} required />
+              <!-- <select bind:value={$formData.wohnsitz}>
+                <option value="Deutschland">Deutschland</option>
+                <option value="Österreich">Österreich</option>
+                <option value="Schweiz">Schweiz</option>
+                <option value="AnderesLand">Anderes Land</option>
+              </select> -->
+
+              <input
+                name="email"
+                bind:value={$formData.wohnsitz}
+                required
+                list="laender" />
+              <datalist id="laender">
+                <option value="Deutschland" />
+                <option value="Österreich" />
+                <option value="Schweiz" />
+              </datalist>
+
             </label>
+            <label class="inline-flex flex-col ">
+              Mitgliedschaft in einer Organisation
+              <select bind:value={$formData.organisation}>
+                <option value="kein Mitglied">kein Mitglied</option>
+                <option value="Bund Dt. Zupfmusiker">
+                  Bund Dt. Zupfmusiker
+                </option>
+                <option value="Student/in an deutschen Musikhochschulen">
+                  Student/in an deutschen Musikhochschulen
+                </option>
+                <option value="Deutsche Orchestervereinigung (DOV)">
+                  Deutsche Orchestervereinigung (DOV)
+                </option>
+                <option value="Deutscher Musikrat">Deutscher Musikrat</option>
+                <option value="Deutscher Tonkünstlerverband (DTKV)">
+                  Deutscher Tonkünstlerverband (DTKV)
+                </option>
+                <option value="Jeunesse Musicales Deutschland">
+                  Jeunesse Musicales Deutschland
+                </option>
+                <option value="Jugend musiziert">Jugend musiziert</option>
+                <option value="Musikalische Jugend Deutschlands">
+                  Musikalische Jugend Deutschlands
+                </option>
+                <option value="Organisation: Lehrer an einer VDM-Musikschule">
+                  Organisation: Lehrer an einer VDM-Musikschule
+                </option>
+                <option
+                  value="Verband Deutscher Musikerzieher und konzertierender
+                  Künstler (VDMK)"
+                  class="">
+                  VDMK - Verband Deutscher Musikerzieher...
+                </option>
+                <option value="Verband Deutscher Schulmusiker">
+                  Verband Deutscher Schulmusiker
+                </option>
+                <option value="Verband Deutscher Tonmeister">
+                  Verband Deutscher Tonmeister
+                </option>
+                <option value="Verdi - Fachverband Musik">
+                  Verdi - Fachverband Musik
+                </option>
+                <option value="Viola Gesellschaft">Viola Gesellschaft</option>
+                <option value="Sonstige">Sonstige</option>
+              </select>
+            </label>
+            <!-- {#if $formData.wohnsitz === 'AnderesLand'}
+              <label class="inline-flex flex-col w-1/2">
+                <input
+                  name="AnderesLand"
+                  bind:value={$formData.andererwohnsitz}
+                  placeholder="Wohnsitz" />
+              </label> 
+            {/if}-->
           </div>
         </div>
         <div class="grid gap-x0p5 grid-cols-2 md:flex md:justify-center">
@@ -367,7 +452,7 @@
       {/if}
       {#if currentTab == 2}
         <div class="tab lg:w-4/6 lg:mx-auto">
-          <p class="text-x0p5 md:text-x0p25">Schritt 3 von 3</p>
+          <p class="text-x1p5 md:text-x0p25">Schritt 3 von 3</p>
           {#if $formData.versicherungsTyp == 'SINFONIMA'}
             <h2 class="text-x3 md:text-x2 text-primary mb-x1">
               Deine Instrumente
@@ -381,7 +466,7 @@
               type="button"
               class="t-x1 p-x1 w-full -mt-x2 add-instrument"
               on:click={addInstrument}>
-              Weiteres Instrument hinzufügen
+              Weiteres Instrument / Zubehör hinzufügen
             </button>
             <label for="" class="mt-x2 block">
               Anmerkungen & Fragen
