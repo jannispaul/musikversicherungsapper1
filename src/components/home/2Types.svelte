@@ -2,15 +2,22 @@
   // import Image from "../Image.svelte";
 </script>
 
-<section class="p-x1p5 mb-x2">
-  <p class="mb-x1">Die perfekte Versicherung für den richtigen Zweck</p>
+<section class="text-x2 md:text-x1 text-white py-x3 px-x1p5 md:p-x1p5">
+  <p class="mb-x2 md:mb-x1 md:text-center text-black">
+    Wähle die richtige Versicherung für Dich
+  </p>
   <div class="md:flex">
-    <div class="md:flex-1 mb-x2">
-      <h2 class="text-secondary uppercase text-x7 md:text-x5 ">Sinfonima®</h2>
+    <div
+      class="px-x3 py-x2 md:px-x1 md:py-x1 bg-secondary mb-x1p5 md:mb-0 md:mr-x1">
+      <h2 class="text-white uppercase text-x7 md:text-x5 leading-tighter">
+        Sinfonima®
+      </h2>
       <p>Instrumentenversicherung für klassische Instrumente</p>
     </div>
-    <div class="md:flex-1">
-      <h2 class="text-secondary uppercase text-x7 md:text-x5 ">I’m sound®</h2>
+    <div class="px-x3 py-x2 md:px-x1 md:py-x1 bg-primary">
+      <h2 class="text-white uppercase text-x7 md:text-x5 leading-tighter ">
+        I’m sound®
+      </h2>
       <p>Rundumschutz für elektronisches Musikequipment</p>
     </div>
   </div>
