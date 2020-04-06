@@ -1,7 +1,19 @@
+
+# [build]
+#   command = "npm run export"
+#   publish = "_sapper/_export"
+#   NODE_ENV = "10.15.3"
+
+
+# [dev]
+#   command = "npm run dev"
+
+
 # [[redirects]]
 #   from = "https://musikversicherung.netlify.com"
 #   to = "https://musikversicherung.com/:splat"
 #   status = 301
+
 
 [[redirects]]
   from = "/images/tiny/*"
