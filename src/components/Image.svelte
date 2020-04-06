@@ -74,7 +74,7 @@
 
 <!-- <img {src} {alt} /> -->
 <picture class="lazy lazy-initial">
-  <source srcset={src} media="(min-width: 1200px)" />
-  <source srcset={src} media="(min-width: 740px)" />
-  <img {src} {alt} />
+  <source srcset={`/images/tiny/${src}`} media="(min-width: 1200px)" />
+  <source srcset={`/images/tiny/${src}`} media="(min-width: 740px)" />
+  <img src={`/images/tiny/${src}`} {alt} />
 </picture>

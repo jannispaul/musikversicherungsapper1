@@ -35,7 +35,7 @@
     <div
       class="flex -mx-x1p5 md:mx-0 block image overflow-hidden md:-mb-x6
       md:relative md:z-0">
-      <Image src="images/mixer.jpg" class="z-10 " />
+      <Image src="mixer.jpg" class="z-10 " />
     </div>
   </div>
 </section>

@@ -43,7 +43,7 @@
   class="bg-gradient p-x1p5 py-x3 md:p-0 w-100 md:grid text-light"
   id="reviews">
   <div class="hidden md:block image overflow-hidden mh-100%">
-    <Image src="images/drums.jpg" alt="" />
+    <Image src="drums.jpg" alt="" />
   </div>
 
   <div class="content md:p-x1 text-light md:relative md:z-10 md:flex flex-col">
