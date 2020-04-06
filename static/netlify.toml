@@ -1,3 +1,8 @@
+# [[redirects]]
+#   from = "https://musikversicherung.netlify.com"
+#   to = "https://musikversicherung.com/:splat"
+#   status = 301
+
 [[redirects]]
   from = "/images/tiny/*"
   to = "https://musikversicherung.netlify.com/images/:splat?nf_resize=fit&w=20"
