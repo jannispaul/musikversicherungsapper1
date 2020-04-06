@@ -1,0 +1,24 @@
+[[redirects]]
+  from = "/images/tiny/*"
+  to = "https://musikversicherung.netlify.com/images/:splat?nf_resize=fit&w=20"
+  status = 302
+
+[[redirects]]
+  from = "/images/small/*"
+  to = "https://musikversicherung.netlify.com/images/:splat?nf_resize=fit&w=500"
+  status = 302
+
+[[redirects]]
+  from = "/images/medium/*"
+  to = "https://musikversicherung.netlify.com/images/:splat?nf_resize=fit&w=600"
+  status = 302
+
+[[redirects]]
+  from = "/images/large/*"
+  to = "https://musikversicherung.netlify.com/images/:splat?nf_resize=fit&w=700"
+  status = 302
+
+[[redirects]]
+  from = "/images/original/*"
+  to = "https://musikversicherung.netlify.com/images/:splat"
+  status = 302
