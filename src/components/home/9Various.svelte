@@ -3,14 +3,7 @@
 </script>
 
 <style>
-  /* .bg-gradient {
-    background: linear-gradient(248.64deg, #412b75 4.06%, #6b46c1 94.06%);
-  } */
-  @media (min-width: 768px) {
-    .col-2 {
-      column-count: 2;
-    }
-  }
+  
 </style>
 
 <section class="md:relative md:mb-x6">
@@ -32,7 +25,9 @@
       SOUND sind beispielsweise auch Laptops, Tablets und Fotoapparate bestens
       „aufgehoben“.
     </p>
-    <div class="flex -mx-x1p5 md:mx-0 block image md:-mb-x6 md:relative md:z-0">
+    <div
+      class="flex -mx-x1p5 md:mx-0 block image  md:-mb-x6
+      md:relative md:z-0">
       <Image src="mixer.jpg" class="z-10 " />
     </div>
   </div>

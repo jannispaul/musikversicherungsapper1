@@ -29,6 +29,11 @@
     paragraph:
       "Es macht keinen Unterschied, ob Du Hobby- oder Berufsmusiker bist oder Deine Kinder die Instrumente nutzen. SINFONIMA und I’M SOUND schützen unabhängig davon immer gleich gut. Du kannst privat und beruflich genutzte Musikinstrumente versichern. Sammlungen sind ebenso versicherbar wie Instrumente von Schulklassen, Musikschulen, Orchestern, Kapellen, Vereinen und natürlich auch Bands. Auch geliehene Instrumente sind kein Problem."
   };
+  let content3 = {
+    headline: "Egal, wer den Schaden verursacht hat",
+    paragraph:
+      "Versicherungsschutz besteht sowohl dann, wenn der Schaden selbst verursacht, als auch, wenn er von Dritten verschuldet wird. Selbst grob fahrlässig herbeigeführte Schäden bis zu einer Höhe von 2.500 Euro fallen unter den Versicherungsschutz dieser Instrumentenversicherung. Das ist nicht selbstverständlich. Andere Anbieter kürzen bei der Regulierung oder leisten gar nicht. Oft gibt es bei Mitbewerbern keine Leistung, wenn ein Schaden von Familienangehörigen verursacht wird. Für SINFONIMA und I’M SOUND ist das alles kein Problem."
+  };
 </script>
 
 <svelte:head>
@@ -43,4 +48,5 @@
   <NoDeductible />
   <HeadlineAndText {...content2} />
   <InstrumentsAndMore />
+  <HeadlineAndText {...content3} headlineColor="text-secondary" />
 </Layout>
