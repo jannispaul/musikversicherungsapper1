@@ -16,6 +16,12 @@
 
 
 [[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+
+[[redirects]]
   from = "/images/tiny/*"
   to = "https://musikversicherung.netlify.com/images/:splat?nf_resize=fit&w=20"
   status = 302
