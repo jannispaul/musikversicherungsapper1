@@ -18,6 +18,7 @@
   import HeadlineAndText from "../components/home/5HeadlineAndText.svelte";
   import NoDeductible from "../components/home/6NoDeductible.svelte";
   import InstrumentsAndMore from "../components/home/8InstrumentsAndMore.svelte";
+  import Video from "../components/home/11Video.svelte";
 
   let content1 = {
     headline: "Weit mehr als nur eine Hausratdeckung",
@@ -49,4 +50,5 @@
   <HeadlineAndText {...content2} />
   <InstrumentsAndMore />
   <HeadlineAndText {...content3} headlineColor="text-secondary" />
+  <Video />
 </Layout>
