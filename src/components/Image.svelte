@@ -59,7 +59,7 @@
     // Set up the intersection observer to detect when to define
     // and load the real image source
     var options = {
-      rootMargin: "10px",
+      rootMargin: "700px",
       threshold: 1.0
     };
     var observer = new IntersectionObserver(lazyLoad, options);
@@ -75,16 +75,21 @@
 <style>
   picture {
     width: 100%;
+    min-width: 100%;
   }
   picture img {
     width: 100%;
-    transition: filter 0.5s;
+    min-width: 100%;
+    transition: filter 0.4s;
   }
 
-  picture .lazy-initial img {
-    width: calc(100% + 2 * 20px);
+  .lazy-initial img {
+    width: 100%;
+
+    /* width: calc(100% + 2 * 20px);
+    height: calc(100% + 40px); */
     filter: blur(20px);
-    margin: -20px -40px -40px -20px;
+    /* margin: -20px -20px -20px -20px; */
   }
 </style>
 

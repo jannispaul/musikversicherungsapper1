@@ -20,7 +20,7 @@
       Beschädigungs- oder Verlustrisiken abgesichert.
     </p>
   </div>
-  <div class="flex image overflow-hidden md:-mt-x6 md:relative md:z-0">
+  <div class="flex image  md:-mt-x6 md:relative md:z-0">
     <Image src="sax.jpg" alt="" class="z-10 " />
   </div>
 </section>

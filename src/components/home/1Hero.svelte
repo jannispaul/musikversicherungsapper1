@@ -38,7 +38,7 @@
     }
     .image-piano {
       grid-column: 16/23;
-      grid-row: 2/8;
+      grid-row: 2/7;
     }
     .image-mixer {
       grid-column: 17/26;
