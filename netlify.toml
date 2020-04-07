@@ -1,12 +1,12 @@
 
-# [build]
-#   command = "npm run export"
-#   publish = "_sapper/_export"
-#   NODE_ENV = "10.15.3"
+[build]
+  command = "npm run export"
+  publish = "_sapper/_export"
+  NODE_ENV = "10.18.1"
 
 
-# [dev]
-#   command = "npm run dev"
+[dev]
+  command = "npm run dev"
 
 
 # [[redirects]]

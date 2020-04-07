@@ -84,7 +84,7 @@
     localStorage.removeItem("formData");
 
     // Redirect to vielen-dank page
-    window.location.href = "/vielen-dank";
+    window.location.href = "/vielen-dank/";
   }
 </script>
 
