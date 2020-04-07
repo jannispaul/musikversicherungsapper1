@@ -8,13 +8,14 @@
   </p>
   <div class="md:flex">
     <div
-      class="px-x3 py-x2 md:px-x1 md:py-x1 bg-secondary mb-x1p5 md:mb-0 md:mr-x1">
+      class="px-x3 py-x2 md:px-x1 md:py-x1 bg-gradient-secondary mb-x1p5 md:mb-0
+      md:mr-x1">
       <h2 class="text-white uppercase text-x7 md:text-x5 leading-tighter">
         Sinfonima®
       </h2>
       <p>Instrumentenversicherung für klassische Instrumente</p>
     </div>
-    <div class="px-x3 py-x2 md:px-x1 md:py-x1 bg-primary">
+    <div class="px-x3 py-x2 md:px-x1 md:py-x1 bg-gradient">
       <h2 class="text-white uppercase text-x7 md:text-x5 leading-tighter ">
         I’m sound®
       </h2>

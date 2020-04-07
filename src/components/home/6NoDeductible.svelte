@@ -3,7 +3,10 @@
 </script>
 
 <style>
-  .bg-gradient {
+  :global(.bg-gradient) {
+    background: linear-gradient(228.42deg, #412b75 4.06%, #6b46c1 94.06%);
+  }
+  :global(.bg-gradient-secondary) {
     background: linear-gradient(240.83deg, #db0086 4.06%, #960075 94.06%);
   }
 
@@ -12,15 +15,15 @@
       background: linear-gradient(240.83deg, #db0086 4.06%, #960075 94.06%);
       max-width: 45vw;
     }
-    .bg-gradient {
+    .bg-gradient-secondary {
       background: none;
     }
   }
 </style>
 
 <section
-  class="bg-gradient p-x1p5 py-x3 md:py-x2 w-100 text-light md:flex relative
-  items-center">
+  class="bg-gradient-secondary p-x1p5 py-x3 md:py-x2 w-100 text-light md:flex
+  relative items-center">
   <div class="hidden md:inline-block order-2">
     <Image src="drums.jpg" alt="" />
   </div>

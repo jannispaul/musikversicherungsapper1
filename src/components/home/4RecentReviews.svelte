@@ -45,7 +45,7 @@
 </style>
 
 <section
-  class="p-x1p5 py-x3 md:p-0 w-100 bg-gradient md:bg-light md:grid text-light"
+  class="p-x1p5 py-x3 md:p-0 w-100 md:bg-light md:grid text-light"
   id="reviews">
   <div class="content relative">
     <h2
@@ -71,11 +71,10 @@
     </a>
   </div>
   <div class="shape hidden md:block" />
-  <div class="z-20  image-drums relative hidden md:inline-block">
+  <div class="z-20 image-drums relative hidden md:inline-block">
     <Image src="drums.jpg" alt="" />
   </div>
-  <div
-    class="z-30  image-guitar relative hidden md:inline-block">
+  <div class="z-30 image-guitar relative hidden md:inline-block">
     <Image src="guitar.jpg" alt="" />
   </div>
 

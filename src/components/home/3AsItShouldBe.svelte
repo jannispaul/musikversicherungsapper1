@@ -4,7 +4,7 @@
 
 <section class="md:relative ">
   <div
-    class=" px-x1p5 py-x3 md:p-x1p5 bg-secondary text-white md:mx-x1p5
+    class=" px-x1p5 py-x3 md:p-x1p5 bg-gradient-secondary text-white md:mx-x1p5
     md:relative md:z-10">
     <h3
       class="text-x5 md:text-x1p5 mb-x1 leading-tight md:mb-x0p5 font-medium
@@ -20,7 +20,7 @@
       Beschädigungs- oder Verlustrisiken abgesichert.
     </p>
   </div>
-  <div class="flex image  md:-mt-x6 md:relative md:z-0">
+  <div class="flex image md:-mt-x6 md:relative md:z-0">
     <Image src="sax.jpg" alt="" class="z-10 " />
   </div>
 </section>
