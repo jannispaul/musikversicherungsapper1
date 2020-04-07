@@ -5,8 +5,8 @@
   NODE_ENV = "10.18.1"
 
 
-[dev]
-  command = "npm run dev"
+# [dev]
+#   command = "npm run dev"
 
 
 # [[redirects]]
