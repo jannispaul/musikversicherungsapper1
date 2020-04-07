@@ -95,13 +95,13 @@
     </a>
   </div>
   <!-- </div> -->
-  <div class="z-20 overflow-hidden image-piano relative">
+  <div class="z-20 image-piano relative">
     <Image src="piano.jpg" alt="pianoplayer" />
   </div>
-  <div class="z-10 overflow-hidden image-mixer hidden md:inline">
+  <div class="z-10 image-mixer hidden md:inline">
     <Image src="mixer.jpg" />
   </div>
-  <div class="z-30 overflow-hidden image-sax hidden md:inline">
+  <div class="z-30 image-sax hidden md:inline">
     <Image src="sax.jpg" />
   </div>
 

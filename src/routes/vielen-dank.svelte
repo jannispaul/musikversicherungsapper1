@@ -18,7 +18,7 @@
           Informationen erhalten. Falls jedoch keine E-Mail bei Dir ankommt,
           überprüfe bitte Deinen Spamfilter. Falls auch dort keine E-Mail
           vorhanden ist nehme bitte direkten Kontakt zu mir auf:
-          <a href="mailto:info@musikversicherung.com">
+          <a href="mailto:info@musikversicherung.com" class="underline">
             info@musikversicherung.com
           </a>
         </p>
