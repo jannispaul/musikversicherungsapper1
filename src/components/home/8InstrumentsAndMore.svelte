@@ -3,9 +3,6 @@
 </script>
 
 <style>
-  /* .bg-gradient {
-    background: linear-gradient(248.64deg, #412b75 4.06%, #6b46c1 94.06%);
-  } */
   @media (min-width: 768px) {
     .col-2 {
       column-count: 2;

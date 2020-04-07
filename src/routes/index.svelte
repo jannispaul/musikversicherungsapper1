@@ -18,6 +18,7 @@
   import HeadlineAndText from "../components/home/5HeadlineAndText.svelte";
   import NoDeductible from "../components/home/6NoDeductible.svelte";
   import InstrumentsAndMore from "../components/home/8InstrumentsAndMore.svelte";
+  import Various from "../components/home/10Various.svelte";
   import Video from "../components/home/11Video.svelte";
 
   let content1 = {
@@ -50,5 +51,6 @@
   <HeadlineAndText {...content2} />
   <InstrumentsAndMore />
   <HeadlineAndText {...content3} headlineColor="text-secondary" />
+  <Various />
   <Video />
 </Layout>

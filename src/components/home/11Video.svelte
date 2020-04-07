@@ -2,7 +2,7 @@
   iframe {
     width: calc(100% + 11.2vw);
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     .bg-gradient-secondary {
       background: none;
     }
@@ -27,7 +27,7 @@
 
   <div
     class="bg-gradient-secondary md:p-x1 md:relative md:z-10 md:flex flex-col
-    mw-x5 ">
+    mw-x5 md:-ml-x1">
     <h3
       class="text-x6 text-primary md:text-light md:text-x1 mb-x1 leading-tight
       md:mb-x0p5 font-medium whitespace-no-wrap">
