@@ -83,8 +83,8 @@
     // Remove formData from localstorage so form is empty
     localStorage.removeItem("formData");
 
-    // Redirect to vielen-dank page
-    window.location.href = "/vielen-dank/";
+    // Redirect to danke page
+    window.location.href = "/danke/";
   }
 </script>
 
