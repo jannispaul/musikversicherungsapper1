@@ -276,7 +276,7 @@
             zuständigen Ombudsmann erfolgt).
           </p>
           <p>
-            <a href="http:/ec.europa.eu/consumers/odr/">
+            <a href="http:/ec.europa.eu/consumers/odr/" rel="nofollow">
               http:/ec.europa.eu/consumers/odr/
             </a>
           </p>
