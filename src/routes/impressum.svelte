@@ -67,12 +67,12 @@
             </a>
             <br />
             Internet:
-            <a href="http://www.vermittlerregister.info">
-              http://www.vermittlerregister.info
+            <a href="https://www.vermittlerregister.info">
+              https://www.vermittlerregister.info
             </a>
             oder
-            <a href="http://www.vermittlerregister.org">
-              http://www.vermittlerregister.org
+            <a href="https://www.vermittlerregister.org">
+              https://www.vermittlerregister.org
             </a>
           </p>
           <br />
@@ -95,7 +95,7 @@
             E-Mail:
             <a href="mailto:service@mannheimer.de">service@mannheimer.de</a>
             , Internet:
-            <a href="http://www.mannheimer.de">http://www.mannheimer.de</a>
+            <a href="https://www.mannheimer.de">https://www.mannheimer.de</a>
           </p>
           <p>
             <b>
@@ -250,7 +250,7 @@
             <br />
             10006 Berlin
             <br />
-            <a href="http://www.versicherungsombudmann.de">
+            <a href="https://www.versicherungsombudmann.de">
               www.versicherungsombudsmann.de
             </a>
           </p>
@@ -265,7 +265,7 @@
             <br />
             10052 Berlin
             <br />
-            <a href="http://www.pkv-ombudsmann.de">www.pkv-ombudsmann.de</a>
+            <a href="https://www.pkv-ombudsmann.de">www.pkv-ombudsmann.de</a>
           </p>
           <br />
           <p>
@@ -276,8 +276,8 @@
             zuständigen Ombudsmann erfolgt).
           </p>
           <p>
-            <a href="http:/ec.europa.eu/consumers/odr/" rel="nofollow">
-              http:/ec.europa.eu/consumers/odr/
+            <a href="https:/ec.europa.eu/consumers/odr/" rel="nofollow">
+              https:/ec.europa.eu/consumers/odr/
             </a>
           </p>
           <br />
