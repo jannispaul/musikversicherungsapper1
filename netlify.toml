@@ -15,33 +15,33 @@
 #   status = 301
 
 
-# [[redirects]]
-#   from = "/*"
-#   to = "/index.html"
-#   status = 200
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
 
 [[redirects]]
   from = "/images/tiny/*"
-  to = "https://musikversicherung.netlify.com/images/:splat?nf_resize=fit&w=20"
+  to = "/images/:splat?nf_resize=fit&w=20"
   status = 302
 
 [[redirects]]
   from = "/images/small/*"
-  to = "https://musikversicherung.netlify.com/images/:splat?nf_resize=fit&w=500"
+  to = "/images/:splat?nf_resize=fit&w=500"
   status = 302
 
 [[redirects]]
   from = "/images/medium/*"
-  to = "https://musikversicherung.netlify.com/images/:splat?nf_resize=fit&w=900"
+  to = "/images/:splat?nf_resize=fit&w=900"
   status = 302
 
 [[redirects]]
   from = "/images/large/*"
-  to = "https://musikversicherung.netlify.com/images/:splat?nf_resize=fit&w=1200"
+  to = "/images/:splat?nf_resize=fit&w=1200"
   status = 302
 
 [[redirects]]
   from = "/images/original/*"
-  to = "https://musikversicherung.netlify.com/images/:splat"
+  to = "/images/:splat"
   status = 302
