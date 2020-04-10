@@ -7,7 +7,8 @@
       background: none;
     }
     iframe {
-      width: 100%;
+      min-width: 100%;
+      height: auto;
     }
   }
 </style>
@@ -23,7 +24,7 @@
     allow="accelerometer; autoplay; encrypted-media; gyroscope;
     picture-in-picture"
     allowfullscreen
-    class="-mr-x1p5 -ml-x1p5 mb-x1 md:m-0" />
+    class="-mr-x1p5 -ml-x1p5 mb-x2 md:m-0" />
 
   <div
     class="bg-gradient-secondary md:p-x1 md:relative md:z-10 md:flex flex-col

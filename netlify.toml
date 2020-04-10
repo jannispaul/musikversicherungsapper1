@@ -14,32 +14,33 @@
 #   to = "https://musikversicherung.com/:splat"
 #   status = 301
 
-[[redirects]]
-  from = "/*"
-  to = "/404/"
-  status = 404 
 
 [[redirects]]
   from = "/images/tiny/*"
-  to = "/images/:splat?nf_resize=fit&w=20"
+  to = "https://musikversicherung.netlify.com/images/:splat?nf_resize=fit&w=20"
   status = 302
 
 [[redirects]]
   from = "/images/small/*"
-  to = "/images/:splat?nf_resize=fit&w=500"
+  to = "https://musikversicherung.netlify.com/images/:splat?nf_resize=fit&w=500"
   status = 302
 
 [[redirects]]
   from = "/images/medium/*"
-  to = "/images/:splat?nf_resize=fit&w=900"
+  to = "https://musikversicherung.netlify.com/images/:splat?nf_resize=fit&w=900"
   status = 302
 
 [[redirects]]
   from = "/images/large/*"
-  to = "/images/:splat?nf_resize=fit&w=1200"
+  to = "https://musikversicherung.netlify.com/images/:splat?nf_resize=fit&w=1200"
   status = 302
 
 [[redirects]]
   from = "/images/original/*"
-  to = "/images/:splat"
+  to = "https://musikversicherung.netlify.com/images/:splat"
   status = 302
+
+[[redirects]]
+  from = "/*"
+  to = "/404/index.html"
+  status = 404 
