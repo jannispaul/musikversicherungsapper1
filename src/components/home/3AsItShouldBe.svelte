@@ -10,7 +10,7 @@
       class="text-x5 md:text-x1p5 mb-x1 leading-tight md:mb-x0p5 font-medium
       whitespace-no-wrap">
       Instrumentenversicherung so,
-      <wbr />
+      <br class="md:hidden" />
       wie sie sein sollte
     </h3>
     <p class="text-x2 mb-x1 md:text-x1 md:mb-x0p5">
