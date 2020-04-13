@@ -10,7 +10,10 @@
   <div
     class="flex flex-col md:flex-row justify-between md:items-center mb-x1
     md:mb-x0p5">
-    <a href="tel:+4951919313199" class="flex-1">Tel: 05191 931 31 99</a>
+    <div class="flex-1 flex space-between">
+      <a href="tel:+4951919313199" class="flex-1">Tel.: 05191 931 31 99</a>
+      <a href="tel:+491725113611" class="flex-1">Mobil: 0172 511 3611</a>
+    </div>
     <a href="mailto:info@musikversicherung.com" class="flex-1">
       info@musikversicherung.com
     </a>
@@ -40,9 +43,11 @@
       &nbsp; · &nbsp;
       <a href="/datenschutz">Datenschutz</a>
     </nav>
-    <a href="/versicherungsbedingungen" class="flex-1 ">
-      Versicherungsbedingungen
-    </a>
+    <div class="flex-1">
+      <a href="/versicherungsbedingungen">Versicherungsbedingungen</a>
+      &nbsp; · &nbsp;
+      <a href="/Beschwerdeverfahren.pdf">Beschwerden</a>
+    </div>
   </div>
   <hr class="border-t md:border-t-x0p1 border-primary " />
 </footer>

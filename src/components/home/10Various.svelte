@@ -13,7 +13,9 @@
     <h3
       class="text-x6 text-primary md:text-light md:text-x1 mb-x1 leading-tight
       md:mb-x0p5 font-medium ">
-      Schützt weltweit, auch im Proberaum und Auto
+      Schützt weltweit,
+      <br />
+      auch im Proberaum und Auto
     </h3>
     <p>
       Egal, ob Sie zuhause oder unterwegs sind: SINFONIMA und I’M SOUND gelten

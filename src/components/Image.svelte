@@ -95,7 +95,11 @@
 
 <!-- <img {src} {alt} /> -->
 <picture class="lazy lazy-initial">
-  <source srcset={`/images/tiny/${src}`} media="(min-width: 1200px)" />
-  <source srcset={`/images/tiny/${src}`} media="(min-width: 740px)" />
-  <img src={`/images/tiny/${src}`} {alt} />
+  <source
+    srcset={`https://musikversicherung.netlify.com/images/tiny/${src}`}
+    media="(min-width: 1200px)" />
+  <source
+    srcset={`https://musikversicherung.netlify.com/images/tiny/${src}`}
+    media="(min-width: 740px)" />
+  <img src={`https://musikversicherung.netlify.com/images/tiny/${src}`} {alt} />
 </picture>
