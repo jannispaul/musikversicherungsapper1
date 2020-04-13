@@ -3,7 +3,7 @@
   <div
     class="flex flex-col md:flex-row justify-between md:items-center mb-x1
     md:mb-x0p5">
-    <div class="flex-1 flex space-between">
+    <div class="flex-1 flex flex-col md:flex-row space-between">
       <a href="tel:+4951919313199" class="flex-1">Tel.: 05191 931 31 99</a>
       <a href="tel:+491725113611" class="flex-1">Mobil: 0172 511 3611</a>
     </div>
@@ -19,7 +19,9 @@
       <br />
       Versicherungsfachmann (BWV)
       <br />
-      Generalagentur der Mannheimer Versicherung AG
+      Generalagentur der
+      <br class="md:hidden" />
+      Mannheimer Versicherung AG
     </p>
     <p class="flex-1 ">
       SINFONIMA® und IM SOUND® sind

@@ -32,10 +32,13 @@
           telefon: undefined,
           status: undefined,
           organisation: "Kein Mitglied",
+          organisationSonstige: undefined,
           wohnsitz: "Deutschland",
           andererwohnsitz: undefined,
           nachricht: undefined,
           proberaum: undefined,
+          bewohnt: undefined,
+          beschreibung: undefined,
           anhanger: undefined,
           musikerhaftpflicht: undefined,
           verdientGeld: undefined,
@@ -220,12 +223,12 @@
 
     :global(.primary-button) {
       margin-top: 3vw;
-      background: none;
+      /* background: none; */
       padding: 1.5vw;
     }
     .primary-button:hover:not(:disabled) {
       /* background: rgba(107, 70, 193, 0.3); */
-      background: none;
+      /* background: none; */
     }
     :global(select) {
       background-size: 1vw;
@@ -256,8 +259,8 @@
             on:focus={onFocus} />
           <label
             for="SINFONIMA"
-            class="block p-x1 md:py-x0p25 md:px-x0p5 flex-1 flex md:mr-x1 mb-x1
-            items-center"
+            class="block p-x1 md:py-x0p25 md:px-x0p5 flex-1 flex md:mr-x0p5
+            mb-x1 items-center"
             class:active={$formData.versicherungsTyp === 'SINFONIMA'}>
             <div class="flex items-center">
               <div class="indicator relative inline mr-x1 md:mr-x0p5" />
@@ -295,12 +298,12 @@
         {/if}
       </div>
 
-      <div class="md:flex md:justify-center">
+      <div class="md:w-2/3 md:m-auto">
         <button
           type="button"
           id="nextBtn"
           on:click={nextTab}
-          class="primary-button w-1/2 md:w-auto float-right "
+          class="primary-button w-full"
           disabled={$formData.versicherungsTyp != 'SINFONIMA' && !$formData.gesamtWert}>
           Weiter
         </button>
@@ -373,79 +376,81 @@
               <option value="Schweiz">Schweiz</option>
               <option value="AnderesLand">Anderes Land</option>
             </select>
-
-            <!-- <input
-              name="wohnsitz"
-              bind:value={$formData.wohnsitz}
-              required
-              list="laender" />
-            <datalist id="laender">
-              <option value="Deutschland" />
-              <option value="Österreich" />
-              <option value="Schweiz" />
-            </datalist> -->
-
-          </label>
-          <label class="inline-flex flex-col ">
-            Mitgliedschaft in einer Organisation
-            <select bind:value={$formData.organisation}>
-              <option value="Kein Mitglied">Kein Mitglied</option>
-              <option value="Bund Dt. Zupfmusiker">Bund Dt. Zupfmusiker</option>
-              <option value="Student/in an deutschen Musikhochschulen">
-                Student/in an deutschen Musikhochschulen
-              </option>
-              <option value="Deutsche Orchestervereinigung (DOV)">
-                Deutsche Orchestervereinigung (DOV)
-              </option>
-              <option value="Deutscher Musikrat">Deutscher Musikrat</option>
-              <option value="Deutscher Tonkünstlerverband (DTKV)">
-                Deutscher Tonkünstlerverband (DTKV)
-              </option>
-              <option value="Jeunesse Musicales Deutschland">
-                Jeunesse Musicales Deutschland
-              </option>
-              <option value="Jugend musiziert">Jugend musiziert</option>
-              <option value="Musikalische Jugend Deutschlands">
-                Musikalische Jugend Deutschlands
-              </option>
-              <option value="Organisation: Lehrer an einer VDM-Musikschule">
-                Organisation: Lehrer an einer VDM-Musikschule
-              </option>
-              <option
-                value="Verband Deutscher Musikerzieher und konzertierender
-                Künstler (VDMK)"
-                class="">
-                VDMK - Verband Deutscher Musikerzieher...
-              </option>
-              <option value="Verband Deutscher Schulmusiker">
-                Verband Deutscher Schulmusiker
-              </option>
-              <option value="Verband Deutscher Tonmeister">
-                Verband Deutscher Tonmeister
-              </option>
-              <option value="Verdi - Fachverband Musik">
-                Verdi - Fachverband Musik
-              </option>
-              <option value="Viola Gesellschaft">Viola Gesellschaft</option>
-              <option value="Sonstige">Sonstige</option>
-            </select>
           </label>
           {#if $formData.wohnsitz === 'AnderesLand'}
-            <label class="inline-flex flex-col w-1/2">
+            <label class="inline-flex flex-col justify-end">
               <input
                 name="AnderesLand"
                 bind:value={$formData.andererwohnsitz}
                 placeholder="Wohnsitz" />
             </label>
           {/if}
+          {#if $formData.versicherungsTyp == 'SINFONIMA'}
+            <label class="inline-flex flex-col ">
+              Mitgliedschaft in einer Organisation
+              <select bind:value={$formData.organisation}>
+                <option value="Kein Mitglied">Kein Mitglied</option>
+                <option value="Bund Dt. Zupfmusiker">
+                  Bund Dt. Zupfmusiker
+                </option>
+                <option value="Student/in an deutschen Musikhochschulen">
+                  Student/in an deutschen Musikhochschulen
+                </option>
+                <option value="Deutsche Orchestervereinigung (DOV)">
+                  Deutsche Orchestervereinigung (DOV)
+                </option>
+                <option value="Deutscher Musikrat">Deutscher Musikrat</option>
+                <option value="Deutscher Tonkünstlerverband (DTKV)">
+                  Deutscher Tonkünstlerverband (DTKV)
+                </option>
+                <option value="Jeunesse Musicales Deutschland">
+                  Jeunesse Musicales Deutschland
+                </option>
+                <option value="Jugend musiziert">Jugend musiziert</option>
+                <option value="Musikalische Jugend Deutschlands">
+                  Musikalische Jugend Deutschlands
+                </option>
+                <option value="Organisation: Lehrer an einer VDM-Musikschule">
+                  Organisation: Lehrer an einer VDM-Musikschule
+                </option>
+                <option
+                  value="Verband Deutscher Musikerzieher und konzertierender
+                  Künstler (VDMK)"
+                  class="">
+                  VDMK - Verband Deutscher Musikerzieher...
+                </option>
+                <option value="Verband Deutscher Schulmusiker">
+                  Verband Deutscher Schulmusiker
+                </option>
+                <option value="Verband Deutscher Tonmeister">
+                  Verband Deutscher Tonmeister
+                </option>
+                <option value="Verdi - Fachverband Musik">
+                  Verdi - Fachverband Musik
+                </option>
+                <option value="Viola Gesellschaft">Viola Gesellschaft</option>
+                <option value="Sonstige">Sonstige</option>
+              </select>
+            </label>
+          {/if}
+          {#if $formData.organisation === 'Sonstige' && $formData.versicherungsTyp == 'SINFONIMA'}
+            <label class="inline-flex flex-col justify-end">
+              <input
+                name="AndereOrganisation"
+                bind:value={$formData.organisationSonstige}
+                placeholder="Organisaton" />
+            </label>
+          {/if}
         </div>
       </div>
-      <div class="grid gap-x0p5 grid-cols-2 md:flex md:justify-center">
+      <div
+        class="grid gap-x0p5 grid-cols-2 md:flex md:justify-center md:w-2/3
+        md:m-auto">
         <button
           type="button"
           id="nextBtn"
           on:click={nextTab}
-          class="primary-button order-2"
+          class="primary-button order-2 w-1/2"
           disabled={!$formData.vorname || !$formData.nachname || !$formData.email}>
           Weiter
         </button>
@@ -453,7 +458,7 @@
           type="button"
           id="prevBtn"
           on:click={prevTab}
-          class="primary-button order-1">
+          class="primary-button order-1 mr-x0p5 w-1/2">
           Zurück
         </button>
       </div>
@@ -498,7 +503,7 @@
 
           <div class="grid gap-x0p5 grid-cols-2 md:flex md:justify-center">
             <button
-              class="primary-button order-2"
+              class="primary-button order-2 w-1/2"
               disabled={!termsAccepted}
               on:click|preventDefault={handleSubmit}>
               Absenden
@@ -507,7 +512,7 @@
               type="primary-button"
               id="prevBtn"
               on:click={prevTab}
-              class="primary-button order-1">
+              class="primary-button order-1 mr-x0p5 w-1/2">
               Zurück
             </button>
           </div>
@@ -533,8 +538,7 @@
                 <span>Ja</span>
               </label>
               <label
-                class="block p-x1 md:p-x0p5 flex-1 flex md:mr-x1 mb-x1
-                items-center"
+                class="block p-x1 md:p-x0p5 flex-1 flex mb-x1 items-center"
                 class:active={$formData.proberaum === 'nein'}>
                 <input
                   type="radio"
@@ -546,6 +550,46 @@
                 <span>Nein</span>
               </label>
             </div>
+            {#if $formData.proberaum === 'ja'}
+              <div class="inline flex flex-wrap md:items-stretch toggle ">
+                <span class="w-full flex-0">
+                  Befindet sich der Proberaum in einem auch ansonsten bewohnten
+                  Gebäude? *
+                </span>
+                <label
+                  class="block p-x1 md:p-x0p5 flex-1 flex mr-x0p5 mb-x1
+                  items-center"
+                  class:active={$formData.bewohnt === 'ja'}>
+                  <input
+                    type="radio"
+                    bind:group={$formData.bewohnt}
+                    value="ja" />
+                  <div class="flex items-center">
+                    <div class="indicator relative inline mr-x1" />
+                  </div>
+                  <span>Ja</span>
+                </label>
+                <label
+                  class="block p-x1 md:p-x0p5 flex-1 flex mb-x1 items-center"
+                  class:active={$formData.bewohnt === 'nein'}>
+                  <input
+                    type="radio"
+                    bind:group={$formData.bewohnt}
+                    value="nein" />
+                  <div class="flex">
+                    <div class="indicator relative inline mr-x1" />
+                  </div>
+                  <span>Nein</span>
+                </label>
+              </div>
+              <label class="inline-flex flex-col justify-end w-full mb-x1">
+                Bitte beschreibe kurz die Örtlichkeit und Sicherungen des
+                Proberaums *
+                <input
+                  name="Beschreibung w-full"
+                  bind:value={$formData.beschreibung} />
+              </label>
+            {/if}
             <div class="inline flex flex-wrap md:items-stretch toggle">
               <span class="w-full flex-0">
                 Wird das Equipment in einem Anhänger transportiert / gelagert? *
@@ -564,8 +608,7 @@
                 <span>Ja</span>
               </label>
               <label
-                class="block p-x1 md:p-x0p5 flex-1 flex md:mr-x1 mb-x1
-                items-center"
+                class="block p-x1 md:p-x0p5 flex-1 flex mb-x1 items-center"
                 class:active={$formData.anhaenger === 'nein'}>
                 <input
                   type="radio"
@@ -579,8 +622,8 @@
             </div>
             <div class="inline flex flex-wrap md:items-stretch toggle">
               <span class="w-full flex-0">
-                Machst Du Deine Musik haupt- oder nebenberuflich, das heißt,
-                verdienst Du Geld damit? *
+                Verdienst Du Geld mit Deiner Musik (haupt- oder nebenberuflich)?
+                *
               </span>
               <label
                 class="block p-x1 md:p-x0p5 flex-1 flex mr-x0p5 mb-x1
@@ -596,8 +639,7 @@
                 <span>Ja</span>
               </label>
               <label
-                class="block p-x1 md:p-x0p5 flex-1 flex md:mr-x1 mb-x1
-                items-center"
+                class="block p-x1 md:p-x0p5 flex-1 flex mb-x1 items-center"
                 class:active={$formData.verdientGeld === 'nein'}>
                 <input
                   type="radio"
@@ -628,8 +670,7 @@
                 <span>Ja</span>
               </label>
               <label
-                class="block p-x1 md:p-x0p5 flex-1 flex md:mr-x1 mb-x1
-                items-center"
+                class="block p-x1 md:p-x0p5 flex-1 flex mb-x1 items-center"
                 class:active={$formData.musikerhaftpflicht === 'nein'}>
                 <input
                   type="radio"
@@ -654,9 +695,9 @@
               <a href="/datenschutz" class="underline">Mehr erfahren</a>
             </span>
           </label>
-          <div class="grid gap-x0p5 grid-cols-2 md:flex md:justify-center">
+          <div class="grid gap-x0p5 grid-cols-2 md:flex md:justify-center ">
             <button
-              class="primary-button order-2"
+              class="primary-button order-2 w-1/2"
               disabled={!termsAccepted}
               on:click|preventDefault={handleSubmit}>
               Absenden
@@ -665,7 +706,7 @@
               type="button"
               id="prevBtn"
               on:click={prevTab}
-              class="primary-button order-1">
+              class="primary-button order-1 mr-x0p5 w-1/2">
               Zurück
             </button>
           </div>
