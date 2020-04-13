@@ -5,10 +5,10 @@
   // import { setContext } from "svelte";
   // setContext("reviewData", reviewData);
 
+  import CookieNotice from "../../components/CookieNotice.svelte";
   import Nav from "../../components/Nav.svelte";
   import Footer from "../../components/Footer.svelte";
   export let segment;
-  export let headline;
 </script>
 
 <style>
@@ -34,10 +34,10 @@
 <svelte:head>
   <meta name="robots" content="noindex" />
 </svelte:head>
-
+<CookieNotice />
 <Nav {segment} />
 
 <main class="mb-x3 md:mb-x1 mt-x1 relative z-0" id="main">
   <slot />
 </main>
-<Footer {headline} />
+<Footer />
