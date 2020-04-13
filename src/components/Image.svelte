@@ -4,6 +4,24 @@
   import { onMount } from "svelte";
 
   onMount(() => {
+    // Watch for all pictures with a "lazy" class
+    let pictures = document.querySelectorAll("picture.lazy");
+
+    // If there is no intersection observer
+    if (
+      !("IntersectionObserver" in window) ||
+      !("IntersectionObserverEntry" in window) ||
+      !("intersectionRatio" in window.IntersectionObserverEntry.prototype)
+    ) {
+      // run loadImage for all images and remove the lazy-initial class that blurs placeholder
+      function launchFunction() {
+        pictures.forEach(
+          picture =>
+            loadImage(picture) && picture.classList.remove("lazy-initial")
+        );
+      }
+      launchFunction();
+    }
     // Make it simple to swap parts of a URL attribute on an element
     function updateAttributeURL(element, attr, swapOut, swapIn) {
       var url = element.getAttribute(attr);
@@ -64,8 +82,6 @@
     };
     var observer = new IntersectionObserver(lazyLoad, options);
 
-    // Watch for all pictures with a "lazy" class
-    var pictures = document.querySelectorAll("picture.lazy");
     pictures.forEach(pic => {
       observer.observe(pic);
     });
