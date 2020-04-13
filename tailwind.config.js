@@ -2,7 +2,7 @@ module.exports = {
   theme: {
     extend: {
       lineHeight: {
-        tighter: "1.1"
+        tighter: "1.1",
       },
       colors: {
         light: "#F8F5FF",
@@ -10,11 +10,15 @@ module.exports = {
         "primary-light": "#EEE7FF",
         secondary: "#DB0086",
         "secondary-light": "#F7E9F9",
-        "secondary-light-hover": "#f5e3f7"
+        "secondary-light-hover": "#f5e3f7",
       },
       fontFamily: {
         sans: ["Space Grotesk", "Helvetica Neue", "Helvetica"],
-        body: ["Space Grotesk", "Helvetica Neue", "Helvetica"]
+        body: ["Space Grotesk", "Helvetica Neue", "Helvetica"],
+        // sans: ["Cairo", "Helvetica Neue", "Helvetica"],
+        // sans: ["Cairo", "Helvetica Neue", "Helvetica"],
+        // body: ["Signika", "Helvetica Neue", "Helvetica"],
+        // body: ["Signika", "Helvetica Neue", "Helvetica"],
       },
       fontSize: {
         x0p25: "1.3vw",
@@ -39,7 +43,7 @@ module.exports = {
         x8:
           "calc(54.72px + (437.76 - 54.72) * ((100vw - 320px) / (2560 - 320)))",
         x9:
-          "calc(82.08px + (656.64 - 82.08) * ((100vw - 320px) / (2560 - 320)))"
+          "calc(82.08px + (656.64 - 82.08) * ((100vw - 320px) / (2560 - 320)))",
       },
       spacing: {
         x0p25: "calc(100vw * 0.25/ 27)",
@@ -72,26 +76,26 @@ module.exports = {
         x25: "calc(100vw * 25 / 27)",
         x26: "calc(100vw * 26 / 27)",
         x27: "calc(100vw * 27 / 27)",
-        "stars-md": "calc(100vw * 0.4/ 27)"
+        "stars-md": "calc(100vw * 0.4/ 27)",
       },
       margin: {
-        "-2": "-2px"
+        "-2": "-2px",
       },
       flex: {
-        half: "1 0 40%"
+        half: "1 0 40%",
       },
       variants: {
-        margin: ["responsive", "odd"]
+        margin: ["responsive", "odd"],
       },
       borderWidth: {
         default: "0.3vw",
         x0p1: "0.18vw",
         x0p2: "1vw",
         x0p3: "1vw",
-        x0p4: "1vw"
-      }
-    }
+        x0p4: "1vw",
+      },
+    },
   },
   variants: {},
-  plugins: []
+  plugins: [],
 };

@@ -7,7 +7,7 @@
     <h1 class="text-primary text-x6 leading-tight border-solid mb-x1">
       Kontakt
     </h1>
-    <p>Hier findest Du deine Kontaktmöglichkeiten:</p>
+    <p>Hier findest Du Deine Kontaktmöglichkeiten:</p>
   </section>
 
 </Layout>
