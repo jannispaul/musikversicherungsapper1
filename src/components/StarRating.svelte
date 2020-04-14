@@ -4,7 +4,7 @@
   export let rating = 0;
   export let isIndicatorActive = false;
   export let style = {
-    styleStarWidth: 10,
+    styleStarWidth: 20,
     styleEmptyStarColor: "#737373",
     styleFullStarColor: "#ffd219"
   };
@@ -17,21 +17,21 @@
 
   let stars = [];
 
-  function getStarPoints() {
-    let centerX = style.styleStarWidth / 2;
-    let centerY = style.styleStarWidth / 2;
-    let innerCircleArms = 5; // a 5 arms star
-    let innerRadius = style.styleStarWidth / innerCircleArms;
-    let innerOuterRadiusRatio = 2.5; // Unique value - determines fatness/sharpness of star
-    let outerRadius = innerRadius * innerOuterRadiusRatio;
-    return calcStarPoints(
-      centerX,
-      centerY,
-      innerCircleArms,
-      innerRadius,
-      outerRadius
-    );
-  }
+  // function getStarPoints() {
+  //   let centerX = style.styleStarWidth / 2;
+  //   let centerY = style.styleStarWidth / 2;
+  //   let innerCircleArms = 5; // a 5 arms star
+  //   let innerRadius = style.styleStarWidth / innerCircleArms;
+  //   let innerOuterRadiusRatio = 2.5; // Unique value - determines fatness/sharpness of star
+  //   let outerRadius = innerRadius * innerOuterRadiusRatio;
+  //   return calcStarPoints(
+  //     centerX,
+  //     centerY,
+  //     innerCircleArms,
+  //     innerRadius,
+  //     outerRadius
+  //   );
+  // }
 
   function calcStarPoints(
     centerX,
@@ -118,7 +118,18 @@
         {style.styleStarWidth}"
         class="star-svg w-x1 md:w-stars-md lg:w-x0p75"
         style="fill: url(#gradient{star.raw});">
-        <polygon points={getStarPoints()} style="" />
+        <polygon
+          points="0.4758701958484366,6.951893788977833
+          7.6345796040273575,6.774354893929491
+          9.95580330823659,0.00009766785509235376
+          12.336815696187243,6.753572363034571
+          19.496814746451474,6.867826685577273
+          13.80965192166062,11.21924248440888
+          15.913550989931636,18.06411276517625
+          10.01767867670538,13.999960932857963
+          4.157960759531867,18.11606909241355
+          6.201274101419407,11.252869325769078"
+          style="" />
         <defs>
           <linearGradient id="gradient{star.raw}">
             <stop

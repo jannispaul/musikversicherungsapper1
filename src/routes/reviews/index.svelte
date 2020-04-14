@@ -6,15 +6,10 @@
         return { reviewData };
       });
   }
-  // import { writable } from "svelte/store";
-  // export const reviewData = writable(data);
 </script>
 
 <script>
-  // Import reviewData store
-  // import { reviewData } from "../../components/reviewData.js";
   export let reviewData;
-
   import ReviewItem from "../../components/ReviewItem.svelte";
   import StarRating from "../../components/StarRating.svelte";
   import Layout from "../_layouts/layout.svelte";
