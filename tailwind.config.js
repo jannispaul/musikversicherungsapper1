@@ -5,6 +5,7 @@ module.exports = {
         tighter: "1.1",
       },
       colors: {
+        warning: "red",
         light: "#F8F5FF",
         primary: "#6B46C1",
         "primary-light": "#EEE7FF",

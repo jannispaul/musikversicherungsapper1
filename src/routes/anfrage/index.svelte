@@ -17,6 +17,21 @@
   // Set focus on Sinfonima when tabbing through the page
   const onFocus = () => ($formData.versicherungsTyp = "SINFONIMA");
 
+  $: errors = {
+    tab1:
+      !$formData.vorname || !$formData.nachname || !$formData.email
+        ? true
+        : false,
+    tab2:
+      !$formData.proberaum ||
+      !$formData.anhaenger ||
+      !$formData.verdientGeld ||
+      !$formData.musikerhaftpflicht ||
+      !termsAccepted
+        ? true
+        : false
+  };
+
   // Is wrapped in onMount to execute on client side not during SSR
   onMount(() => {
     // Set store to saved formData in localStorage or else to defined object
@@ -40,8 +55,8 @@
           bewohnt: undefined,
           beschreibung: undefined,
           anhanger: undefined,
-          musikerhaftpflicht: undefined,
           verdientGeld: undefined,
+          musikerhaftpflicht: undefined,
           instruments: [{ name: "", valueType: "Neuwert", value: "" }]
         }
       );
@@ -289,7 +304,7 @@
         </div>
         {#if $formData.versicherungsTyp == 'IAMSOUND'}
           <label class="flex flex-col">
-            Gesamtwert der Instrumente in €
+            Gesamtwert der Instrumente in € *
             <input
               name="gesamtWert"
               bind:value={$formData.gesamtWert}
@@ -442,6 +457,11 @@
             </label>
           {/if}
         </div>
+        {#if errors.tab1}
+          <div class="text-warning">
+            Bitte fülle alle mit * markierten Felder aus.
+          </div>
+        {/if}
       </div>
       <div
         class="grid gap-x0p5 grid-cols-2 md:flex md:justify-center md:w-2/3
@@ -488,7 +508,7 @@
               rows="4"
               class="w-full border-primary" />
           </label>
-          <label class="flex items-center mt-x1 cursor-pointer">
+          <label class="flex items-center my-x0p5 cursor-pointer">
             <input
               type="checkbox"
               name="terms"
@@ -585,9 +605,11 @@
               <label class="inline-flex flex-col justify-end w-full mb-x1">
                 Bitte beschreibe kurz die Örtlichkeit und Sicherungen des
                 Proberaums *
-                <input
+                <textarea
                   name="Beschreibung w-full"
-                  bind:value={$formData.beschreibung} />
+                  bind:value={$formData.beschreibung}
+                  rows="4"
+                  class="w-full border-primary" />
               </label>
             {/if}
             <div class="inline flex flex-wrap md:items-stretch toggle">
@@ -683,7 +705,7 @@
               </label>
             </div>
           </div>
-          <label class="flex items-center mt-x1">
+          <label class="flex items-center my-x0p5">
             <input
               type="checkbox"
               name="terms"
@@ -695,6 +717,12 @@
               <a href="/datenschutz" class="underline">Mehr erfahren</a>
             </span>
           </label>
+          {#if errors.tab2}
+            <div class="text-warning">
+              Bitte fülle alle mit * markierten Felder aus und akzeptiere die
+              Bedingungen.
+            </div>
+          {/if}
           <div class="grid gap-x0p5 grid-cols-2 md:flex md:justify-center ">
             <button
               class="primary-button order-2 w-1/2"
