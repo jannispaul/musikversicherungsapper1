@@ -28,9 +28,8 @@
           class="text-primary mb-x1 text-x3 md:text-x2 leading-tight md:mb-x0p5">
           Was passiert als nächstes?
         </h2>
-        In Kürze sende ich Dir ein individuelles Angebot per E-Mail zu. Nehme es
-        per E-Mail an und genieße sofort den SINFONIMA® Allgefahrenschutz für
-        Deine Instrumente.
+        Anschließend sende ich Dir ein individuelles Angebot per Mail zu. Nimm
+        es an und Du kannst Dich entspannt und gut versichert zurücklehnen.
       </div>
     </div>
   </section>
