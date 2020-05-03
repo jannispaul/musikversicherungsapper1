@@ -19,7 +19,7 @@
         </a>
         <br />
         <br />
-        Geben und Sie dort den folgenden Code ein.
+        Gib dort den folgenden Code ein.
         <br />
         für SINFONIMA: T010 0400 0000 00G0 0519
         <br />
@@ -30,8 +30,8 @@
         gesetzliche vorgeschriebenen Stand angepasst. Damit die Informationen
         immer aktuell sind, habe ich diese nicht hier hinterlegt, sondern stelle
         einen Link auf die Seite der Mannheimer Versicherung zur Verfügung.
-        Insoweit ist immer Aktualität garantiert. Wenn Sie Fragen zum
-        Verständnis haben, kontaktieren Sie mich bitte.
+        Insoweit ist immer Aktualität garantiert. Wenn Du Fragen zum Verständnis
+        habst, kontaktiere mich bitte.
       </p>
       <br />
     </div>

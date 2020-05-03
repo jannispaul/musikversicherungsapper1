@@ -18,7 +18,7 @@
       auch im Proberaum und Auto
     </h3>
     <p>
-      Egal, ob Sie zuhause oder unterwegs sind: SINFONIMA und I’M SOUND gelten
+      Egal, ob Du zuhause oder unterwegs bist: SINFONIMA und I’M SOUND gelten
       weltweit. Selbst im Auto sind Instrumente und Equipment rund um die Uhr –
       auch gegen Diebstahl – versichert, wenn die Sachen in einem verschlossenen
       und von außen nicht einsehbaren Koffer- oder Laderaum aufbewahrt werden.
@@ -33,12 +33,12 @@
       Schnelle Abwicklung
     </h3>
     <p>
-      Nach Erhalt Ihrer Online-Anfrage bekommen Sie in der Regel noch am selben,
-      spätestens am nächsten Arbeitstag Ihr individuelles Angebot zur
-      Instrumentenversicherung. Wenn Sie das Angebot annehmen möchten, reicht
-      ein kurzer Hinweis per Email. Wenn nichts weiter zu klären ist, erhalten
-      Sie dann umgehend eine Bestätigung über sofortigen Versicherungsschutz.
-      Der dazugehörige Versicherungsvertrag folgt binnen weniger Tage per Post.
+      Nach Erhalt Deiner Online-Anfrage bekommst Du in der Regel noch am selben,
+      spätestens am nächsten Arbeitstag Dein individuelles Angebot zur
+      Instrumentenversicherung. Wenn Du das Angebot annehmen möchten, reicht ein
+      kurzer Hinweis per Email. Wenn nichts weiter zu klären ist, erhältst Du
+      dann umgehend eine Bestätigung über sofortigen Versicherungsschutz. Der
+      dazugehörige Versicherungsvertrag folgt binnen weniger Tage per Post.
     </p>
 
   </div>

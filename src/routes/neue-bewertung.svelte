@@ -212,7 +212,7 @@
       </label>
 
       <label class="inline-flex flex-col mb-x0p5 md:mb-x1">
-        <span>Ihre Rezension</span>
+        <span>Deine Rezension</span>
         <textarea name="fields[review]" rows="4" required class="" />
       </label>
 
