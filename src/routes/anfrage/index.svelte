@@ -333,18 +333,14 @@
         <div class="grid md:grid-cols-2 gap-x0p5">
           <label class="inline-flex flex-col ">
             Anrede *
-            <select bind:value={$formData.anrede}>
+            <select bind:value={$formData.anrede} autofocus>
               <option value="Frau">Frau</option>
               <option value="Herr">Herr</option>
             </select>
           </label>
           <label class="inline-flex flex-col ">
             Vorname *
-            <input
-              name="vorname"
-              bind:value={$formData.vorname}
-              required
-              autofocus />
+            <input name="vorname" bind:value={$formData.vorname} required />
           </label>
           <label class="inline-flex flex-col ">
             Nachname *
