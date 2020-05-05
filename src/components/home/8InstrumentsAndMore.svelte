@@ -22,7 +22,7 @@
 
     <p class="col-2 text-x2 mb-x3 md:text-x0p5 md:mb-x1 block">
       Nahezu alle Arten von Musikinstrumenten und Equipment und das jeweilige
-      Zubehör sind versicher- bar. Als Versicherungssumme kann je Instrument
+      Zubehör sind versicherbar. Als Versicherungssumme kann je Instrument
       wahlweise der Neu- oder Zeitwert festgelegt werden. Auch beim Zubehör
       (Koffer, Bogen, Mundstück usw.) macht SINFONIMA nicht halt. Es kann
       genauso umfassend versichert werden, wie die Instrumente selbst. Bei I’M
