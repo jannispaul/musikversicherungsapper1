@@ -1,7 +1,7 @@
 <style>
   iframe {
     width: 60vw;
-    height: 30vw;
+    height: 34vw;
   }
   @media (max-width: 767px) {
     .bg-gradient-secondary {
@@ -9,7 +9,7 @@
     }
     iframe {
       width: 100vw;
-      height: 50vw;
+      height: 58vw;
     }
   }
 </style>

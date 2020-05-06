@@ -4,6 +4,57 @@
 </script>
 
 <style>
+  .mobile-icon {
+    /* width: 25px;
+    height: 14px; */
+    position: relative;
+    cursor: pointer;
+  }
+
+  .mobile-icon:after,
+  .mobile-icon:before,
+  .middle-line {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.5vw;
+    background-color: #6b46c1;
+    transition: all 0.4s;
+    transform-origin: center;
+  }
+
+  .mobile-icon:before,
+  .middle-line {
+    top: 0;
+  }
+
+  .mobile-icon:after,
+  .middle-line {
+    bottom: 0;
+  }
+
+  .middle-line {
+    margin: auto;
+  }
+
+  .mobile-icon:hover:before,
+  .mobile-icon:hover:after,
+  .mobile-icon.active:before,
+  .mobile-icon.active:after,
+  .mobile-icon.active .middle-line {
+    width: 100%;
+  }
+
+  .mobile-icon.active:before,
+  .mobile-icon.active:after {
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+
+  .mobile-icon.active .middle-line {
+    transform: rotate(45deg);
+  }
+
   .skip-to-main:focus,
   .skip-to-main:active {
     color: #fff;
@@ -27,7 +78,7 @@
 <header class="w-full z-10 top-0 sticky">
   <a
     href="#main"
-    class="skip-to-main absolute overflow-hidden z-0 w-1 h-1 text-x2 md:text-x1">
+    class="skip-to-main absolute z-0 w-1 h-1 overflow-hidden text-x2 md:text-x1">
     Navigation überspringen
   </a>
   <nav
@@ -41,27 +92,34 @@
           rel="prefetch"
           class:active={segment === 'index'}
           href="."
-          class="text-primary md:text-x0p5">
+          class="text-x3 text-primary md:text-x1 lg:text-x0p5">
           <strong>
             Musikversicherung
             <span class="opacity-75 -ml-1">.com</span>
           </strong>
         </a>
-        <button
+        <div
+          on:click={expanded === false ? () => (expanded = true) : () => (expanded = false)}
+          class="mobile-icon md:hidden w-x1p5 h-x1 {expanded ? ' active' : ''}
+          ">
+          <div class="middle-line" />
+        </div>
+        <!-- <button
           on:click={expanded === false ? () => (expanded = true) : () => (expanded = false)}
           aria-label="Menu">
           <svg
-            class="fill-primary w-x1 h-x1 md:hidden burger-svg"
+            class="fill-primary w-x1p5 h-x1p5 md:hidden burger-svg"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">
             <title>Menu</title>
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
           </svg>
-        </button>
+        </button> -->
         <div
-          class="burger-menu-items w-full block mb-x1p5 md:mb-0 md:flex
+          class="absolute md:relative bg-light top-0 w-screen block px-x1p5
+          pb-x2 mt-x3 -mx-x1p5 md:mt-0 md:py-x0p25 md:mb-0 md:flex
           md:items-center md:w-auto {expanded === false ? 'hidden' : ''}">
-          <div class=" md:text-x0p5 md:flex-grow">
+          <div class="text-x3 md:text-x1 lg:text-x0p5 md:flex-grow">
             <a
               rel="prefetch"
               class:active={segment === 'faq'}
@@ -81,10 +139,10 @@
           </div>
           <a
             href="anfrage"
-            class="inline-block md:text-x0p5 px-x0p5 py-x0p25 leading-none
-            border md:border-x0p1 text-primary border-primary
-            hover:border-transparent hover:text-light hover:bg-primary mt-4
-            md:mt-0">
+            class="inline-block text-x3 text-primary mt-4 md:px-x0p5 md:py-x0p25
+            md:leading-none md:border md:border-primary
+            md:hover:border-transparent md:hover:text-light md:hover:bg-primary
+            md:mt-0 md:text-x0p5 md:border-x0p1 ">
             Jetzt anfragen
           </a>
         </div>
