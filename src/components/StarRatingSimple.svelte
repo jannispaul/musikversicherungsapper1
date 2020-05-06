@@ -1,14 +1,12 @@
 <script>
   import { onMount } from "svelte";
-
   export let rating = 0;
-
-  let totalStars = 5;
   export let style = {
     styleStarWidth: 20,
     styleEmptyStarColor: "#D0D0D0",
     styleFullStarColor: "#ffd219"
   };
+  let totalStars = 5;
 </script>
 
 <style>
@@ -26,6 +24,7 @@
 
 <div class="star-container">
   <div class="star-rating">
+    <!-- Set stars according to rating -->
     {#each Array(rating) as star}
       <svg
         viewBox="0 0 {style.styleStarWidth}
@@ -42,10 +41,10 @@
           15.913550989931636,18.06411276517625
           10.01767867670538,13.999960932857963
           4.157960759531867,18.11606909241355
-          6.201274101419407,11.252869325769078"
-          style="" />
+          6.201274101419407,11.252869325769078" />
       </svg>
     {/each}
+    <!-- Set gray stars to get 5 stars in total -->
     {#each Array(totalStars - rating) as star}
       <svg
         viewBox="0 0 {style.styleStarWidth}
@@ -62,12 +61,8 @@
           15.913550989931636,18.06411276517625
           10.01767867670538,13.999960932857963
           4.157960759531867,18.11606909241355
-          6.201274101419407,11.252869325769078"
-          style="" />
+          6.201274101419407,11.252869325769078" />
       </svg>
     {/each}
-    {#if isIndicatorActive}
-      <div class="indicator" itemprop="ratingValue">{rating}</div>
-    {/if}
   </div>
 </div>
