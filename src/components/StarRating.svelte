@@ -1,6 +1,4 @@
 <script>
-  import { onMount } from "svelte";
-
   export let rating = 0;
   export let isIndicatorActive = false;
   export let style = {
@@ -12,47 +10,7 @@
   let emptyStar = 0;
   let fullStar = 5;
   let totalStars = 5;
-  // let styleFullStarColor = "#ffd219";
-  // let styleStarWidth = 50;
-
   let stars = [];
-
-  // function getStarPoints() {
-  //   let centerX = style.styleStarWidth / 2;
-  //   let centerY = style.styleStarWidth / 2;
-  //   let innerCircleArms = 5; // a 5 arms star
-  //   let innerRadius = style.styleStarWidth / innerCircleArms;
-  //   let innerOuterRadiusRatio = 2.5; // Unique value - determines fatness/sharpness of star
-  //   let outerRadius = innerRadius * innerOuterRadiusRatio;
-  //   return calcStarPoints(
-  //     centerX,
-  //     centerY,
-  //     innerCircleArms,
-  //     innerRadius,
-  //     outerRadius
-  //   );
-  // }
-
-  function calcStarPoints(
-    centerX,
-    centerY,
-    innerCircleArms,
-    innerRadius,
-    outerRadius
-  ) {
-    let angle = Math.PI / innerCircleArms;
-    let angleOffsetToCenterStar = 60;
-    let totalArms = innerCircleArms * 2;
-    let points = "";
-    for (let i = 0; i < totalArms; i++) {
-      let isEvenIndex = i % 2 == 0;
-      let r = isEvenIndex ? outerRadius : innerRadius;
-      let currX = centerX + Math.cos(i * angle + angleOffsetToCenterStar) * r;
-      let currY = centerY + Math.sin(i * angle + angleOffsetToCenterStar) * r;
-      points += currX + "," + currY + " ";
-    }
-    return points;
-  }
 
   function initStars() {
     for (let i = 0; i < totalStars; i++) {
@@ -91,10 +49,8 @@
       : style.styleEmptyStarColor;
   }
 
-  onMount(() => {
-    initStars();
-    setStars();
-  });
+  initStars();
+  setStars();
 </script>
 
 <style>
@@ -116,20 +72,12 @@
       <svg
         viewBox="0 0 {style.styleStarWidth}
         {style.styleStarWidth}"
+        xmlns="http://www.w3.org/2000/svg"
         class="star-svg w-x1 md:w-stars-md lg:w-x0p75"
         style="fill: url(#gradient{star.raw});">
-        <polygon
-          points="0.4758701958484366,6.951893788977833
-          7.6345796040273575,6.774354893929491
-          9.95580330823659,0.00009766785509235376
-          12.336815696187243,6.753572363034571
-          19.496814746451474,6.867826685577273
-          13.80965192166062,11.21924248440888
-          15.913550989931636,18.06411276517625
-          10.01767867670538,13.999960932857963
-          4.157960759531867,18.11606909241355
-          6.201274101419407,11.252869325769078"
-          style="" />
+        <path
+          d="M.476 6.952l7.159-.178L9.955 0l2.382 6.754 7.16.114-5.687 4.351
+          2.104 6.845L10.018 14l-5.86 4.116 2.043-6.863z" />
         <defs>
           <linearGradient id="gradient{star.raw}">
             <stop
