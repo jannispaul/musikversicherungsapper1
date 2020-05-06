@@ -37,7 +37,9 @@
         <span itemprop="bestRating">5</span>
       </div>
       <StarRating rating={reviewData.averageRating} />
-      {reviewData.averageRating} Sterne von {reviewData.count} Berwertungen
+      <div class="text-x2 md:text-x0p5 mb-x1">
+        {reviewData.averageRating} Sterne von {reviewData.count} Berwertungen
+      </div>
       <div class="grid md:grid-cols-2 col-gap-x1 row-gap-x0p5">
         {#each reviewData.allReviews as review}
           <ReviewItem {review} />

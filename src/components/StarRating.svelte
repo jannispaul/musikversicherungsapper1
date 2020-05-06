@@ -5,7 +5,7 @@
   export let isIndicatorActive = false;
   export let style = {
     styleStarWidth: 20,
-    styleEmptyStarColor: "#737373",
+    styleEmptyStarColor: "#D0D0D0",
     styleFullStarColor: "#ffd219"
   };
 

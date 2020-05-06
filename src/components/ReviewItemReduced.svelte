@@ -1,6 +1,6 @@
 <script>
   export let review;
-  import StarRating from "./StarRating.svelte";
+  import StarRatingSimple from "./StarRatingSimple.svelte";
 
   let style = {
     styleStarWidth: 10,
@@ -28,7 +28,7 @@
       itemtype="https://schema.org/Rating">
       <span itemprop="ratingValue" class="hidden">{review.rating}</span>
       <span itemprop="bestRating" class="hidden">5</span>
-      <StarRating rating={review.rating} {style} />
+      <StarRatingSimple rating={review.rating} />
     </span>
     <span class="flex opacity-75">
       &nbsp;von&nbsp;
